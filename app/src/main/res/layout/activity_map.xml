@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_Top"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/bg_main"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|left"
+                android:padding="6dp"
+                android:src="@drawable/icon_hamburg"/>
+
+            <!--<com.mikhaellopez.circularimageview.CircularImageView-->
+                <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="50dp"-->
+                <!--android:src="@drawable/pic_profile"-->
+                <!--app:civ_border_color="#EEEEEE"-->
+                <!--app:civ_border_width="1dp"-->
+                <!--app:civ_shadow="true"-->
+                <!--app:civ_shadow_radius="8"-->
+                <!--app:civ_shadow_color="#646464"-->
+                <!--android:layout_gravity="center_vertical|left"/>-->
+
+            <ImageView
+                android:id="@+id/image_loading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:padding="6dp"
+                android:src="@drawable/logo_tool_bar"
+                android:transitionName="profile"/>
+
+        </FrameLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <FrameLayout
+        android:id="@+id/sc_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_Top"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:background="@android:color/transparent">
+
+        <!--<co.th.udrinkidrive.CustomMapView-->
+            <!--android:id="@+id/mapview"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_below="@+id/toolbar_Top" />-->
+
+        <fragment
+            android:id="@+id/mapview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar_Top"
+            android:name="com.google.android.gms.maps.SupportMapFragment"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bg_main">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/lv_current"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp">
+
+                    <TableLayout
+                        android:id="@+id/tableLayoutCurrent"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent">
+
+                    </TableLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="2dp"
+                    android:background="@drawable/border_shadow">
+
+                    <TableLayout
+                        android:id="@+id/tableLayoutPoint"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent">
+
+                        <TableRow
+                            android:id="@+id/tableRowPoint"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent">
+
+                            <!--<View-->
+                                <!--android:layout_width="4dp"-->
+                                <!--android:layout_height="match_parent"-->
+                                <!--android:background="@color/black"/>-->
+
+                            <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:text="TO"
+                                android:textColor="@color/white"
+                                android:paddingTop="5dp"
+                                android:paddingLeft="15dp"
+                                android:textSize="24dp"
+                                android:gravity="center"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:padding="5dp">
+
+                                <co.th.udrinkidrive.MyFontsStyle.MyTextViewFontsBold
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:text="Kingkong Yakinyu"
+                                    android:textColor="@color/blue"
+                                    android:textSize="@dimen/text_normal"/>
+
+                                <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:text="อาคาร CW Tower ชั้น 28เลขที่ 184/184-185 ถนนรัชดาภิเษก แขวงห้วยขวาง เขตห้วยขวาง กรุงเทพฯ 10310"
+                                    android:textColor="@color/white"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:textSize="@dimen/text_normal"/>
+
+                            </LinearLayout>
+
+                            <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                                android:id="@+id/tv_add_row"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:text="ADD"
+                                android:textSize="@dimen/text_normal"
+                                android:textColor="@color/white"
+                                android:padding="15dp"
+                                android:layout_gravity="center_vertical"/>
+
+                        </TableRow>
+
+                    </TableLayout>
+
+                </LinearLayout>
+
+                <include
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    layout="@layout/table_view_infomation"
+                    android:layout_marginTop="4dp"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/lv_book"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:background="@android:color/transparent">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_search_box"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp">
+
+                <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Fare : 360"
+                    android:textSize="@dimen/text_normal"
+                    android:textColor="@color/black"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:padding="12dp"
+                    android:layout_weight="1"/>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Cash"
+                        android:textSize="@dimen/text_normal"
+                        android:textColor="@color/black"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:padding="12dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                android:id="@+id/bt_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:background="@drawable/border_button"
+                android:gravity="center_horizontal"
+                android:padding="6dp"
+                android:text="CONFIRM"
+                android:textColor="#fff"
+                android:textSize="@dimen/button_normal" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</RelativeLayout>

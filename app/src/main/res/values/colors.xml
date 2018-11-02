@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#383838</color>
+    <color name="colorPrimaryDark">#26282f</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="blue">#03C5F9</color>
+    <color name="blue_press">#03A3CE</color>
+    <color name="white">#fff</color>
+    <color name="black">#000000</color>
+    <color name="search_shadow">#7F000000</color>
+    <color name="bg_main">#04041B</color>
+    <color name="color_login_username_pass_hint">#CACACA</color>
+
+
+</resources>

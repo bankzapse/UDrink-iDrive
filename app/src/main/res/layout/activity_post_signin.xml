@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main"
+    tools:context=".presentationlayer.postlogin.PostLoginActivity">
+
+    <LinearLayout
+        android:id="@+id/ln_main"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:gravity="center_vertical|center_horizontal">
+
+        <ImageView
+            android:id="@+id/image_loading_sign_in"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logo_udrink"
+            android:transitionName="profile"/>
+
+        <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+            android:id="@+id/tv_sologan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/text_salogan"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_normal"
+            android:transitionName="text"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableLayout
+                android:id="@+id/tablelayout"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:layout_marginTop="15dp">
+
+                <TableRow
+                    android:background="@drawable/border_table"
+                    android:layout_marginTop="5dp">
+                    <co.th.udrinkidrive.MyFontsStyle.MyEdittextFonts
+                        android:id="@+id/et_email"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:inputType="textEmailAddress"
+                        android:backgroundTint="#fff"
+                        android:textCursorDrawable="@null"
+                        android:hint="@string/login_email"
+                        android:textColorHint="@color/color_login_username_pass_hint"
+                        android:textColor="@color/bg_main"
+                        android:background="@null"
+                        android:textSize="@dimen/edittext_normal"
+                        android:padding="14dp"/>
+                </TableRow>
+
+                <TableRow
+                    android:background="@drawable/border_table"
+                    android:layout_marginTop="5dp">
+                    <co.th.udrinkidrive.MyFontsStyle.MyEdittextFonts
+                        android:id="@+id/et_pass"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:inputType="textPassword"
+                        android:backgroundTint="#fff"
+                        android:textCursorDrawable="@null"
+                        android:hint="@string/login_password"
+                        android:textColorHint="@color/color_login_username_pass_hint"
+                        android:textColor="@color/bg_main"
+                        android:background="@null"
+                        android:textSize="@dimen/edittext_normal"
+                        android:padding="14dp"/>
+                </TableRow>
+
+            </TableLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
+                android:id="@+id/bt_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_button"
+                android:gravity="center_horizontal"
+                android:padding="6dp"
+                android:text="@string/login_confirm"
+                android:textColor="#fff"
+                android:textSize="@dimen/button_normal"
+                android:layout_weight="1"
+                android:layout_marginRight="2dp"/>
+
+            <co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
+                android:id="@+id/bt_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_button_default"
+                android:gravity="center_horizontal"
+                android:padding="6dp"
+                android:text="@string/login_cancel"
+                android:textColor="#000"
+                android:textSize="@dimen/button_normal"
+                android:layout_weight="1"
+                android:layout_marginLeft="2dp"/>
+
+        </LinearLayout>
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:layout_gravity="center_vertical">-->
+
+            <!--<View-->
+                <!--android:layout_height="1dp"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:background="#C2C1C1"-->
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:layout_weight="1"/>-->
+
+            <!--<co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:padding="5dp"-->
+                <!--android:text="OR"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="14dp" />-->
+
+            <!--<View-->
+                <!--android:layout_height="1dp"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:background="#C2C1C1"-->
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:layout_weight="1"/>-->
+
+        <!--</LinearLayout>-->
+
+        <!--<FrameLayout-->
+            <!--android:id="@+id/fl_facebook"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="10dp">-->
+
+            <!--&lt;!&ndash;<com.facebook.login.widget.LoginButton&ndash;&gt;-->
+            <!--&lt;!&ndash;android:id="@+id/login_button"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_gravity="center_horizontal|center_vertical" />&ndash;&gt;-->
+
+            <!--<LinearLayout-->
+                <!--android:orientation="horizontal"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:gravity="center_horizontal|center_vertical"-->
+                <!--android:background="@drawable/border_facebook"-->
+                <!--android:padding="6dp">-->
+
+                <!--<ImageView-->
+                    <!--android:id="@+id/img_back"-->
+                    <!--android:layout_width="30dp"-->
+                    <!--android:layout_height="30dp"-->
+                    <!--android:src="@drawable/icon_facebook"/>-->
+
+                <!--<co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Login With Facebook"-->
+                    <!--android:textSize="14dp"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:layout_marginLeft="4dp"/>-->
+
+            <!--</LinearLayout>-->
+
+        <!--</FrameLayout>-->
+
+    </LinearLayout>
+
+</LinearLayout>

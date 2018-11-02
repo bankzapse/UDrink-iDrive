@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border_shadow">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow
+                android:id="@+id/tableCurrent"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <!--<View-->
+                    <!--android:id="@+id/view_add"-->
+                    <!--android:layout_width="4dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:background="#FF7C7A7A"/>-->
+
+                <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                    android:id="@+id/tv_status_row"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="TO"
+                    android:textColor="@color/white"
+                    android:paddingLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:textSize="24dp"
+                    android:gravity="center"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <co.th.udrinkidrive.MyFontsStyle.MyTextViewFontsBold
+                        android:id="@+id/tv_status_local"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="-"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_normal"/>
+
+                    <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Choose your destination"
+                        android:textColor="@color/white"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textSize="@dimen/text_normal"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/image_remove"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|right"
+                    android:padding="6dp"
+                    android:src="@android:drawable/ic_menu_delete"/>
+
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
