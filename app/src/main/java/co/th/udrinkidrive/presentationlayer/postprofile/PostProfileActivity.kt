@@ -39,6 +39,7 @@ class PostProfileActivity : AppCompatActivity() {
                     .replace(R.id.container, PostMenuFragment.newInstance())
                     .commitNow()
         }
+        
     }
 
     override fun onBackPressed() {
