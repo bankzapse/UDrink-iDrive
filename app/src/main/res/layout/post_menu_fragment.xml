@@ -1,89 +1,458 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_main"
+    android:background="@color/white"
+    android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentationlayer.postprofile.ui.postprofile.PostMenuFragment">
 
-    <LinearLayout
-        android:layout_height="match_parent"
+    <RelativeLayout
+        android:id="@+id/rl_profile"
+        android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:orientation="vertical"
-        android:gravity="center_horizontal">
-
-        <RelativeLayout
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:orientation="vertical">
-
-                <co.th.udrinkidrive.MyFontsStyle.MyEdittextFonts
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Standard"
-                    android:textColor="@color/white"
-                    android:background="@null"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="16dp"
-                    android:padding="14dp"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:orientation="vertical"
-                android:gravity="right">
-
-                <com.mikhaellopez.circularimageview.CircularImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:gravity="right"
-                    android:src="@drawable/pic_profile"
-                    app:civ_border_color="#EEEEEE"
-                    app:civ_border_width="1dp"
-                    app:civ_shadow="true"
-                    app:civ_shadow_color="#646464"
-                    app:civ_shadow_radius="8" />
-
-            </LinearLayout>
-
-        </RelativeLayout>
+        android:padding="5dp"
+        android:background="@color/bg_main"
+        android:elevation="20dp">
 
         <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/border_edittext"
-            android:layout_margin="4dp">
+            android:layout_alignParentLeft="true"
+            android:orientation="vertical">
 
             <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="First name"
-                android:textColor="@color/blue"
-                android:textSize="16dp"
-                android:layout_marginLeft="4dp"/>
+                android:text="Surawut UdrinkiDrive"
+                android:textColor="@color/white"
+                android:textSize="28dp" />
 
-            <co.th.udrinkidrive.MyFontsStyle.MyEdittextFonts
+            <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Standard"
                 android:textColor="@color/white"
-                android:background="@null"
-                android:layout_marginLeft="10dp"
-                android:textSize="16dp"
-                android:padding="14dp"
-                android:ems="300"/>
+                android:textSize="@dimen/text_normal" />
+
+            <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="เบอร์โทร : ​089-1234567"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_normal" />
 
         </LinearLayout>
 
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentRight="true">
 
-</LinearLayout>
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:gravity="right"
+                android:src="@drawable/pic_profile"
+                app:civ_border_color="#EEEEEE"
+                app:civ_border_width="1dp"
+                app:civ_shadow="true"
+                app:civ_shadow_color="#646464"
+                app:civ_shadow_radius="8" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="2dp"
+        android:layout_below="@+id/rl_profile"
+        android:paddingRight="2dp">
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="2dp">
+
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/rl_profile"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:orientation="vertical"-->
+                <!--android:padding="5dp"-->
+                <!--android:background="@color/white"-->
+                <!--android:elevation="20dp">-->
+
+                <!--<LinearLayout-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:orientation="vertical">-->
+
+                    <!--<co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="Surawut UdrinkiDrive"-->
+                        <!--android:textColor="@color/bg_main"-->
+                        <!--android:textSize="28dp" />-->
+
+                    <!--<co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="Standard"-->
+                        <!--android:textColor="@color/bg_main"-->
+                        <!--android:textSize="@dimen/text_normal" />-->
+
+                    <!--<co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="เบอร์โทร : ​089-1234567"-->
+                        <!--android:textColor="@color/bg_main"-->
+                        <!--android:textSize="@dimen/text_normal" />-->
+
+                <!--</LinearLayout>-->
+
+                <!--<LinearLayout-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="vertical"-->
+                    <!--android:layout_alignParentRight="true">-->
+
+                    <!--<com.mikhaellopez.circularimageview.CircularImageView-->
+                        <!--android:layout_width="100dp"-->
+                        <!--android:layout_height="100dp"-->
+                        <!--android:gravity="right"-->
+                        <!--android:src="@drawable/pic_profile"-->
+                        <!--app:civ_border_color="#EEEEEE"-->
+                        <!--app:civ_border_width="1dp"-->
+                        <!--app:civ_shadow="true"-->
+                        <!--app:civ_shadow_color="#646464"-->
+                        <!--app:civ_shadow_radius="8" />-->
+
+                <!--</LinearLayout>-->
+
+            <!--</RelativeLayout>-->
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="2dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/ln_reward"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="4dp"
+                    android:elevation="20dp"
+                    android:clickable="true"
+                    android:layout_weight="1"
+                    android:layout_marginRight="1dp"
+                    android:background="@android:color/transparent">
+
+                    <FrameLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/height_menu"
+                            android:src="@drawable/pic_menu_more4"
+                            android:scaleType="fitXY"/>
+
+                        <LinearLayout
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:background="#C4000000"
+                            android:layout_gravity="bottom">
+
+                            <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Reward"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_menu_profile"
+                                android:gravity="right"
+                                android:layout_marginRight="4dp"/>
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/ln_payment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="4dp"
+                    android:elevation="20dp"
+                    android:clickable="true"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="1dp"
+                    android:background="@android:color/transparent">
+
+                    <FrameLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/height_menu"
+                            android:src="@drawable/pic_menu_more4"
+                            android:scaleType="fitXY"/>
+
+                        <LinearLayout
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:background="#C4000000"
+                            android:layout_gravity="bottom">
+
+                            <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Promotion"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_menu_profile"
+                                android:gravity="right"
+                                android:layout_marginRight="4dp"/>
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+            //Box1
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="2dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/ln_myplace"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="4dp"
+                    android:elevation="20dp"
+                    android:clickable="true"
+                    android:layout_weight="1"
+                    android:layout_marginRight="1dp"
+                    android:background="@android:color/transparent">
+
+                    <FrameLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/height_menu"
+                            android:src="@drawable/pic_menu_more4"
+                            android:scaleType="fitXY"/>
+
+                        <LinearLayout
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:background="#C4000000"
+                            android:layout_gravity="bottom">
+
+                            <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="My Place"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_menu_profile"
+                                android:gravity="right"
+                                android:layout_marginRight="4dp"/>
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/ln_help"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="4dp"
+                    android:elevation="20dp"
+                    android:clickable="true"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="1dp"
+                    android:background="@android:color/transparent">
+
+                    <FrameLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/height_menu"
+                            android:src="@drawable/pic_menu_more4"
+                            android:scaleType="fitXY"/>
+
+                        <LinearLayout
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:background="#C4000000"
+                            android:layout_gravity="bottom">
+
+                            <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Payment"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_menu_profile"
+                                android:gravity="right"
+                                android:layout_marginRight="4dp"/>
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+            //Box2
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="2dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/ln_history"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="4dp"
+                    android:elevation="20dp"
+                    android:clickable="true"
+                    android:layout_weight="1"
+                    android:layout_marginRight="1dp"
+                    android:background="@android:color/transparent">
+
+                    <FrameLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/height_menu"
+                            android:src="@drawable/pic_menu_more4"
+                            android:scaleType="fitXY"/>
+
+                        <LinearLayout
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:background="#C4000000"
+                            android:layout_gravity="bottom">
+
+                            <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="History"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_menu_profile"
+                                android:gravity="right"
+                                android:layout_marginRight="4dp"/>
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/ln_notification"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="4dp"
+                    android:elevation="20dp"
+                    android:clickable="true"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="1dp"
+                    android:background="@android:color/transparent">
+
+                    <FrameLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/height_menu"
+                            android:src="@drawable/pic_menu_more4"
+                            android:scaleType="fitXY"/>
+
+                        <LinearLayout
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:background="#C4000000"
+                            android:layout_gravity="bottom">
+
+                            <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Term and codition"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_menu_profile"
+                                android:gravity="right"
+                                android:layout_marginRight="4dp"/>
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+            //Box3
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/pic_distance_fee"
+                android:scaleType="fitXY"
+                android:layout_marginTop="2dp"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:src="@drawable/pic_service"
+                android:scaleType="fitXY"
+                android:layout_marginTop="2dp"/>
+
+            <co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
+                android:id="@+id/bt_logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/red"
+                android:gravity="center_horizontal"
+                android:padding="6dp"
+                android:text="@string/menu_logout"
+                android:textColor="@color/white"
+                android:textSize="@dimen/button_normal"
+                android:layout_marginTop="2dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

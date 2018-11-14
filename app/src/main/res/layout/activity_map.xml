@@ -25,18 +25,6 @@
                 android:padding="6dp"
                 android:src="@drawable/icon_hamburg"/>
 
-            <!--<com.mikhaellopez.circularimageview.CircularImageView-->
-                <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
-                <!--android:layout_width="50dp"-->
-                <!--android:layout_height="50dp"-->
-                <!--android:src="@drawable/pic_profile"-->
-                <!--app:civ_border_color="#EEEEEE"-->
-                <!--app:civ_border_width="1dp"-->
-                <!--app:civ_shadow="true"-->
-                <!--app:civ_shadow_radius="8"-->
-                <!--app:civ_shadow_color="#646464"-->
-                <!--android:layout_gravity="center_vertical|left"/>-->
-
             <ImageView
                 android:id="@+id/image_loading"
                 android:layout_width="match_parent"
@@ -70,14 +58,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/toolbar_Top"
-            android:name="com.google.android.gms.maps.SupportMapFragment"/>
+            android:name="co.th.udrinkidrive.presentationlayer.detectonmap.MySupportMapFragment"/>
 
         <ScrollView
+            android:id="@+id/sc_detail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/bg_main">
+            android:layout_height="wrap_content">
 
             <LinearLayout
+                android:id="@+id/lv_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -86,7 +75,8 @@
                     android:id="@+id/lv_current"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="4dp">
+                    android:paddingBottom="2dp"
+                    android:background="@color/bg_main">
 
                     <TableLayout
                         android:id="@+id/tableLayoutCurrent"
@@ -101,7 +91,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:elevation="2dp"
+                    android:elevation="10dp"
                     android:background="@drawable/border_shadow">
 
                     <TableLayout
@@ -171,11 +161,30 @@
 
                 </LinearLayout>
 
-                <include
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    layout="@layout/table_view_infomation"
-                    android:layout_marginTop="4dp"/>
+                <FrameLayout
+                    android:id="@+id/information_any"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <include
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        layout="@layout/table_view_infomation"/>
+
+                    <include
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        layout="@layout/custom_info_any"/>
+
+                    <ImageView
+                        android:id="@+id/image_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:padding="10dp"
+                        android:src="@drawable/icon_back_black"/>
+
+                </FrameLayout>
 
             </LinearLayout>
 
@@ -213,7 +222,20 @@
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent">
+
+                    <View
+                        android:layout_height="wrap_content"
+                        android:layout_width="1dp"
+                        android:background="#dfdddd"
+                        android:layout_margin="6dp"/>
+
+                    <ImageView
+                        android:id="@+id/image_visa"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/pay_mastercard"
+                        android:layout_gravity="center_vertical"/>
 
                     <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
                         android:layout_width="match_parent"

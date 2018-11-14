@@ -16,30 +16,34 @@ class PostProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.post_profile_activity)
 
-        image_edit.setOnClickListener {
-            if(check_edit){
-                supportFragmentManager.beginTransaction()
-                        .setCustomAnimations(R.anim.slide_in_right, R.anim.slide_in_left)
-                        .replace(R.id.container, PostProfileFragment.newInstance())
-                        .commitNow()
-                image_edit.setImageResource(android.R.drawable.ic_menu_edit)
-                check_edit = false
-            }else{
-                supportFragmentManager.beginTransaction()
-                        .setCustomAnimations(R.anim.slide_out_left, R.anim.slide_out_right)
-                        .replace(R.id.container, PostEditFragment.newInstance())
-                        .commitNow()
-                image_edit.setImageResource(android.R.drawable.ic_delete)
-                check_edit = true
-            }
+        image_back.setOnClickListener {
+            onBackPressed()
         }
+
+//        image_edit.setOnClickListener {
+//            if(check_edit){
+//                supportFragmentManager.beginTransaction()
+//                        .setCustomAnimations(R.anim.slide_in_right, R.anim.slide_in_left)
+//                        .replace(R.id.container, PostProfileFragment.newInstance())
+//                        .commitNow()
+//                image_edit.setImageResource(android.R.drawable.ic_menu_edit)
+//                check_edit = false
+//            }else{
+//                supportFragmentManager.beginTransaction()
+//                        .setCustomAnimations(R.anim.slide_out_left, R.anim.slide_out_right)
+//                        .replace(R.id.container, PostEditFragment.newInstance())
+//                        .commitNow()
+//                image_edit.setImageResource(android.R.drawable.ic_delete)
+//                check_edit = true
+//            }
+//        }
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
                     .replace(R.id.container, PostMenuFragment.newInstance())
                     .commitNow()
         }
-        
+
     }
 
     override fun onBackPressed() {

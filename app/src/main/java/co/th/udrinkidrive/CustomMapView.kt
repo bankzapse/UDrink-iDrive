@@ -42,6 +42,7 @@ class CustomMapView : MapView {
             }
             else -> {
             }
+
         }
 
         return super.onInterceptTouchEvent(event)

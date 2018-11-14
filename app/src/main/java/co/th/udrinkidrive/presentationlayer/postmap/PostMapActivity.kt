@@ -1,8 +1,5 @@
 package co.th.udrinkidrive.presentationlayer.postmap
 
-import android.Manifest
-import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -19,19 +16,24 @@ import android.os.Handler
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.view.animation.CycleInterpolator
 import android.widget.*
 import android.widget.LinearLayout
 import androidx.core.app.ActivityCompat
+import co.th.udrinkidrive.Utils
+import co.th.udrinkidrive.presentationlayer.detectonmap.TouchableWrapper
 import co.th.udrinkidrive.presentationlayer.postprofile.PostProfileActivity
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import com.thekhaeng.pushdownanim.PushDownAnim
+import kotlinx.android.synthetic.main.custom_info_any.*
+import kotlinx.android.synthetic.main.table_view_infomation.*
 
-class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener {
+class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  , TouchableWrapper.UpdateMapAfterUserInterection{
     override fun onCameraChange(p0: CameraPosition?) {
         Log.d("Tag","p0 : $p0")
     }
@@ -39,6 +41,7 @@ class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener {
     internal var googleMap: GoogleMap? = null
     internal var mSupportMapFragment: SupportMapFragment? = null
     lateinit var current: LatLng
+    lateinit var animation:Animation
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,6 +66,17 @@ class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener {
                 .setDurationPush(35)
                 .setDurationRelease(15)
                 .setOnClickListener {  }
+
+        ln_info_any.setOnClickListener {
+            Utils(this).AnimationLayoutBottom(R.anim.slide_in_right,ln_any,"VISIBLE","Custom",image_back)
+            ln_any.visibility = View.VISIBLE
+        }
+        image_back.setOnClickListener {
+            Utils(this).AnimationLayoutBottom(R.anim.slide_out_left,ln_any,"GONE","Custom",image_back)
+        }
+
+        ln_any.visibility = View.GONE
+        image_back.visibility = View.GONE
 
     }
 
@@ -103,9 +117,7 @@ class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener {
                     val b = bitmapdraw.bitmap
                     val smallMarker = Bitmap.createScaledBitmap(b, width, height, false)
 
-                    pulseMarker(smallMarker, pinnedMarker, 1000)
-
-
+                    Utils(this).pulseMarker(smallMarker, pinnedMarker, 1000)
 
                 }
             }
@@ -113,32 +125,15 @@ class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener {
         }
     }
 
-    private fun pulseMarker(markerIcon: Bitmap, marker: Marker, onePulseDuration: Long) {
-        val handler = Handler()
-        val startTime = System.currentTimeMillis()
-
-        val interpolator = CycleInterpolator(1f)
-        handler.post(object : Runnable {
-            override fun run() {
-                try {
-                    val elapsed = System.currentTimeMillis() - startTime
-                    val t = interpolator.getInterpolation(elapsed.toFloat() / onePulseDuration)
-                    marker.setIcon(BitmapDescriptorFactory.fromBitmap(scaleBitmap(markerIcon, 1f + 0.05f * t)))
-                    handler.postDelayed(this, 16)
-                } catch (e: Exception) {
-                    handler.removeCallbacks(this)
-                }
-
-            }
-        })
+    override fun onUpdateMapAfterUserInterection(type : String) {
+        if(type == "DOWN") {
+            Utils(this).AnimationLayoutBottom(R.anim.slide_down,lv_book,"GONE","General",image_back)
+            Utils(this).AnimationLayoutTop(R.anim.slide_up_scroll,sc_detail,"GONE")
+        }else if(type == "UP") {
+            Utils(this).AnimationLayoutBottom(R.anim.slide_up, lv_book, "VISIBLE","General",image_back)
+            Utils(this).AnimationLayoutTop(R.anim.slide_down_scroll, sc_detail, "VISIBLE")
+        }
     }
-
-    fun scaleBitmap(bitmap: Bitmap, scaleFactor: Float): Bitmap {
-        val sizeX = Math.round(bitmap.width * scaleFactor)
-        val sizeY = Math.round(bitmap.height * scaleFactor)
-        return Bitmap.createScaledBitmap(bitmap, sizeX, sizeY, false)
-    }
-
 
     private val locationListener = object : LocationListener {
         override fun onLocationChanged(location: Location) {
@@ -185,25 +180,9 @@ class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener {
             tableLayoutCurrent.removeViewAt(tableLayoutCurrent.childCount-1)
         }
 
-//        for (i in 0..1) {
-//            val row = findViewById(R.id.display_row) as TableRow
-//            checkBox = CheckBox(this)
-//            tv = TextView(this)
-//            addBtn = ImageButton(this)
-//            addBtn.setImageResource(R.drawable.add)
-//            minusBtn = ImageButton(this)
-//            minusBtn.setImageResource(R.drawable.minus)
-//            qty = TextView(this)
-//            checkBox.setText("hello")
-//            qty.setText("10")
-//            row.addView(checkBox)
-//            row.addView(minusBtn)
-//            row.addView(qty)
-//            row.addView(addBtn)
-//            tableRow1.addView(row, i)
-//        }
-
     }
+
+
 
     override fun onResume() {
         super.onResume()

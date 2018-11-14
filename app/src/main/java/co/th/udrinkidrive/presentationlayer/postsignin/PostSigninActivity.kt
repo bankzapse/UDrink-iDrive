@@ -8,6 +8,7 @@ import androidx.core.app.ActivityOptionsCompat
 import co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
 import co.th.udrinkidrive.R
 import co.th.udrinkidrive.presentationlayer.postmap.PostMapActivity
+import co.th.udrinkidrive.presentationlayer.postregister.PostRegisterActivity
 import com.thekhaeng.pushdownanim.PushDownAnim
 import kotlinx.android.synthetic.main.activity_post_login.*
 import kotlinx.android.synthetic.main.activity_post_signin.*
@@ -20,6 +21,8 @@ class PostSigninActivity : AppCompatActivity() , View.OnClickListener {
 
         PushDownClick(bt_confirm)
         PushDownClick(bt_cancel)
+
+        tv_register.setOnClickListener(this@PostSigninActivity)
 
     }
 
@@ -34,6 +37,12 @@ class PostSigninActivity : AppCompatActivity() , View.OnClickListener {
             }
             R.id.bt_cancel -> {
                 onBackPressed()
+            }
+            R.id.tv_register ->{
+                var intent = Intent(this@PostSigninActivity, PostRegisterActivity::class.java)
+                val options = ActivityOptionsCompat.makeSceneTransitionAnimation(this@PostSigninActivity,  image_loading_sign_in , "profile")
+                startActivity(intent, options.toBundle())
+                overridePendingTransition(R.anim.abc_fade_in,R.anim.abc_fade_out)
             }
         }
 

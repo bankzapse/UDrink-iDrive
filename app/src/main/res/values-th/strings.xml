@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">UDrink\nIDrive</string>
+    <string name="facebook_app_id">916694911703367</string>
+    <string name="fb_login_protocol_scheme">fb916694911703367</string>
     <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCMjmMfB1CUnbGf0vUcMAAZD0yY3v7Evmk</string>
     <string name="title_activity_post_edit_profile_fragment">PostEditProfileFragment</string>
     <string name="action_settings">Settings</string>
 
-    <string name="login_signin">เข้าสู่ระบบ</string>
+    <string name="login_signin">เข้าสู่ระบบผ่านทางอีเมล</string>
     <string name="login_register">สมัครสมาชิก</string>
+    <string name="login_forgot_password">ลืมรหัสผ่าน?</string>
     <string name="login_or">หรือ</string>
-    <string name="login_facebook">เข้าสู่ระบบด้วย facebook</string>
+    <string name="login_facebook">เข้าสู่ระบบผ่านทางเฟสบุ๊ค</string>
+    <string name="login_dont_have">ฉันไม่มีบัญชี </string>
     <string name="login_email">อีเมล</string>
     <string name="login_password">รหัสผ่าน</string>
     <string name="login_buttom">  เข้าสู่ระบบ  </string>
@@ -20,5 +24,7 @@
     <string name="register_lastname">นามสกุล</string>
     <string name="register_email">อีเมล</string>
     <string name="register_password">รหัสผ่าน</string>
+
+    <string name="menu_logout">ออกจากระบบ</string>
 
 </resources>

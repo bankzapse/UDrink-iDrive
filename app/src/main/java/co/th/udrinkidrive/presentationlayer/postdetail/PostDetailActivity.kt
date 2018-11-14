@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModelProviders
 import co.th.udrinkidrive.PostsReaderApplication
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCallbacks
 import com.github.ksoichiro.android.observablescrollview.ScrollState
-//import kotlinx.android.synthetic.main.activity_detail_shop.*
 
 class PostDetailActivity : AppCompatActivity() , ObservableScrollViewCallbacks {
     override fun onUpOrCancelMotionEvent(scrollState: ScrollState?) {
