@@ -25,6 +25,12 @@
     <string name="register_email">อีเมล</string>
     <string name="register_password">รหัสผ่าน</string>
 
+    <string name="forgot_password">โปรดกรอกอีเมล ทางทีมงานจะส่งลิงค์ตั้งค่า\nรหัสผ่านใหม่ทางอีเมล</string>
+
     <string name="menu_logout">ออกจากระบบ</string>
+
+    <string name="otp_don_have">ยังไม่ได้รับรหัส?</string>
+    <string name="otp_recode">ส่งรหัสใหม่</string>
+    <string name="otp_phone">เบอร์โทรศัพท์มือถือ</string>
 
 </resources>

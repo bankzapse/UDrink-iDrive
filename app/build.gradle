@@ -76,6 +76,10 @@ dependencies {
 
     //Facebook SDK
     implementation 'com.facebook.android:facebook-android-sdk:[4,5)'
+
+    //OTP PinView
+    implementation 'com.chaos.view:pinview:1.4.2'
+    implementation 'com.github.stfalcon:smsverifycatcher:0.3.2'
 }
 repositories {
     mavenCentral()

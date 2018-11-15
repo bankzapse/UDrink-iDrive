@@ -25,6 +25,12 @@
     <string name="register_email">email</string>
     <string name="register_password">password</string>
 
+    <string name="forgot_password">Enter your e-mail address and will"'"ll send\nyou link to reset your password.</string>
+
     <string name="menu_logout">LOGOUT</string>
+
+    <string name="otp_don_have">Don"'"t receive OTP?</string>
+    <string name="otp_recode">Resend code</string>
+    <string name="otp_phone">Phone number</string>
 
 </resources>

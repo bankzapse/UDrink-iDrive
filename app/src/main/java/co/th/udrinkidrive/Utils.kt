@@ -1,6 +1,8 @@
 package co.th.udrinkidrive
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Handler
 import android.view.View
@@ -10,10 +12,15 @@ import android.view.animation.CycleInterpolator
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.ScrollView
+import androidx.core.app.ActivityOptionsCompat
 import co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
+import co.th.udrinkidrive.presentationlayer.postmap.PostMapActivity
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.Marker
 import com.thekhaeng.pushdownanim.PushDownAnim
+import android.R
+
+
 
 class Utils(context: Context) {
 
@@ -47,6 +54,7 @@ class Utils(context: Context) {
     }
 
     //Slide animation with Layout (View)
+
     fun AnimationLayoutTop(slide_down: Int, layout: ScrollView, show :String) {
         val animation = AnimationUtils.loadAnimation(mContext, slide_down)
         animation.setAnimationListener(object : Animation.AnimationListener{
@@ -98,4 +106,11 @@ class Utils(context: Context) {
                 .setDurationRelease( 15 )
     }
 
+//    fun GotoIntent(){
+//        var intent = Intent(mContext, PostMapActivity::class.java)
+//        val options = ActivityOptionsCompat.makeSceneTransitionAnimation(mContext, null, "profile")
+//        mContext!!.startActivity(intent, options.toBundle())
+//        (mContext as Activity).overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out)
+//
+//    }
 }

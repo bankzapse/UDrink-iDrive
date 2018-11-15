@@ -1,20 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/postot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg_main"
+    android:orientation="vertical"
+    android:paddingRight="30dp"
+    android:paddingLeft="30dp"
     tools:context=".presentationlayer.postcallotp.PostCallOTPActivity">
 
-    <TextView
-        android:id="@+id/message"
+    <LinearLayout
+        android:id="@+id/ln_main"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:id="@+id/image_sms_otp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/otp_sms"
+            android:layout_marginLeft="10dp"/>
+
+        <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:layout_marginTop="10dp"
+            android:text="Enter OTP"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_menu_profile"
+            android:transitionName="text"/>
+
+        <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:text="Verification code is sent via sms"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_normal_24"
+            android:transitionName="text"/>
+
+    </LinearLayout>
+
+    <com.chaos.view.PinView
+        android:id="@+id/firstPinView"
+        style="@style/PinWidget.PinView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PostOTPFragment"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:cursorVisible="true"
+        android:hint="X"
+        android:textColorHint="@color/gray"
+        android:inputType="numberSigned"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:state_selected="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        app:cursorColor="@color/white"
+        app:cursorWidth="2dp"
+        app:hideLineWhenFilled="false"
+        app:itemCount="4"
+        app:itemHeight="58dp"
+        app:itemWidth="58dp"
+        app:lineColor="@color/white"
+        app:lineWidth="2dp"
+        app:viewType="line" />
+    <requestFocus />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center_vertical">
+
+        <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/otp_don_have"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_normal_24"/>
+
+        <co.th.udrinkidrive.MyFontsStyle.MyTextViewFontsBold
+            android:id="@+id/tv_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/otp_recode"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_normal_24"
+            android:layout_marginLeft="4dp"/>
+
+    </LinearLayout>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

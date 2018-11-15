@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/postot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main"
+    android:orientation="vertical"
+    android:paddingRight="30dp"
+    android:paddingLeft="30dp"
+    tools:context=".presentationlayer.postcallotp.PostCallOTPActivity">
+
+    <LinearLayout
+        android:id="@+id/ln_main"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:id="@+id/image_sms_otp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/otp_sms"
+            android:layout_marginLeft="10dp"/>
+
+        <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:layout_marginTop="10dp"
+            android:text="Enter your phone number"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_menu_profile"
+            android:transitionName="text"/>
+
+    </LinearLayout>
+
+    <TableLayout
+        android:id="@+id/tablelayout"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent">
+
+        <TableRow
+            android:background="@drawable/border_table"
+            android:layout_marginTop="5dp">
+            <co.th.udrinkidrive.MyFontsStyle.MyEdittextFonts
+                android:id="@+id/et_phone_number"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:inputType="textEmailAddress"
+                android:backgroundTint="#fff"
+                android:textCursorDrawable="@null"
+                android:hint="@string/otp_phone"
+                android:textColorHint="@color/color_login_username_pass_hint"
+                android:textColor="@color/bg_main"
+                android:background="@null"
+                android:textSize="@dimen/edittext_normal"
+                android:padding="14dp"/>
+        </TableRow>
+
+    </TableLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="right">
+
+        <co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
+            android:id="@+id/bt_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_button"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/login_confirm"
+            android:textColor="#fff"
+            android:textSize="@dimen/button_normal"/>
+
+    </LinearLayout>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

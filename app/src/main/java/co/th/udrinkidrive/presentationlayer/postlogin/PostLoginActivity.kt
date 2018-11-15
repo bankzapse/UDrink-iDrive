@@ -105,13 +105,4 @@ class PostLoginActivity : AppCompatActivity() ,  View.OnClickListener{
 
     }
 
-    fun PushDownClick(bt: MyButtonFonts) {
-        PushDownAnim.setPushDownAnimTo( bt )
-                .setScale( MODE_SCALE, PushDownAnim.DEFAULT_PUSH_SCALE )
-                .setDurationPush( 35 )
-                .setDurationRelease( 15 )
-                .setOnClickListener(this@PostLoginActivity)
-    }
-
-
 }
