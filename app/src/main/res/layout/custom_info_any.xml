@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ln_any"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:visibility="gone">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:padding="6dp"
+            android:src="@drawable/info_any"/>
+
+        <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Drive Gender"
+            android:textSize="@dimen/text_info_normal"
+            android:textColor="@color/black"
+            android:layout_gravity="center_vertical|center_horizontal"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:paddingBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:background="@drawable/border_radius">
+
+                        <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Any\nGender"
+                            android:textSize="@dimen/text_menu_profile"
+                            android:textColor="@color/blue"
+                            android:gravity="center_horizontal"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:background="@drawable/border_radius_default">
+
+                        <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Male"
+                            android:textSize="@dimen/text_menu_profile"
+                            android:textColor="@color/gray"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:background="@drawable/border_radius_default">
+
+                        <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Female"
+                            android:textSize="@dimen/text_menu_profile"
+                            android:textColor="@color/gray"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--<ImageView-->
+        <!--android:id="@+id/image_back"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="top"-->
+        <!--android:padding="10dp"-->
+        <!--android:src="@drawable/icon_back_black"/>-->
+
+</LinearLayout>

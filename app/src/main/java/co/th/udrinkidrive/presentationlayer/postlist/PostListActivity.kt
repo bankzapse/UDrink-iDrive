@@ -52,7 +52,7 @@ class PostListActivity : AppCompatActivity() {
             addItemDecoration(DividerItemDecoration(context, linearLayoutManager.orientation))
 
             postAdapter.onPostClickListener = {
-                PageNavigator.gotoPostDetailActivity(this@PostListActivity, this@PostListActivity ,it)
+//                PageNavigator.gotoPostDetailActivity(this@PostListActivity, this@PostListActivity ,it)
             }
             adapter = postAdapter
         }
