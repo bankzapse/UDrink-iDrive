@@ -24,7 +24,7 @@
             android:id="@+id/image_sms_otp"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/otp_sms"
+            android:src="@drawable/otp_phone"
             android:layout_marginLeft="10dp"/>
 
         <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts

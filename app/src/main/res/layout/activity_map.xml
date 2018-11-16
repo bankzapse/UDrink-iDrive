@@ -176,6 +176,16 @@
                         android:layout_height="wrap_content"
                         layout="@layout/custom_info_any"/>
 
+                    <include
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        layout="@layout/custom_contact"/>
+
+                    <include
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        layout="@layout/custom_promotion"/>
+
                     <ImageView
                         android:id="@+id/image_back"
                         android:layout_width="wrap_content"
@@ -251,7 +261,7 @@
 
             </LinearLayout>
 
-            <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+            <co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
                 android:id="@+id/bt_confirm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

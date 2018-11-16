@@ -33,4 +33,16 @@
     <string name="otp_recode">ส่งรหัสใหม่</string>
     <string name="otp_phone">เบอร์โทรศัพท์มือถือ</string>
 
+    <string name="info_any_topic">เลือกเพศพนักงานขับรถ</string>
+    <string name="info_any">ไม่ระบุเพศ</string>
+    <string name="info_any_male">ชาย</string>
+    <string name="info_any_female">หญิง</string>
+
+    <string name="info_contact_topic">ข้อมูลติดต่อ</string>
+    <string name="info_contact_self">ตัวเอง</string>
+    <string name="info_contact_friend">เพื่อน</string>
+
+    <string name="info_promotion_topic">รหัสโปรโมชั่น</string>
+    <string name="info_promotion_hint">ใส่รหัสโค้ด</string>
+
 </resources>

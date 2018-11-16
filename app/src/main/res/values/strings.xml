@@ -33,4 +33,16 @@
     <string name="otp_recode">Resend code</string>
     <string name="otp_phone">Phone number</string>
 
+    <string name="info_any_topic">Driver Gender</string>
+    <string name="info_any">Any\nGender</string>
+    <string name="info_any_male">Male</string>
+    <string name="info_any_female">Female</string>
+
+    <string name="info_contact_topic">Contact Person</string>
+    <string name="info_contact_self">Myself</string>
+    <string name="info_contact_friend">Friend</string>
+
+    <string name="info_promotion_topic">Promotion Code</string>
+    <string name="info_promotion_hint">input code here</string>
+
 </resources>

@@ -18,7 +18,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
-import android.view.animation.CycleInterpolator
 import android.widget.*
 import android.widget.LinearLayout
 import androidx.core.app.ActivityCompat
@@ -30,10 +29,13 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import com.thekhaeng.pushdownanim.PushDownAnim
+import kotlinx.android.synthetic.main.custom_contact.*
 import kotlinx.android.synthetic.main.custom_info_any.*
+import kotlinx.android.synthetic.main.custom_promotion.*
 import kotlinx.android.synthetic.main.table_view_infomation.*
 
-class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  , TouchableWrapper.UpdateMapAfterUserInterection{
+class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  , TouchableWrapper.UpdateMapAfterUserInterection , View.OnClickListener{
+
     override fun onCameraChange(p0: CameraPosition?) {
         Log.d("Tag","p0 : $p0")
     }
@@ -42,42 +44,41 @@ class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  
     internal var mSupportMapFragment: SupportMapFragment? = null
     lateinit var current: LatLng
     lateinit var animation:Animation
+    lateinit var view_action: LinearLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_map)
 
+        //Google Map
         mSupportMapFragment = supportFragmentManager.findFragmentById(R.id.mapview) as SupportMapFragment
         setMapView()
 
+        //Table Add location
         AddTablerow()
         tv_add_row.setOnClickListener {
             AddTablerow()
         }
 
-        image_profile.setOnClickListener {
-            val intent = Intent(this@PostMapActivity, PostProfileActivity::class.java)
-            startActivity(intent)
-            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_left)
-        }
+        //Action Click : GONE : VISIBLE
+        ViewAndEvent()
 
-        PushDownAnim.setPushDownAnimTo(bt_confirm)
-                .setScale(PushDownAnim.MODE_SCALE, PushDownAnim.DEFAULT_PUSH_SCALE)
-                .setDurationPush(35)
-                .setDurationRelease(15)
-                .setOnClickListener {  }
+    }
 
-        ln_info_any.setOnClickListener {
-            Utils(this).AnimationLayoutBottom(R.anim.slide_in_right,ln_any,"VISIBLE","Custom",image_back)
-            ln_any.visibility = View.VISIBLE
-        }
-        image_back.setOnClickListener {
-            Utils(this).AnimationLayoutBottom(R.anim.slide_out_left,ln_any,"GONE","Custom",image_back)
-        }
+    fun ViewAndEvent(){
+
+        Utils(this).PushDownClick(bt_confirm)
+
+        image_profile.setOnClickListener(this)
+        ln_info_any.setOnClickListener(this)
+        ln_main_contact.setOnClickListener(this)
+        ln_main_promotion.setOnClickListener(this)
+        image_back.setOnClickListener(this)
 
         ln_any.visibility = View.GONE
+        ln_contact.visibility = View.GONE
+        ln_promotion.visibility = View.GONE
         image_back.visibility = View.GONE
-
     }
 
     fun setMapView(){
@@ -121,16 +122,45 @@ class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  
 
                 }
             }
-
         }
     }
 
+    override fun onClick(v: View?) {
+        when (v!!.id) {
+            R.id.ln_info_any -> {
+                Utils(this).AnimationLayoutBottom(R.anim.slide_in_right,ln_any,"VISIBLE","Custom",image_back,ln_menu_info)
+                ln_any.visibility = View.VISIBLE
+                view_action = ln_any
+            }
+            R.id.ln_main_contact -> {
+                Utils(this).AnimationLayoutBottom(R.anim.slide_in_right,ln_contact,"VISIBLE","Custom",image_back,ln_menu_info)
+                ln_contact.visibility = View.VISIBLE
+                view_action = ln_contact
+            }
+            R.id.ln_main_promotion -> {
+                Utils(this).AnimationLayoutBottom(R.anim.slide_in_right,ln_promotion,"VISIBLE","Custom",image_back,ln_menu_info)
+                ln_promotion.visibility = View.VISIBLE
+                view_action = ln_promotion
+            }
+            R.id.image_back -> {
+                Utils(this).AnimationLayoutBottom(R.anim.slide_out_left,view_action,"GONE","Custom",image_back,ln_menu_info)
+
+            }
+            R.id.image_profile -> {
+                val intent = Intent(this@PostMapActivity, PostProfileActivity::class.java)
+                startActivity(intent)
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_left)
+            }
+        }
+    }
+
+
     override fun onUpdateMapAfterUserInterection(type : String) {
         if(type == "DOWN") {
-            Utils(this).AnimationLayoutBottom(R.anim.slide_down,lv_book,"GONE","General",image_back)
+            Utils(this).AnimationLayoutBottom(R.anim.slide_down,lv_book,"GONE","General",image_back,ln_menu_info)
             Utils(this).AnimationLayoutTop(R.anim.slide_up_scroll,sc_detail,"GONE")
         }else if(type == "UP") {
-            Utils(this).AnimationLayoutBottom(R.anim.slide_up, lv_book, "VISIBLE","General",image_back)
+            Utils(this).AnimationLayoutBottom(R.anim.slide_up, lv_book, "VISIBLE","General",image_back,ln_menu_info)
             Utils(this).AnimationLayoutTop(R.anim.slide_down_scroll, sc_detail, "VISIBLE")
         }
     }
@@ -181,8 +211,6 @@ class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  
         }
 
     }
-
-
 
     override fun onResume() {
         super.onResume()

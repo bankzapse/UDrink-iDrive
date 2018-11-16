@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ln_promotion"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:padding="6dp"
+            android:src="@drawable/info_img_promotion"/>
+
+        <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/info_promotion_topic"
+            android:textSize="@dimen/text_info_normal"
+            android:textColor="@color/black"
+            android:layout_gravity="center_vertical|center_horizontal"/>
+
+        <co.th.udrinkidrive.MyFontsStyle.MyEdittextFonts
+            android:id="@+id/et_promotion_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:backgroundTint="#fff"
+            android:textCursorDrawable="@null"
+            android:hint="@string/info_promotion_hint"
+            android:textColorHint="@color/color_login_username_pass_hint"
+            android:textColor="@color/bg_main"
+            android:background="@null"
+            android:textSize="@dimen/edittext_normal"
+            android:padding="14dp"
+            android:layout_margin="10dp"/>
+
+        <co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
+            android:id="@+id/bt_confirm_promotion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_button"
+            android:gravity="center_horizontal"
+            android:padding="6dp"
+            android:text="@string/login_confirm"
+            android:textColor="#fff"
+            android:textSize="@dimen/button_normal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

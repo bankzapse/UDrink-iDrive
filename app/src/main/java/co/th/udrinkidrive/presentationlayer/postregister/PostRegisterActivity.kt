@@ -7,6 +7,7 @@ import android.view.View
 import androidx.core.app.ActivityOptionsCompat
 import co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
 import co.th.udrinkidrive.R
+import co.th.udrinkidrive.Utils
 import co.th.udrinkidrive.presentationlayer.postmap.PostMapActivity
 import com.thekhaeng.pushdownanim.PushDownAnim
 import kotlinx.android.synthetic.main.activity_post_register.*
@@ -17,8 +18,13 @@ class PostRegisterActivity : AppCompatActivity() , View.OnClickListener{
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_post_register)
 
-        PushDownClick(bt_confirm)
-        PushDownClick(bt_cancel)
+        Utils(this).PushDownClick(bt_confirm)
+        Utils(this).PushDownClick(bt_cancel)
+        bt_confirm.setOnClickListener(this)
+        bt_cancel.setOnClickListener(this)
+
+//        PushDownClick(bt_confirm)
+//        PushDownClick(bt_cancel)
 
     }
 

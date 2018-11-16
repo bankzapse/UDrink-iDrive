@@ -74,7 +74,7 @@ class Utils(context: Context) {
         layout.startAnimation(animation)
     }
 
-    fun AnimationLayoutBottom(slide_down: Int, layout: LinearLayout, show :String, type_box: String , image_back : ImageView) {
+    fun AnimationLayoutBottom(slide_down: Int, layout: LinearLayout, show :String, type_box: String , image_back : ImageView , layout_menu: LinearLayout) {
         val animation = AnimationUtils.loadAnimation(mContext, slide_down)
         animation.setAnimationListener(object : Animation.AnimationListener{
             override fun onAnimationStart(animation: Animation) {}
@@ -86,11 +86,13 @@ class Utils(context: Context) {
                     layout.visibility = View.GONE
                     if(type_box == "Custom"){
                         image_back.visibility = View.GONE
+                        layout_menu.visibility = View.VISIBLE
                     }
                 }else if(show.equals("VISIBLE",true)){
                     layout.visibility = View.VISIBLE
                     if(type_box == "Custom"){
                         image_back.visibility = View.VISIBLE
+                        layout_menu.visibility = View.GONE
                     }
                 }
 

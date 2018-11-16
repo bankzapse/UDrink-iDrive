@@ -20,9 +20,9 @@ class PostCallOTPActivity : AppCompatActivity() {
 
     fun GotoOTPRequest(){
         supportFragmentManager.beginTransaction()
-                .setCustomAnimations(R.anim.slide_in_right, R.anim.slide_in_left)
+                .setCustomAnimations(R.anim.slide_out_left, R.anim.slide_out_right)
                 .replace(R.id.container, PostOTPFragment.newInstance())
-                .commitNow()
+                .commitAllowingStateLoss()
     }
 
 }

@@ -5,12 +5,9 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityOptionsCompat
-import co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
+import co.th.udrinkidrive.LoadingActivity
 import co.th.udrinkidrive.R
 import co.th.udrinkidrive.Utils
-import co.th.udrinkidrive.presentationlayer.postmap.PostMapActivity
-import co.th.udrinkidrive.presentationlayer.postsignin.PostSigninActivity
-import com.thekhaeng.pushdownanim.PushDownAnim
 import kotlinx.android.synthetic.main.activity_forgot_pass.*
 
 class PostForgotpwActivity : AppCompatActivity() , View.OnClickListener{
@@ -30,22 +27,19 @@ class PostForgotpwActivity : AppCompatActivity() , View.OnClickListener{
 
         when (v!!.id) {
             R.id.bt_confirm -> {
-                onBackPressed()
+                var intent = Intent(this@PostForgotpwActivity, LoadingActivity::class.java)
+                val options = ActivityOptionsCompat.makeSceneTransitionAnimation(this@PostForgotpwActivity, image_loading_forgot, "profile")
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+                overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out)
                 finish()
+
             }
             R.id.bt_cancel -> {
                 onBackPressed()
-                finish()
             }
         }
 
     }
 
-    fun PushDownClick(bt: MyButtonFonts) {
-        PushDownAnim.setPushDownAnimTo(bt)
-                .setScale(PushDownAnim.MODE_SCALE, PushDownAnim.DEFAULT_PUSH_SCALE)
-                .setDurationPush(35)
-                .setDurationRelease(15)
-                .setOnClickListener(this@PostForgotpwActivity)
-    }
 }
