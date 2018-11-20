@@ -14,7 +14,7 @@ class PostsReaderApplication : Application() {
         lateinit var component: AppComponent
     }
 
-    private val BASE_URL = "http://jsonplaceholder.typicode.com"
+    private val BASE_URL = "https://trip.api.udrinkbackend.com/api/"
 
     override fun onCreate() {
         super.onCreate()

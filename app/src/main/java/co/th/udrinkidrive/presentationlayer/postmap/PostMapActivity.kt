@@ -83,11 +83,11 @@ class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  
 
     fun setMapView(){
 
-        if (ActivityCompat.checkSelfPermission(this@PostMapActivity,
-                        android.Manifest.permission.ACCESS_FINE_LOCATION) !== PackageManager.PERMISSION_GRANTED || ActivityCompat.checkSelfPermission(this@PostMapActivity,
-                        android.Manifest.permission.READ_PHONE_STATE) !== PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this@PostMapActivity, arrayOf(android.Manifest.permission.READ_PHONE_STATE, android.Manifest.permission.ACCESS_FINE_LOCATION), 1340)
-        }
+//        if (ActivityCompat.checkSelfPermission(this@PostMapActivity,
+//                        android.Manifest.permission.ACCESS_FINE_LOCATION) !== PackageManager.PERMISSION_GRANTED || ActivityCompat.checkSelfPermission(this@PostMapActivity,
+//                        android.Manifest.permission.READ_PHONE_STATE) !== PackageManager.PERMISSION_GRANTED) {
+//            ActivityCompat.requestPermissions(this@PostMapActivity, arrayOf(android.Manifest.permission.READ_PHONE_STATE, android.Manifest.permission.ACCESS_FINE_LOCATION), 1340)
+//        }
 
         if (mSupportMapFragment != null) {
             mSupportMapFragment!!.getMapAsync { googleMap ->

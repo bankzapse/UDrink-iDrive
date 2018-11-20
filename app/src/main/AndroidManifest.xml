@@ -54,7 +54,8 @@
             android:name=".presentationlayer.postsignin.PostSigninActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".presentationlayer.postcallotp.PostCallOTPActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden">
         </activity>
         <activity android:name=".presentationlayer.postforgotpassword.PostForgotpwActivity"
             android:theme="@style/AppTheme.NoActionBar">

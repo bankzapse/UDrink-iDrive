@@ -18,7 +18,12 @@
     <string name="login_buttom">  OK  </string>
     <string name="login_confirm">CONFIRM</string>
     <string name="login_cancel">CANCEL</string>
+    <string name="login_alert">Alert</string>
+    <string name="login_alert_detail">Wrong username or password</string>
     <string name="text_salogan">PROFESSIONALS TO DRIVE YOUR CAR</string>
+    <string name="login_please_email_type">  Please check format email address </string>
+    <string name="login_please_pass">  Please input password  </string>
+    <string name="login_please_pass_not_match">Password must be between 4 "-" 16 characters</string>
 
     <string name="register_firstname">firstname</string>
     <string name="register_lastname">lastname</string>

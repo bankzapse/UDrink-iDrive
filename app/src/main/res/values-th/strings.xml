@@ -18,7 +18,12 @@
     <string name="login_buttom">  เข้าสู่ระบบ  </string>
     <string name="login_confirm">ตกลง</string>
     <string name="login_cancel">ยกเลิก</string>
+    <string name="login_alert">แจ้งเตือน</string>
+    <string name="login_alert_detail">ชื่อผู้ใช้งาน หรือ รหัสผ่านไม่ถูกต้อง</string>
     <string name="text_salogan">บริการขับรถระดับมืออาชีพ สำหรับขับรถของคุณ</string>
+    <string name="login_please_email_type">  รูปแบบอีเมลไม่ถูกต้อง </string>
+    <string name="login_please_pass">กรุณาใส่รหัสผ่าน</string>
+    <string name="login_please_pass_not_match">ใส่รหัสผ่านอย่างน้อย 4 "-" 16 ตัว </string>
 
     <string name="register_firstname">ชื่อ</string>
     <string name="register_lastname">นามสกุล</string>

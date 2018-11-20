@@ -1,6 +1,5 @@
 package co.th.udrinkidrive.datalayer
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import co.th.udrinkidrive.datalayer.entity.Post
 import co.th.udrinkidrive.datalayer.local.PostDao
@@ -29,5 +28,7 @@ class PostRepositoryImpl(val localSource: PostDao, val remoteSource: PostsReader
                 }
         return localSource.getPostById(id)
     }
+
+
 }
 

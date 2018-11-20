@@ -6,18 +6,14 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.core.app.ActivityOptionsCompat
-import co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
 import co.th.udrinkidrive.R
 import co.th.udrinkidrive.Utils
 import co.th.udrinkidrive.presentationlayer.postsignin.PostSigninActivity
 import com.facebook.*
-import com.thekhaeng.pushdownanim.PushDownAnim
-import com.thekhaeng.pushdownanim.PushDownAnim.MODE_SCALE
 import kotlinx.android.synthetic.main.activity_post_login.*
 import com.facebook.login.LoginResult
 import org.json.JSONObject
 import com.facebook.AccessToken
-
 
 class PostLoginActivity : AppCompatActivity() ,  View.OnClickListener{
 
@@ -33,13 +29,6 @@ class PostLoginActivity : AppCompatActivity() ,  View.OnClickListener{
         bt_signin.setOnClickListener(this)
         fl_facebook.setOnClickListener(this)
 
-//        if (ActivityCompat.checkSelfPermission(this@PostLoginActivity,
-//                        android.Manifest.permission.ACCESS_FINE_LOCATION) !== PackageManager.PERMISSION_GRANTED || ActivityCompat.checkSelfPermission(this@PostLoginActivity,
-//                        android.Manifest.permission.READ_PHONE_STATE) !== PackageManager.PERMISSION_GRANTED) {
-//            ActivityCompat.requestPermissions(this@PostLoginActivity, arrayOf(android.Manifest.permission.READ_PHONE_STATE, android.Manifest.permission.ACCESS_FINE_LOCATION), 1340)
-//        }
-
-
         // Callback registration
         login_facebook_button.setReadPermissions("email")
         login_facebook_button.registerCallback(callbackManager, object : FacebookCallback<LoginResult>{
@@ -53,12 +42,6 @@ class PostLoginActivity : AppCompatActivity() ,  View.OnClickListener{
                         Log.d("Tag", object_list.getString("name"))
                         Log.d("Tag", accesstoken.token)
 
-//                        var emai = ""
-//                        if(object_list.has("email") && !object_list.isNull("email")){
-//                            emai = object_list.getString("email")
-//                        }else{
-//                            emai = object_list.getString("id")+"@gmail.com"
-//                        }
                      }
                 })
 

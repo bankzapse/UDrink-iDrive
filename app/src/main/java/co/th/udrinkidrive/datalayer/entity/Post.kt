@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName
 
 
 @Entity(tableName = "post")
-class Post {
+public class Post {
 
     @PrimaryKey
     @ColumnInfo(name = "id")
@@ -21,4 +21,9 @@ class Post {
     @ColumnInfo(name = "body")
     @SerializedName("body")
     lateinit var body: String
+
+//    @ColumnInfo(name = "data")
+//    @SerializedName("data")
+//    lateinit var data: String
+
 }

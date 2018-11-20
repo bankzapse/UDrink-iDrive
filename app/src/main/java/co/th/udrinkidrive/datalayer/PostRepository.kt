@@ -10,4 +10,7 @@ interface PostRepository {
     fun getAllPosts(): LiveData<List<Post>>
 
     fun getPostById(id: String): LiveData<Post>
+
+//    fun getPostLogin(username: String,password: String): LiveData<Post>
+
 }

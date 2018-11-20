@@ -20,5 +20,9 @@ interface PostDao {
     @Query("SELECT * FROM post WHERE id = :user_id")
     fun getPostById(user_id: String): LiveData<Post>
 
+//    // id is changed to arg0 in generated code
+//    @Query("SELECT * FROM post WHERE data = :username")
+//    fun getPostLogin(username: String,password: String): LiveData<Post>
+
 }
 

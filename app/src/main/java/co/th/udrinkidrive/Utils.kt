@@ -19,7 +19,10 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.Marker
 import com.thekhaeng.pushdownanim.PushDownAnim
 import android.R
-
+import android.app.Dialog
+import android.view.Window
+import android.view.inputmethod.InputMethodManager
+import android.widget.Button
 
 
 class Utils(context: Context) {
@@ -108,11 +111,31 @@ class Utils(context: Context) {
                 .setDurationRelease( 15 )
     }
 
-//    fun GotoIntent(){
-//        var intent = Intent(mContext, PostMapActivity::class.java)
-//        val options = ActivityOptionsCompat.makeSceneTransitionAnimation(mContext, null, "profile")
-//        mContext!!.startActivity(intent, options.toBundle())
-//        (mContext as Activity).overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out)
-//
-//    }
+    //hideSoftKeyboard
+
+    fun hideSoftKeyboard(view: View) {
+        val imm = mContext!!.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(view.windowToken, 0)
+    }
+
+    //Action Popup
+
+    fun PopupLoginFailed() {
+
+        var dialog_failed = Dialog(mContext)
+        dialog_failed.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog_failed.setContentView(co.th.udrinkidrive.R.layout.custom_dialog_login)
+        dialog_failed.setCancelable(false)
+        dialog_failed.window!!.setBackgroundDrawableResource(android.R.color.transparent)
+
+        val bt_confirm = dialog_failed.findViewById<View>(co.th.udrinkidrive.R.id.bt_confirm) as Button
+//        val tv_text_sub_confirm_detail = dialog_failed.findViewById<View>(R.id.tv_text_sub_confirm_detail) as TextView
+//        tv_text_sub_confirm_detail.text = resources.getText(R.string.some_thing_wrong)
+        bt_confirm.setOnClickListener {
+            dialog_failed.dismiss()
+        }
+
+        dialog_failed.show()
+
+    }
 }

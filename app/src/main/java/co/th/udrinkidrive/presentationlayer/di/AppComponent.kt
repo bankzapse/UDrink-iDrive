@@ -29,6 +29,5 @@ interface AppComponent {
 
     fun inject(postDetailViewModel: PostDetailViewModel)
 
-//    fun inject(PostProfileModel: PostProfileModel)
 }
 
