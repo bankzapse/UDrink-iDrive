@@ -34,7 +34,8 @@
                     android:paddingLeft="15dp"
                     android:layout_marginTop="5dp"
                     android:textSize="24dp"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:ems="3"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -51,13 +52,16 @@
                         android:textColor="@color/white"
                         android:textSize="@dimen/text_normal"/>
 
-                    <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                    <co.th.udrinkidrive.MyFontsStyle.MyAutoTextView
+                        android:id="@+id/tv_detail_local"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:text="Choose your destination"
                         android:textColor="@color/white"
-                        android:ellipsize="end"
-                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:scrollHorizontally="true"
+                        android:ellipsize="marquee"
+                        android:marqueeRepeatLimit="marquee_forever"
                         android:textSize="@dimen/text_normal"/>
 
                 </LinearLayout>

@@ -21,6 +21,7 @@
     <string name="login_alert">Alert</string>
     <string name="login_alert_detail">Wrong username or password</string>
     <string name="text_salogan">PROFESSIONALS TO DRIVE YOUR CAR</string>
+    <string name="login_please_email">  Please input email </string>
     <string name="login_please_email_type">  Please check format email address </string>
     <string name="login_please_pass">  Please input password  </string>
     <string name="login_please_pass_not_match">Password must be between 4 "-" 16 characters</string>
@@ -49,5 +50,10 @@
 
     <string name="info_promotion_topic">Promotion Code</string>
     <string name="info_promotion_hint">input code here</string>
+
+    <string name="location_from">From</string>
+    <string name="location_to">To</string>
+    <string name="location_current">Current Location</string>
+    <string name="location_will_go">Where you will go</string>
 
 </resources>

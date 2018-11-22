@@ -77,6 +77,8 @@ dependencies {
         exclude group: 'com.android.support'
     }
     implementation 'com.github.dmytrodanylyk.shadow-layout:library:1.0.1'
+    implementation 'com.ramotion.expandingcollection:expanding-collection:0.9.0'
+    implementation 'com.github.takusemba:multisnaprecyclerview:1.2.0'
 
     //Google service
     implementation 'com.google.android.gms:play-services:12.0.1'

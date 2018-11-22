@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ln_search_location"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent">
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:background="@color/bg_main"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp">
+
+                <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                    android:text="@string/location_from"
+                    android:textColor="@color/bg_main"
+                    android:textSize="@dimen/text_menu_profile"
+                    android:gravity="center"
+                    android:background="@drawable/border_radius_top_left"
+                    android:padding="15dp"/>
+
+                <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                    android:id="@+id/tv_search_current"
+                    android:text="@string/location_current"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/text_menu_profile"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:padding="15dp"
+                    android:background="@drawable/border_radius_top_right"
+                    android:layout_weight="1"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:background="@color/white"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:paddingRight="10dp">
+
+                <View
+                    android:layout_height="4dp"
+                    android:background="@color/blue"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"/>
+
+                <View
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/color_login_username_pass_hint"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp">
+
+                <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                    android:text="@string/location_to"
+                    android:textColor="@color/bg_main"
+                    android:textSize="@dimen/text_menu_profile"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:background="@drawable/border_radius_bottom_left"/>
+
+                <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                    android:text="@string/location_will_go"
+                    android:textColor="@color/blue"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textSize="@dimen/text_menu_profile"
+                    android:padding="15dp"
+                    android:background="@drawable/border_radius_bottom_right"
+                    android:layout_weight="1"/>
+
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

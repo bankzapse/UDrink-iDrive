@@ -82,6 +82,7 @@
                         android:background="@drawable/border_facebook"/>
 
                     <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                        android:id="@+id/tv_facebook"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/login_facebook"
@@ -131,11 +132,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp">
+                android:layout_marginBottom="10dp">
 
-                <co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
-                    android:id="@+id/bt_signin"
-                    android:layout_width="match_parent"
+                <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                    android:id="@+id/tv_signin"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
                     android:layout_gravity="center_horizontal|center_vertical"

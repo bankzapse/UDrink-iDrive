@@ -6,7 +6,7 @@
     android:id="@+id/postot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_main"
+    android:background="@color/white"
     android:orientation="vertical"
     android:paddingRight="30dp"
     android:paddingLeft="30dp"
@@ -34,7 +34,7 @@
             android:padding="5dp"
             android:layout_marginTop="10dp"
             android:text="Enter your phone number"
-            android:textColor="@color/white"
+            android:textColor="@color/bg_main"
             android:textSize="@dimen/text_menu_profile"
             android:transitionName="text"/>
 
@@ -52,7 +52,7 @@
                 android:id="@+id/et_phone_number"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:inputType="textEmailAddress"
+                android:inputType="number"
                 android:backgroundTint="#fff"
                 android:textCursorDrawable="@null"
                 android:hint="@string/otp_phone"
@@ -60,7 +60,9 @@
                 android:textColor="@color/bg_main"
                 android:background="@null"
                 android:textSize="@dimen/edittext_normal"
+                android:maxLength="10"
                 android:padding="14dp"/>
+            <requestFocus/>
         </TableRow>
 
     </TableLayout>
@@ -80,7 +82,7 @@
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:text="@string/login_confirm"
-            android:textColor="#fff"
+            android:textColor="@color/white"
             android:textSize="@dimen/button_normal"/>
 
     </LinearLayout>

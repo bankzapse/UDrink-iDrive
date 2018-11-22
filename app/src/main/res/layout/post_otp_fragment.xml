@@ -6,7 +6,7 @@
     android:id="@+id/postot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_main"
+    android:background="@color/white"
     android:orientation="vertical"
     android:paddingRight="30dp"
     android:paddingLeft="30dp"
@@ -34,7 +34,7 @@
             android:padding="5dp"
             android:layout_marginTop="10dp"
             android:text="Enter OTP"
-            android:textColor="@color/white"
+            android:textColor="@color/bg_main"
             android:textSize="@dimen/text_menu_profile"
             android:transitionName="text"/>
 
@@ -44,7 +44,7 @@
             android:layout_gravity="center"
             android:padding="5dp"
             android:text="Verification code is sent via sms"
-            android:textColor="@color/white"
+            android:textColor="@color/bg_main"
             android:textSize="@dimen/text_normal_24"
             android:transitionName="text"/>
 
@@ -59,22 +59,22 @@
         android:hint="X"
         android:textColorHint="@color/gray"
         android:inputType="numberSigned"
-        android:textColor="@color/white"
+        android:textColor="@color/bg_main"
         android:textSize="24sp"
         android:textStyle="bold"
         android:state_selected="true"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
-        app:cursorColor="@color/white"
+        app:cursorColor="@color/bg_main"
         app:cursorWidth="2dp"
         app:hideLineWhenFilled="false"
         app:itemCount="4"
         app:itemHeight="58dp"
         app:itemWidth="58dp"
-        app:lineColor="@color/white"
+        app:lineColor="@color/bg_main"
         app:lineWidth="2dp"
         app:viewType="line" />
-    <requestFocus />
+    <requestFocus/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -88,7 +88,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/otp_don_have"
-            android:textColor="@color/white"
+            android:textColor="@color/bg_main"
             android:textSize="@dimen/text_normal_24"/>
 
         <co.th.udrinkidrive.MyFontsStyle.MyTextViewFontsBold

@@ -21,6 +21,7 @@
     <string name="login_alert">แจ้งเตือน</string>
     <string name="login_alert_detail">ชื่อผู้ใช้งาน หรือ รหัสผ่านไม่ถูกต้อง</string>
     <string name="text_salogan">บริการขับรถระดับมืออาชีพ สำหรับขับรถของคุณ</string>
+    <string name="login_please_email">กรุณาใส่อีเมล</string>
     <string name="login_please_email_type">  รูปแบบอีเมลไม่ถูกต้อง </string>
     <string name="login_please_pass">กรุณาใส่รหัสผ่าน</string>
     <string name="login_please_pass_not_match">ใส่รหัสผ่านอย่างน้อย 4 "-" 16 ตัว </string>
@@ -49,5 +50,10 @@
 
     <string name="info_promotion_topic">รหัสโปรโมชั่น</string>
     <string name="info_promotion_hint">ใส่รหัสโค้ด</string>
+
+    <string name="location_from">รับ</string>
+    <string name="location_to">ส่ง</string>
+    <string name="location_current">สถานที่ปัจจุบัน</string>
+    <string name="location_will_go">คุณต้องการไปที่</string>
 
 </resources>

@@ -40,11 +40,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/login_alert_detail"
-                android:textSize="@dimen/text_menu_profile"
+                android:textSize="@dimen/text_normal_24"
                 android:gravity="center_horizontal"
-                android:textColor="@color/bg_main"
-                android:layout_marginTop="6dp"
-                android:ems="100"/>
+                android:textColor="@color/bg_main"/>
 
         </LinearLayout>
 
@@ -53,13 +51,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="5dp">
 
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="3dp">
+                android:layout_height="wrap_content">
 
                 <co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
                     android:id="@+id/bt_confirm"
@@ -69,7 +66,6 @@
                     android:textColor="#fff"
                     android:textSize="@dimen/button_normal"
                     android:layout_weight="1"
-                    android:layout_marginRight="2dp"
                     android:background="@drawable/border_button"/>
 
                 <!--<co.th.udrinkidrive.MyFontsStyle.MyButtonFonts-->

@@ -44,6 +44,9 @@ class PostSigninActivity : AppCompatActivity() , View.OnClickListener {
         tv_forgot_pass.setOnClickListener(this)
         ln_sign_main.setOnClickListener(this)
 
+        et_email.setText("bank@gmail.com")
+        et_pass.setText("123456")
+
     }
 
     override fun onClick(v: View?) {
@@ -79,21 +82,24 @@ class PostSigninActivity : AppCompatActivity() , View.OnClickListener {
     }
 
     fun CallLoginService(){
-        if(isEmailValid(et_email.text)){
-            if (et_pass.text.isEmpty()) {
-                Toast.makeText(this@PostSigninActivity, R.string.login_please_pass, Toast.LENGTH_SHORT).show()
-            }else{
-                if(et_pass.text.length in 4..16){
-                    val myService: SOService = ApiUtils.getSOService()
-                    myService.Login(et_email.text.toString(),et_pass.text.toString()).enqueue(callbackService)
-                }else{
-                    Toast.makeText(this@PostSigninActivity, R.string.login_please_pass_not_match, Toast.LENGTH_SHORT).show()
+        if(et_email.text.isEmpty()){
+            Toast.makeText(this@PostSigninActivity, R.string.login_please_email, Toast.LENGTH_SHORT).show()
+        }else {
+            if (isEmailValid(et_email.text)) {
+                if (et_pass.text.isEmpty()) {
+                    Toast.makeText(this@PostSigninActivity, R.string.login_please_pass, Toast.LENGTH_SHORT).show()
+                } else {
+                    if (et_pass.text.length in 4..16) {
+                        val myService: SOService = ApiUtils.getSOService()
+                        myService.Login(et_email.text.toString(), et_pass.text.toString()).enqueue(callbackService)
+                    } else {
+                        Toast.makeText(this@PostSigninActivity, R.string.login_please_pass_not_match, Toast.LENGTH_SHORT).show()
+                    }
                 }
+            } else {
+                Toast.makeText(this@PostSigninActivity, R.string.login_please_email_type, Toast.LENGTH_SHORT).show()
             }
-        }else{
-            Toast.makeText(this@PostSigninActivity, R.string.login_please_email_type, Toast.LENGTH_SHORT).show()
         }
-
     }
 
     val callbackService = object : Callback<Item> {

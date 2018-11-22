@@ -25,9 +25,11 @@ class PostLoginActivity : AppCompatActivity() ,  View.OnClickListener{
         callbackManager = CallbackManager.Factory.create()
         setContentView(R.layout.activity_post_login)
 
-        Utils(this).PushDownClick(bt_signin)
-        bt_signin.setOnClickListener(this)
-        fl_facebook.setOnClickListener(this)
+        Utils(this).PushDownClickTextView(tv_signin)
+        Utils(this).PushDownClickTextView(tv_facebook)
+
+        tv_signin.setOnClickListener(this)
+        tv_facebook.setOnClickListener(this)
 
         // Callback registration
         login_facebook_button.setReadPermissions("email")
@@ -75,13 +77,13 @@ class PostLoginActivity : AppCompatActivity() ,  View.OnClickListener{
     override fun onClick(v: View?) {
 
         when (v!!.id) {
-            R.id.bt_signin -> {
+            R.id.tv_signin -> {
                 var intent = Intent(this@PostLoginActivity,PostSigninActivity::class.java)
                 val options = ActivityOptionsCompat.makeSceneTransitionAnimation(this@PostLoginActivity,  image_loading_login , "profile")
                 startActivity(intent, options.toBundle())
                 overridePendingTransition(R.anim.abc_fade_in,R.anim.abc_fade_out)
             }
-            R.id.fl_facebook ->{
+            R.id.tv_facebook ->{
                 login_facebook_button.callOnClick()
             }
         }

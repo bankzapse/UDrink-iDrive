@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lv_favorite_location"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:padding="4dp"
+    android:elevation="10dp"
+    android:background="@drawable/border_button_default">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="5dp">
+
+        <co.th.udrinkidrive.MyFontsStyle.MyTextViewFontsBold
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_normal_24"/>
+
+        <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5.8 Km | Saved Place"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_normal"/>
+
+        <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ekkamai 22 Alley,Khlong Tan Nuea Ekkamai 22 Alley,Khlong Tan Nuea"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_normal"
+            android:ems="10"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="right|center_vertical"
+        android:src="@drawable/img_house_location"
+        android:layout_margin="4dp"/>
+</LinearLayout>

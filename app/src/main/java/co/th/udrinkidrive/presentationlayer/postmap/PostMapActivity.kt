@@ -21,6 +21,8 @@ import android.view.animation.AnimationUtils
 import android.widget.*
 import android.widget.LinearLayout
 import androidx.core.app.ActivityCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import co.th.udrinkidrive.HorizontalAdapter
 import co.th.udrinkidrive.Utils
 import co.th.udrinkidrive.presentationlayer.detectonmap.TouchableWrapper
 import co.th.udrinkidrive.presentationlayer.postprofile.PostProfileActivity
@@ -32,6 +34,7 @@ import com.thekhaeng.pushdownanim.PushDownAnim
 import kotlinx.android.synthetic.main.custom_contact.*
 import kotlinx.android.synthetic.main.custom_info_any.*
 import kotlinx.android.synthetic.main.custom_promotion.*
+import kotlinx.android.synthetic.main.custom_search_location.*
 import kotlinx.android.synthetic.main.table_view_infomation.*
 
 class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  , TouchableWrapper.UpdateMapAfterUserInterection , View.OnClickListener{
@@ -45,12 +48,13 @@ class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  
     lateinit var current: LatLng
     lateinit var animation:Animation
     lateinit var view_action: LinearLayout
+    var action_infomation :Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_map)
 
-        //Google Map
+        //Set Google Map
         mSupportMapFragment = supportFragmentManager.findFragmentById(R.id.mapview) as SupportMapFragment
         setMapView()
 
@@ -63,6 +67,9 @@ class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  
         //Action Click : GONE : VISIBLE
         ViewAndEvent()
 
+        //Add MutiSnap favorite location
+        setMutiSnapFavoriteLocation()
+
     }
 
     fun ViewAndEvent(){
@@ -74,11 +81,16 @@ class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  
         ln_main_contact.setOnClickListener(this)
         ln_main_promotion.setOnClickListener(this)
         image_back.setOnClickListener(this)
+        tv_search_current.setOnClickListener(this)
 
-        ln_any.visibility = View.GONE
-        ln_contact.visibility = View.GONE
-        ln_promotion.visibility = View.GONE
-        image_back.visibility = View.GONE
+    }
+
+    fun setMutiSnapFavoriteLocation(){
+        val titles = arrayOf("Android", "Beta", "Cupcake", "Donut", "Eclair", "Froyo", "Gingerbread", "Honeycomb", "Ice Cream Sandwich", "Jelly Bean", "KitKat", "Lollipop", "Marshmallow", "Nougat", "Oreo")
+        val firstAdapter = HorizontalAdapter(titles, this@PostMapActivity)
+        val firstManager = LinearLayoutManager(this@PostMapActivity, LinearLayoutManager.HORIZONTAL, false)
+        muti_snap_favorite_location.layoutManager = firstManager
+        muti_snap_favorite_location.adapter = firstAdapter
     }
 
     fun setMapView(){
@@ -151,17 +163,26 @@ class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  
                 startActivity(intent)
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_left)
             }
+            R.id.tv_search_current -> {
+                action_infomation = true
+                ln_search_location.visibility = View.GONE
+                muti_snap_favorite_location.visibility = View.GONE
+                sc_detail.visibility = View.VISIBLE
+                lv_book.visibility = View.VISIBLE
+            }
         }
     }
 
 
     override fun onUpdateMapAfterUserInterection(type : String) {
-        if(type == "DOWN") {
-            Utils(this).AnimationLayoutBottom(R.anim.slide_down,lv_book,"GONE","General",image_back,ln_menu_info)
-            Utils(this).AnimationLayoutTop(R.anim.slide_up_scroll,sc_detail,"GONE")
-        }else if(type == "UP") {
-            Utils(this).AnimationLayoutBottom(R.anim.slide_up, lv_book, "VISIBLE","General",image_back,ln_menu_info)
-            Utils(this).AnimationLayoutTop(R.anim.slide_down_scroll, sc_detail, "VISIBLE")
+        if(action_infomation){
+            if(type == "DOWN") {
+                Utils(this).AnimationLayoutBottom(R.anim.slide_down,lv_book,"GONE","General",image_back,ln_menu_info)
+                Utils(this).AnimationLayoutTop(R.anim.slide_up_scroll,sc_detail,"GONE")
+            }else if(type == "UP") {
+                Utils(this).AnimationLayoutBottom(R.anim.slide_up, lv_book, "VISIBLE","General",image_back,ln_menu_info)
+                Utils(this).AnimationLayoutTop(R.anim.slide_down_scroll, sc_detail, "VISIBLE")
+            }
         }
     }
 
@@ -191,11 +212,13 @@ class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  
 //        val view_add = row.findViewById<View>(R.id.view_add)
         val tv_status_row = row.findViewById<View>(R.id.tv_status_row) as TextView
         val tv_status_local = row.findViewById<View>(R.id.tv_status_local) as TextView
+        val tv_detail_local = row.findViewById<View>(R.id.tv_detail_local) as TextView
         val image_remove = row.findViewById<View>(R.id.image_remove) as ImageView
         if(tableLayoutCurrent.childCount == 0){
 //            view_add.setBackgroundColor(resources.getColor(R.color.blue))
             tv_status_row.text = "FROM"
             tv_status_local.text = "Current Location"
+            tv_detail_local.text = "225/9 ซอยทองหล่อ 10 Sukhumvit Rd, Khlong Tan Nuea, Watthana, Bangkok 10110"
             image_remove.visibility = View.GONE
         }else{
             tv_status_row.text = "TO "+tableLayoutCurrent.childCount.toString()

@@ -63,7 +63,8 @@
         <ScrollView
             android:id="@+id/sc_detail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:visibility="gone">
 
             <LinearLayout
                 android:id="@+id/lv_detail"
@@ -91,8 +92,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:elevation="10dp"
-                    android:background="@drawable/border_shadow">
+                    android:elevation="4dp"
+                    android:background="@color/bg_main">
 
                     <TableLayout
                         android:id="@+id/tableLayoutPoint"
@@ -105,11 +106,6 @@
                             android:layout_height="wrap_content"
                             android:layout_width="match_parent">
 
-                            <!--<View-->
-                                <!--android:layout_width="4dp"-->
-                                <!--android:layout_height="match_parent"-->
-                                <!--android:background="@color/black"/>-->
-
                             <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
                                 android:layout_height="wrap_content"
                                 android:layout_width="wrap_content"
@@ -118,7 +114,8 @@
                                 android:paddingTop="5dp"
                                 android:paddingLeft="15dp"
                                 android:textSize="24dp"
-                                android:gravity="center"/>
+                                android:gravity="center"
+                                android:ems="3"/>
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -134,13 +131,15 @@
                                     android:textColor="@color/blue"
                                     android:textSize="@dimen/text_normal"/>
 
-                                <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                                <co.th.udrinkidrive.MyFontsStyle.MyAutoTextView
                                     android:layout_height="wrap_content"
                                     android:layout_width="wrap_content"
-                                    android:text="อาคาร CW Tower ชั้น 28เลขที่ 184/184-185 ถนนรัชดาภิเษก แขวงห้วยขวาง เขตห้วยขวาง กรุงเทพฯ 10310"
+                                    android:text="Soi Thong Lo 10, Khwaeng Khlong Tan Nuea, Khet Watthana, Krung Thep Maha Nakhon 10110"
                                     android:textColor="@color/white"
-                                    android:ellipsize="end"
-                                    android:maxLines="1"
+                                    android:singleLine="true"
+                                    android:scrollHorizontally="true"
+                                    android:ellipsize="marquee"
+                                    android:marqueeRepeatLimit="marquee_forever"
                                     android:textSize="@dimen/text_normal"/>
 
                             </LinearLayout>
@@ -192,13 +191,19 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="top"
                         android:padding="10dp"
-                        android:src="@drawable/icon_back_black"/>
+                        android:src="@drawable/icon_back_black"
+                        android:visibility="gone"/>
 
                 </FrameLayout>
 
             </LinearLayout>
 
         </ScrollView>
+
+        <include
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/custom_search_location"/>
 
         <LinearLayout
             android:id="@+id/lv_book"
@@ -208,6 +213,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_gravity="bottom"
+            android:visibility="gone"
             android:background="@android:color/transparent">
 
             <LinearLayout
@@ -274,6 +280,14 @@
                 android:textSize="@dimen/button_normal" />
 
         </LinearLayout>
+
+        <com.takusemba.multisnaprecyclerview.MultiSnapRecyclerView
+            android:id="@+id/muti_snap_favorite_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:msrv_gravity="start"
+            app:msrv_snap_count="1" />
 
     </FrameLayout>
 

@@ -23,6 +23,7 @@ import android.app.Dialog
 import android.view.Window
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
+import co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
 
 
 class Utils(context: Context) {
@@ -111,11 +112,23 @@ class Utils(context: Context) {
                 .setDurationRelease( 15 )
     }
 
+    fun PushDownClickTextView(tv: MyTextViewFonts) {
+        PushDownAnim.setPushDownAnimTo( tv )
+                .setScale(PushDownAnim.MODE_SCALE, PushDownAnim.DEFAULT_PUSH_SCALE )
+                .setDurationPush( 35 )
+                .setDurationRelease( 15 )
+    }
+
     //hideSoftKeyboard
 
     fun hideSoftKeyboard(view: View) {
         val imm = mContext!!.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(view.windowToken, 0)
+    }
+
+    fun hideKeyboard(activity: Activity) {
+        val inputMethodManager = mContext!!.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.hideSoftInputFromWindow(activity.currentFocus!!.windowToken, 0)
     }
 
     //Action Popup
