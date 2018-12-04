@@ -3,13 +3,14 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 28
     buildToolsVersion "28.0.3"
     defaultConfig {
         applicationId "co.th.udrinkidrive"
-        minSdkVersion 21
+        minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -19,10 +20,6 @@ android {
     dexOptions {
         javaMaxHeapSize "4g"
     }
-//    compileOptions {
-//        sourceCompatibility JavaVersion.VERSION_1_8
-//        targetCompatibility JavaVersion.VERSION_1_8
-//    }
     buildTypes {
         release {
             minifyEnabled false
@@ -79,19 +76,36 @@ dependencies {
     implementation 'com.github.dmytrodanylyk.shadow-layout:library:1.0.1'
     implementation 'com.ramotion.expandingcollection:expanding-collection:0.9.0'
     implementation 'com.github.takusemba:multisnaprecyclerview:1.2.0'
+    implementation 'com.takisoft.datetimepicker:datetimepicker:1.0.0'
+    implementation 'com.github.Shashank02051997:FancyToast-Android:0.1.3'
 
     //Google service
-    implementation 'com.google.android.gms:play-services:12.0.1'
-    implementation 'com.google.android.gms:play-services-auth:8.4.0'
-    implementation 'android.arch.navigation:navigation-fragment:1.0.0-alpha06'
+//    implementation 'com.google.android.gms:play-services:12.0.1'
+//    implementation 'com.google.android.gms:play-services-auth:16.0.1'
+    implementation 'android.arch.navigation:navigation-fragment:1.0.0-alpha07'
+    implementation 'com.seatgeek:placesautocomplete:0.3-SNAPSHOT'
+    implementation 'com.akexorcist:googledirectionlibrary:1.0.4'
 
     //Facebook SDK
-    implementation 'com.facebook.android:facebook-android-sdk:[4,5)'
+//    implementation 'com.facebook.android:facebook-android-sdk:[4,5)'
+    implementation 'com.facebook.android:facebook-login:[4,5)'
 
     //OTP PinView
     implementation 'com.chaos.view:pinview:1.4.2'
     implementation 'com.github.stfalcon:smsverifycatcher:0.3.2'
+
+    //Firebase
+//    implementation 'com.google.firebase:firebase-core:16.0.5'
+//    implementation 'com.google.firebase:firebase-messaging:17.3.4'
+
+    implementation 'com.google.android.gms:play-services:11.0.4'
+    implementation 'com.google.firebase:firebase-auth:11.0.4'
+    implementation 'com.google.firebase:firebase-database:11.0.4'
+    implementation 'com.google.firebase:firebase-storage:11.0.4'
 }
 repositories {
     mavenCentral()
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
 }
+
+apply plugin: 'com.google.gms.google-services'

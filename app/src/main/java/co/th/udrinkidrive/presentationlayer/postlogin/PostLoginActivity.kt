@@ -1,25 +1,33 @@
 package co.th.udrinkidrive.presentationlayer.postlogin
 
 import android.content.Intent
+import android.content.IntentFilter
+import android.net.ConnectivityManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.core.app.ActivityOptionsCompat
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import co.th.udrinkidrive.R
 import co.th.udrinkidrive.Utils
+import co.th.udrinkidrive.datalayer.service.InternetAvailability
 import co.th.udrinkidrive.presentationlayer.postsignin.PostSigninActivity
 import com.facebook.*
 import kotlinx.android.synthetic.main.activity_post_login.*
 import com.facebook.login.LoginResult
 import org.json.JSONObject
 import com.facebook.AccessToken
+import com.google.firebase.FirebaseApp
+import com.google.firebase.analytics.FirebaseAnalytics
 
 class PostLoginActivity : AppCompatActivity() ,  View.OnClickListener{
 
     lateinit var callbackManager: CallbackManager
+    lateinit var mFirebaseAnalytics: FirebaseAnalytics
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        FirebaseApp.initializeApp(this)
         super.onCreate(savedInstanceState)
 //        window.exitTransition = Explode()
         callbackManager = CallbackManager.Factory.create()
@@ -88,6 +96,16 @@ class PostLoginActivity : AppCompatActivity() ,  View.OnClickListener{
             }
         }
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        registerReceiver(InternetAvailability(), IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
+    }
+
+    override fun onPause() {
+        super.onPause()
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(InternetAvailability())
     }
 
 }

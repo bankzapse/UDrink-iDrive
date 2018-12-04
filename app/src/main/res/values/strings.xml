@@ -26,10 +26,14 @@
     <string name="login_please_pass">  Please input password  </string>
     <string name="login_please_pass_not_match">Password must be between 4 "-" 16 characters</string>
 
+    <string name="internet_topic">Internet connect fail</string>
+    <string name="internet_sub_topic">Please check internet connect</string>
+
     <string name="register_firstname">firstname</string>
     <string name="register_lastname">lastname</string>
     <string name="register_email">email</string>
     <string name="register_password">password</string>
+    <string name="register_date_of_birth">Date of birth</string>
 
     <string name="forgot_password">Enter your e-mail address and will"'"ll send\nyou link to reset your password.</string>
 
@@ -51,9 +55,22 @@
     <string name="info_promotion_topic">Promotion Code</string>
     <string name="info_promotion_hint">input code here</string>
 
+    <string name="info_price">Price : </string>
+
+    <string name="info_credit_topic">Payment Option</string>
+    <string name="info_credit_cash">Cash</string>
+    <string name="info_credit_credit">Credit Card</string>
+    <string name="info_credit_submit">ADD PAYMENT OPTION</string>
+
     <string name="location_from">From</string>
     <string name="location_to">To</string>
     <string name="location_current">Current Location</string>
     <string name="location_will_go">Where you will go</string>
+
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="otp_request_mobile">Please input mobile number</string>
+    <string name="otp_mobile_length">Please input mobile number 10 characters</string>
 
 </resources>

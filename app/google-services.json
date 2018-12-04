@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "49602780496",
+    "firebase_url": "https://udid-drive.firebaseio.com",
+    "project_id": "udid-drive",
+    "storage_bucket": "udid-drive.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:49602780496:android:43106290f55082c0",
+        "android_client_info": {
+          "package_name": "co.th.udrinkidrive"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "49602780496-ovjvn5ki0ub8gjts6gkst3r3dcqjdm79.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "co.th.udrinkidrive",
+            "certificate_hash": "2958cd1c019662c6d7327d2e0b2b86ff29ab8f34"
+          }
+        },
+        {
+          "client_id": "49602780496-uklrahlc1vc5sa8unbeguhps8e2dm6b7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBP5Dgg3Yjwvvr5bOh2POlrzExOFQyOJv8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "49602780496-uklrahlc1vc5sa8unbeguhps8e2dm6b7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

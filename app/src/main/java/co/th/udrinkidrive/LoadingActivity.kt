@@ -1,6 +1,8 @@
 package co.th.udrinkidrive
 
 import android.content.Intent
+import android.content.IntentFilter
+import android.net.ConnectivityManager
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.os.CountDownTimer
@@ -10,6 +12,8 @@ import android.view.WindowManager
 import android.view.animation.AnimationUtils
 import androidx.core.app.ActivityOptionsCompat
 import androidx.core.util.Pair
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import co.th.udrinkidrive.datalayer.service.InternetAvailability
 import kotlinx.android.synthetic.main.activity_loading.*
 import co.th.udrinkidrive.presentationlayer.postlogin.PostLoginActivity
 
@@ -40,10 +44,19 @@ class LoadingActivity : AppCompatActivity() {
                 val options = ActivityOptionsCompat.makeSceneTransitionAnimation(this@LoadingActivity, p1, p2)
                 startActivity(intent, options.toBundle())
 
-//                overridePendingTransition(R.anim.abc_fade_in,R.anim.abc_fade_out)
             }
 
         }.start()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        registerReceiver(InternetAvailability(), IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
+    }
+
+    override fun onPause() {
+        super.onPause()
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(InternetAvailability())
     }
 
 }

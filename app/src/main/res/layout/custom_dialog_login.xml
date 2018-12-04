@@ -20,6 +20,7 @@
             android:padding="10dp">
 
             <ImageView
+                android:id="@+id/image_show_dialog"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:src="@drawable/img_warning"

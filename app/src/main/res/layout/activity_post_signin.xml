@@ -143,7 +143,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="@string/login_register"
+                android:text="@string/login_facebook"
                 android:textColor="@color/blue"
                 android:textSize="@dimen/text_normal_24"
                 android:layout_marginLeft="4dp"/>

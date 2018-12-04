@@ -26,10 +26,14 @@
     <string name="login_please_pass">กรุณาใส่รหัสผ่าน</string>
     <string name="login_please_pass_not_match">ใส่รหัสผ่านอย่างน้อย 4 "-" 16 ตัว </string>
 
+    <string name="internet_topic">เกิดข้อผิดพลาด</string>
+    <string name="internet_sub_topic">กรุณาตรวจสอบ อินเตอเน็ต</string>
+
     <string name="register_firstname">ชื่อ</string>
     <string name="register_lastname">นามสกุล</string>
     <string name="register_email">อีเมล</string>
     <string name="register_password">รหัสผ่าน</string>
+    <string name="register_date_of_birth">เลือกวันเกิด</string>
 
     <string name="forgot_password">โปรดกรอกอีเมล ทางทีมงานจะส่งลิงค์ตั้งค่า\nรหัสผ่านใหม่ทางอีเมล</string>
 
@@ -51,9 +55,22 @@
     <string name="info_promotion_topic">รหัสโปรโมชั่น</string>
     <string name="info_promotion_hint">ใส่รหัสโค้ด</string>
 
+    <string name="info_price">ราคา : </string>
+
+    <string name="info_credit_topic">วิธีการ ชำระเงิน</string>
+    <string name="info_credit_cash">เงินสด</string>
+    <string name="info_credit_credit">บัตรเครดิต</string>
+    <string name="info_credit_submit">เพิ่มบัตร</string>
+
     <string name="location_from">รับ</string>
     <string name="location_to">ส่ง</string>
     <string name="location_current">สถานที่ปัจจุบัน</string>
     <string name="location_will_go">คุณต้องการไปที่</string>
+
+    <string name="ok">ตกลง</string>
+    <string name="cancel">ยกเลิก</string>
+
+    <string name="otp_request_mobile">กรุณาใส่เบอร์โทรศัพท์</string>
+    <string name="otp_mobile_length">กรุณาใส่เบอร์โทรศัพท์ ให้ครบ 10 หลัก</string>
 
 </resources>

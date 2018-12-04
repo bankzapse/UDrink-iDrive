@@ -31,8 +31,8 @@ class PostMenuFragment : Fragment()  ,  View.OnClickListener{
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(PostMenuViewModel::class.java)
 
-        PushDownClick(ln_reward)
-        PushDownClick(ln_payment)
+//        PushDownClick(ln_reward)
+//        PushDownClick(ln_payment)
 
     }
 

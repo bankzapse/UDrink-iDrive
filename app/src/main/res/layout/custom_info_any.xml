@@ -17,7 +17,7 @@
             android:layout_height="80dp"
             android:layout_gravity="center_vertical|center_horizontal"
             android:padding="6dp"
-            android:src="@drawable/info_any"/>
+            android:src="@drawable/info_img_any_active"/>
 
         <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
             android:layout_height="wrap_content"

@@ -32,8 +32,8 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center_vertical|right"
-                        android:padding="6dp"
-                        android:src="@android:drawable/ic_menu_call"/>
+                        android:padding="2dp"
+                        android:src="@drawable/info_img_clock"/>
 
                     <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
                         android:layout_height="wrap_content"
@@ -61,8 +61,8 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center_vertical|right"
-                        android:padding="6dp"
-                        android:src="@android:drawable/ic_menu_call"/>
+                        android:padding="2dp"
+                        android:src="@drawable/info_img_any"/>
 
                     <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
                         android:layout_height="wrap_content"
@@ -89,8 +89,8 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center_vertical|right"
-                        android:padding="6dp"
-                        android:src="@android:drawable/ic_menu_call"/>
+                        android:padding="2dp"
+                        android:src="@drawable/info_img_contact"/>
 
                     <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
                         android:layout_height="wrap_content"
@@ -123,8 +123,8 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center_vertical|right"
-                        android:padding="6dp"
-                        android:src="@android:drawable/ic_menu_call"/>
+                        android:padding="2dp"
+                        android:src="@drawable/info_img_promotion"/>
 
                     <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
                         android:layout_height="wrap_content"
@@ -150,8 +150,8 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center_vertical|right"
-                        android:padding="6dp"
-                        android:src="@android:drawable/ic_menu_call"/>
+                        android:padding="2dp"
+                        android:src="@drawable/info_img_supercar"/>
 
                     <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
                         android:layout_height="wrap_content"
@@ -176,9 +176,9 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:layout_gravity="center_vertical|right"
-                        android:padding="6dp"
-                        android:src="@android:drawable/ic_menu_call"/>
+                        android:layout_gravity="center_vertical|left"
+                        android:padding="2dp"
+                        android:src="@drawable/info_img_note"/>
 
                     <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
                         android:layout_height="wrap_content"

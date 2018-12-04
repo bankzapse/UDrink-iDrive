@@ -21,4 +21,11 @@ public interface SOService {
             @Field("password") String password
     );
 
+    @FormUrlEncoded
+    @POST("v2/customer/register")
+    Call<Item> Register(
+            @Field("username") String username,
+            @Field("password") String password
+    );
+
 }
