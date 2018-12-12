@@ -73,4 +73,14 @@
     <string name="otp_request_mobile">Please input mobile number</string>
     <string name="otp_mobile_length">Please input mobile number 10 characters</string>
 
+    <string name="permission_topic">Permission request</string>
+    <string name="permission_sub_topic">Please check permission</string>
+
+    <string name="table_information_any">Any Gender</string>
+    <string name="table_information_contact">Contact</string>
+    <string name="table_information_promotion">Promo</string>
+    <string name="table_information_super_car">Super car</string>
+    <string name="table_information_note">Note</string>
+    <string name="table_information_advance">Advance</string>
+
 </resources>

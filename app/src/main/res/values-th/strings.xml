@@ -73,4 +73,14 @@
     <string name="otp_request_mobile">กรุณาใส่เบอร์โทรศัพท์</string>
     <string name="otp_mobile_length">กรุณาใส่เบอร์โทรศัพท์ ให้ครบ 10 หลัก</string>
 
+    <string name="permission_topic">คำขออนุญาต</string>
+    <string name="permission_sub_topic">กรุณา ตรวจการเข้าถึงสิทธิ์</string>
+
+    <string name="table_information_any">ไม่ระบุเพศ</string>
+    <string name="table_information_contact">ติดต่อ</string>
+    <string name="table_information_promotion">โปรโมชั่น</string>
+    <string name="table_information_super_car">ซุปเปอร์คาร์</string>
+    <string name="table_information_note">หมายเหตุ</string>
+    <string name="table_information_advance">เพิ่มเติม</string>
+
 </resources>

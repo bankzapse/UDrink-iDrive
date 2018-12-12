@@ -1,13 +1,23 @@
 package co.th.udrinkidrive.presentationlayer.postlogin
 
+import android.Manifest
+import android.annotation.SuppressLint
+import android.annotation.TargetApi
+import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.content.pm.PackageManager
 import android.net.ConnectivityManager
+import android.net.Uri
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Settings
 import android.util.Log
 import android.view.View
+import androidx.core.app.ActivityCompat
 import androidx.core.app.ActivityOptionsCompat
+import androidx.core.content.ContextCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import co.th.udrinkidrive.R
 import co.th.udrinkidrive.Utils
@@ -20,6 +30,8 @@ import org.json.JSONObject
 import com.facebook.AccessToken
 import com.google.firebase.FirebaseApp
 import com.google.firebase.analytics.FirebaseAnalytics
+import com.nabinbhandari.android.permissions.PermissionHandler
+import com.nabinbhandari.android.permissions.Permissions
 
 class PostLoginActivity : AppCompatActivity() ,  View.OnClickListener{
 
@@ -70,7 +82,9 @@ class PostLoginActivity : AppCompatActivity() ,  View.OnClickListener{
             }
         })
 
+        Utils(this@PostLoginActivity).setupPermissions("General")
     }
+
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         callbackManager.onActivityResult(requestCode, resultCode, data)
@@ -83,19 +97,19 @@ class PostLoginActivity : AppCompatActivity() ,  View.OnClickListener{
     }
 
     override fun onClick(v: View?) {
-
         when (v!!.id) {
             R.id.tv_signin -> {
-                var intent = Intent(this@PostLoginActivity,PostSigninActivity::class.java)
-                val options = ActivityOptionsCompat.makeSceneTransitionAnimation(this@PostLoginActivity,  image_loading_login , "profile")
-                startActivity(intent, options.toBundle())
-                overridePendingTransition(R.anim.abc_fade_in,R.anim.abc_fade_out)
+                if (Utils(this@PostLoginActivity).setupPermissions("Check")) {
+                    var intent = Intent(this@PostLoginActivity, PostSigninActivity::class.java)
+                    val options = ActivityOptionsCompat.makeSceneTransitionAnimation(this@PostLoginActivity, image_loading_login, "profile")
+                    startActivity(intent, options.toBundle())
+                    overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out)
+                }
             }
-            R.id.tv_facebook ->{
+            R.id.tv_facebook -> {
                 login_facebook_button.callOnClick()
             }
         }
-
     }
 
     override fun onResume() {

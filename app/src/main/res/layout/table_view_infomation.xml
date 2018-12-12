@@ -9,16 +9,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="2dp"
-        android:background="@drawable/border_shadow">
+        android:orientation="vertical">
 
         <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#f7f5f5">
+            android:layout_height="match_parent">
 
             <TableRow
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
+                android:layout_width="match_parent"
+                android:background="#f7f5f5">
 
                 <LinearLayout
                     android:layout_height="wrap_content"
@@ -48,6 +48,104 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/ln_main_promotion"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:layout_margin="1dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical|right"
+                        android:padding="2dp"
+                        android:src="@drawable/info_img_promotion"/>
+
+                    <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="@string/table_information_promotion"
+                        android:textColor="#000000"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="15dp"
+                        android:gravity="center"
+                        android:textSize="@dimen/text_normal"/>
+
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:id="@+id/ln_main_contact"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:background="#fff"
+                        android:layout_margin="1dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_vertical|right"
+                            android:padding="2dp"
+                            android:src="@drawable/info_img_contact"/>
+
+                        <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text="@string/table_information_contact"
+                            android:textColor="#000000"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="15dp"
+                            android:gravity="center"
+                            android:textSize="@dimen/text_normal"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lv_advance_main"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:background="#fff"
+                        android:layout_margin="1dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_vertical|right"
+                            android:padding="2dp"
+                            android:src="@drawable/info_img_advace"/>
+
+                        <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text="@string/table_information_advance"
+                            android:textColor="#000000"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="15dp"
+                            android:gravity="center"
+                            android:textSize="@dimen/text_normal"/>
+
+                    </LinearLayout>
+
+                </FrameLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_bottom"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:background="#f7f5f5"
+                android:visibility="invisible">
+
+                <LinearLayout
                     android:id="@+id/ln_info_any"
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
@@ -67,69 +165,7 @@
                     <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="Any"
-                        android:textColor="#000000"
-                        android:paddingTop="15dp"
-                        android:paddingBottom="15dp"
-                        android:gravity="center"
-                        android:textSize="@dimen/text_normal"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/ln_main_contact"
-                    android:layout_height="wrap_content"
-                    android:layout_width="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_weight="1"
-                    android:background="#fff"
-                    android:layout_margin="1dp">
-
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_gravity="center_vertical|right"
-                        android:padding="2dp"
-                        android:src="@drawable/info_img_contact"/>
-
-                    <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text="Personal"
-                        android:textColor="#000000"
-                        android:paddingTop="15dp"
-                        android:paddingBottom="15dp"
-                        android:gravity="center"
-                        android:textSize="@dimen/text_normal"/>
-
-                </LinearLayout>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent">
-
-                <LinearLayout
-                    android:id="@+id/ln_main_promotion"
-                    android:layout_height="wrap_content"
-                    android:layout_width="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_weight="1"
-                    android:background="#fff"
-                    android:layout_margin="1dp">
-
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_gravity="center_vertical|right"
-                        android:padding="2dp"
-                        android:src="@drawable/info_img_promotion"/>
-
-                    <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text="Promo"
+                        android:text="@string/table_information_any"
                         android:textColor="#000000"
                         android:paddingTop="15dp"
                         android:paddingBottom="15dp"
@@ -156,7 +192,7 @@
                     <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="Super car"
+                        android:text="@string/table_information_super_car"
                         android:textColor="#000000"
                         android:paddingTop="15dp"
                         android:paddingBottom="15dp"
@@ -183,7 +219,7 @@
                     <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="Note"
+                        android:text="@string/table_information_note"
                         android:textColor="#000000"
                         android:paddingTop="15dp"
                         android:paddingBottom="15dp"
@@ -194,37 +230,46 @@
 
             </TableRow>
 
-            <!--<TableRow-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_width="match_parent">-->
+            <LinearLayout
+                android:id="@+id/box_advace"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="right"
+                android:background="@android:color/transparent"
+                android:visibility="invisible">
 
-                <!--<LinearLayout-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:orientation="horizontal"-->
-                    <!--android:layout_weight="1"-->
-                    <!--android:background="#fff"-->
-                    <!--android:layout_margin="1dp">-->
+                <LinearLayout
+                    android:id="@+id/lv_advance_active"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@color/blue"
+                    android:layout_margin="1dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="40dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
 
-                    <!--<ImageView-->
-                        <!--android:layout_width="30dp"-->
-                        <!--android:layout_height="30dp"-->
-                        <!--android:layout_gravity="center_vertical|right"-->
-                        <!--android:padding="6dp"-->
-                        <!--android:src="@android:drawable/ic_menu_call"/>-->
+                    <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text=" x "
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:rotation="90"
+                        android:textSize="@dimen/text_normal"/>
 
-                    <!--<co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:text="Note to driver"-->
-                        <!--android:textColor="#000000"-->
-                        <!--android:paddingTop="15dp"-->
-                        <!--android:paddingBottom="15dp"-->
-                        <!--android:gravity="center"/>-->
+                    <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="@string/table_information_advance"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:textSize="@dimen/text_normal"/>
 
-                <!--</LinearLayout>-->
+                </LinearLayout>
 
-            <!--</TableRow>-->
+            </LinearLayout>
 
         </TableLayout>
 

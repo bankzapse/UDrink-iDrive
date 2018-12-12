@@ -102,6 +102,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:11.0.4'
     implementation 'com.google.firebase:firebase-database:11.0.4'
     implementation 'com.google.firebase:firebase-storage:11.0.4'
+
+    //Permission
+    implementation 'com.nabinbhandari.android:permissions:3.7'
 }
 repositories {
     mavenCentral()

@@ -16,9 +16,12 @@ import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
 import android.net.ConnectivityManager
+import android.os.SystemClock
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
+import android.view.WindowManager
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.*
@@ -60,9 +63,11 @@ class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  
     lateinit var view_action: LinearLayout
     var action_infomation :Boolean = false
     var action_back_search :Boolean = false
+    var avaliable : Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+//        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_MODE_CHANGED|WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
         setContentView(R.layout.activity_map)
 
         mSupportMapFragment = supportFragmentManager.findFragmentById(R.id.mapview) as SupportMapFragment //Set Google Map
@@ -136,6 +141,8 @@ class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  
         image_back.setOnClickListener(this)
         tv_search_current.setOnClickListener(this)
         image_back_search.setOnClickListener(this)
+        lv_advance_main.setOnClickListener(this)
+        box_advace.setOnClickListener(this)
     }
 
     fun setMutiSnapFavoriteLocation(){
@@ -216,15 +223,16 @@ class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  
                 view_action = ln_promotion
             }
             R.id.ln_main_credit_card -> {
-                Utils(this).AnimationLayoutBottom(R.anim.slide_in_right,ln_credit_card, "VISIBLE", "Custom", image_back, ln_menu_info)
+                Utils(this).AnimationLayoutBottom(R.anim.slide_in_right, ln_credit_card, "VISIBLE", "Custom", image_back, ln_menu_info)
                 ln_credit_card.visibility = View.VISIBLE
                 view_action = ln_credit_card
+                ln_main_credit_card.isEnabled = false
             }
-            //END CALL POPUP SLIDE
             R.id.image_back -> {
                 Utils(this).AnimationLayoutBottom(R.anim.slide_out_left,view_action,"GONE","Custom",image_back,ln_menu_info)
-
+                ln_main_credit_card.isEnabled = true
             }
+            //END CALL POPUP SLIDE
             R.id.image_profile -> {
                 val intent = Intent(this@PostMapActivity, PostProfileActivity::class.java)
                 startActivity(intent)
@@ -233,6 +241,8 @@ class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  
             R.id.tv_search_current -> {
                 Utils(this).AnimationLinearLayoutTop(R.anim.slide_up_scroll,ln_search_location,"GONE")
                 Utils(this).AnimationLinearLayoutTop(R.anim.slide_down_scroll,ln_google_place,"VISIBLE")
+                places_autocomplete.requestFocus()
+                Utils(this).showKeyboardView(places_autocomplete)
             }
             R.id.image_back_search -> {
                 if(action_back_search){
@@ -244,6 +254,7 @@ class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  
                     Utils(this).AnimationLinearLayoutTop(R.anim.slide_down_scroll, ln_search_location, "VISIBLE")
                     Utils(this).AnimationLinearLayoutTop(R.anim.slide_up_scroll, ln_google_place, "GONE")
                 }
+                Utils(this).hideKeyboard(this@PostMapActivity)
             }
             R.id.tableCurrent -> {
                 action_infomation = false
@@ -251,9 +262,22 @@ class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  
                 Utils(this).AnimationLayoutBottom(R.anim.slide_down,lv_book,"GONE","General",image_back,ln_menu_info)
                 Utils(this).AnimationLayoutTop(R.anim.slide_up_scroll,sc_detail,"GONE")
             }
+            R.id.lv_advance_main -> {
+                if(!avaliable) {
+                    lv_advance_main.visibility = View.GONE
+                    Log.d("Tag", "avaliable 1 : $avaliable")
+                    avaliable = true
+                    Utils(this).AnimationTableRow(R.anim.fade_in, tr_bottom, "VISIBLE", box_advace)
+                }
+            }
+            R.id.box_advace -> {
+                lv_advance_main.visibility = View.VISIBLE
+                Log.d("Tag","avaliable 2 : $avaliable")
+                Utils(this).AnimationTableRow(R.anim.fade_out,tr_bottom,"GONE",box_advace)
+                avaliable = false
+            }
         }
     }
-
 
     override fun onUpdateMapAfterUserInterection(type : String) {
         if(action_infomation){
@@ -337,4 +361,5 @@ class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  
         super.onLowMemory()
         mSupportMapFragment!!.onLowMemory()
     }
+
 }

@@ -1,5 +1,6 @@
 package co.th.udrinkidrive
 
+import android.Manifest
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
@@ -9,22 +10,23 @@ import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.view.animation.CycleInterpolator
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.ScrollView
 import androidx.core.app.ActivityOptionsCompat
 import co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
 import co.th.udrinkidrive.presentationlayer.postmap.PostMapActivity
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.Marker
 import com.thekhaeng.pushdownanim.PushDownAnim
-import android.R
 import android.app.Dialog
+import android.content.pm.PackageManager
 import android.graphics.Color
+import android.net.Uri
+import android.provider.Settings
 import android.util.Log
 import android.view.Window
 import android.view.inputmethod.InputMethodManager
-import android.widget.Button
+import android.widget.*
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
 import com.akexorcist.googledirection.DirectionCallback
 import com.akexorcist.googledirection.GoogleDirection
@@ -138,6 +140,27 @@ class Utils(context: Context) {
         layout.startAnimation(animation)
     }
 
+    fun AnimationTableRow(slide_down: Int, layout: TableRow, show :String,layout_advance: LinearLayout) {
+        val animation = AnimationUtils.loadAnimation(mContext, slide_down)
+        animation.setAnimationListener(object : Animation.AnimationListener{
+            override fun onAnimationStart(animation: Animation) {}
+
+            override fun onAnimationRepeat(animation: Animation) {}
+
+            override fun onAnimationEnd(animation: Animation) {
+                if(show.equals("GONE",true)){
+                    layout.visibility = View.GONE
+                    layout_advance.visibility = View.GONE
+                }else if(show.equals("VISIBLE",true)){
+                    layout.visibility = View.VISIBLE
+                    layout_advance.visibility = View.VISIBLE
+                }
+
+            }
+        })
+        layout.startAnimation(animation)
+    }
+
     fun PushDownClick(bt: MyButtonFonts ) {
         PushDownAnim.setPushDownAnimTo( bt )
                 .setScale(PushDownAnim.MODE_SCALE, PushDownAnim.DEFAULT_PUSH_SCALE )
@@ -161,6 +184,11 @@ class Utils(context: Context) {
     fun hideKeyboard(activity: Activity) {
         val inputMethodManager = mContext!!.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         inputMethodManager.hideSoftInputFromWindow(activity.currentFocus!!.windowToken, 0)
+    }
+
+    fun showKeyboardView(view: View) {
+        val inputMethodManager = mContext!!.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.showSoftInput(view.findFocus(), InputMethodManager.SHOW_IMPLICIT)
     }
 
     //Action Popup
@@ -211,10 +239,10 @@ class Utils(context: Context) {
                 .avoid(AvoidType.TOLLS)
                 .execute(object : DirectionCallback {
                     override fun onDirectionSuccess(direction: Direction, rawBody: String) {
-                        Log.d("Tag","onDirectionSuccess : ${direction.isOK}")
-                        Log.d("Tag","onDirectionSuccess : ${direction.status}")
-                        Log.d("Tag","onDirectionSuccess : ${direction.errorMessage}")
-                        Log.d("Tag","onDirectionSuccess : $rawBody")
+//                        Log.d("Tag","onDirectionSuccess : ${direction.isOK}")
+//                        Log.d("Tag","onDirectionSuccess : ${direction.status}")
+//                        Log.d("Tag","onDirectionSuccess : ${direction.errorMessage}")
+//                        Log.d("Tag","onDirectionSuccess : $rawBody")
                         if(direction.routeList.size > 0){
                             val route = direction.routeList[0]
                             val leg = route.legList[0]
@@ -232,4 +260,73 @@ class Utils(context: Context) {
                 })
 
     }
+
+    //Set permission
+    fun setupPermissions(s : String) : Boolean {
+        val permission_fine_location = ContextCompat.checkSelfPermission(mContext!!.applicationContext, Manifest.permission.ACCESS_FINE_LOCATION )
+        val permission_read_external = ContextCompat.checkSelfPermission(mContext!!.applicationContext, Manifest.permission.WRITE_EXTERNAL_STORAGE )
+        val permission_write_external = ContextCompat.checkSelfPermission(mContext!!.applicationContext, Manifest.permission.WRITE_EXTERNAL_STORAGE )
+        val permission_read_sms = ContextCompat.checkSelfPermission(mContext!!.applicationContext, Manifest.permission.READ_SMS )
+        val permission_receive_sms = ContextCompat.checkSelfPermission(mContext!!.applicationContext, Manifest.permission.RECEIVE_SMS )
+        val permission_call_phone = ContextCompat.checkSelfPermission(mContext!!.applicationContext, Manifest.permission.CALL_PHONE )
+        val permission_camera = ContextCompat.checkSelfPermission(mContext!!.applicationContext, Manifest.permission.CAMERA )
+
+        val listPermissionsNeeded = ArrayList<String>()
+        listPermissionsNeeded.add(Manifest.permission.ACCESS_FINE_LOCATION)
+        listPermissionsNeeded.add(Manifest.permission.READ_EXTERNAL_STORAGE)
+        listPermissionsNeeded.add(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+        listPermissionsNeeded.add(Manifest.permission.READ_SMS)
+        listPermissionsNeeded.add(Manifest.permission.RECEIVE_SMS)
+        listPermissionsNeeded.add(Manifest.permission.CALL_PHONE)
+        listPermissionsNeeded.add(Manifest.permission.CAMERA)
+
+        if(s == "Check"){
+            if (permission_fine_location == PackageManager.PERMISSION_GRANTED && permission_read_external == PackageManager.PERMISSION_GRANTED && permission_write_external == PackageManager.PERMISSION_GRANTED
+                    && permission_read_sms == PackageManager.PERMISSION_GRANTED && permission_receive_sms == PackageManager.PERMISSION_GRANTED && permission_call_phone == PackageManager.PERMISSION_GRANTED
+                    && permission_read_sms == PackageManager.PERMISSION_GRANTED  && permission_camera == PackageManager.PERMISSION_GRANTED) {
+                return true
+            }else{
+                PopupGotoSetting()
+                return false
+            }
+        }
+
+        ActivityCompat.requestPermissions(mContext as Activity, listPermissionsNeeded.toTypedArray(), 1)
+
+        return true
+    }
+
+    // Permission Request
+    fun PopupGotoSetting() {
+        var dialog_custom: Dialog? = null
+        if (dialog_custom != null) {
+            dialog_custom.dismiss()
+        }
+        dialog_custom = Dialog(mContext)
+        dialog_custom.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog_custom.setContentView(co.th.udrinkidrive.R.layout.custom_dialog_login)
+        dialog_custom.setCancelable(false)
+        dialog_custom.window!!.setBackgroundDrawableResource(android.R.color.transparent)
+
+        val image_show_dialog = dialog_custom.findViewById<ImageView>(co.th.udrinkidrive.R.id.image_show_dialog)
+        val bt_confirm = dialog_custom.findViewById<Button>(co.th.udrinkidrive.R.id.bt_confirm)
+        val tv_text_confirm = dialog_custom.findViewById<TextView>(co.th.udrinkidrive.R.id.tv_text_confirm)
+        val tv_text_sub_confirm = dialog_custom.findViewById<TextView>(co.th.udrinkidrive.R.id.tv_text_sub_confirm)
+
+        image_show_dialog.setImageResource(co.th.udrinkidrive.R.drawable.img_warning)
+        tv_text_confirm.text = mContext!!.resources.getText(co.th.udrinkidrive.R.string.permission_topic)
+        tv_text_sub_confirm.text = mContext!!.resources.getText(co.th.udrinkidrive.R.string.permission_sub_topic)
+        bt_confirm.setOnClickListener {
+            val intent = Intent()
+            intent.action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
+            val uri = Uri.fromParts("package", mContext!!.packageName, null)
+            intent.data = uri
+            mContext!!.startActivity(intent)
+            dialog_custom!!.dismiss()
+        }
+
+        dialog_custom.show()
+    }
+
+
 }
