@@ -41,7 +41,6 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.LatLngBounds
 import com.shashank.sony.fancytoastlib.FancyToast
 
-
 class Utils(context: Context) {
 
     private var mContext: Context? = context
@@ -328,5 +327,40 @@ class Utils(context: Context) {
         dialog_custom.show()
     }
 
+    //Popup Default
+    fun PopupDefault(image: Int , topic: String , sub_topic: String , intent: Intent , check_action: String , activity: Activity){
+        var dialog_custom: Dialog? = null
+        if (dialog_custom != null) {
+            dialog_custom.dismiss()
+        }
+        dialog_custom = Dialog(mContext)
+        dialog_custom.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog_custom.setContentView(R.layout.custom_dialog_default)
+        dialog_custom.setCancelable(false)
+        dialog_custom.window!!.setBackgroundDrawableResource(android.R.color.transparent)
+
+        val image_show_dialog = dialog_custom.findViewById<ImageView>(R.id.image_show_dialog)
+        val bt_confirm = dialog_custom.findViewById<Button>(R.id.bt_confirm)
+        val bt_cancel = dialog_custom.findViewById<Button>(R.id.bt_cancel)
+        val tv_text_confirm = dialog_custom.findViewById<TextView>(R.id.tv_text_confirm)
+        val tv_text_sub_confirm = dialog_custom.findViewById<TextView>(R.id.tv_text_sub_confirm)
+
+        image_show_dialog.setImageResource(image)
+        tv_text_confirm.text = topic
+        tv_text_sub_confirm.text = sub_topic
+        bt_confirm.setOnClickListener {
+            if(check_action == "INTENT") {
+                mContext!!.startActivity(intent)
+                SharedPrefUtil(mContext as Activity).SaveResultString("Login", "false")
+            }else if(check_action == "BOOK"){
+                (activity as PostMapActivity).ConfirmOrCancleBooking("CANCEL")
+            }
+            dialog_custom!!.dismiss()
+        }
+        bt_cancel.setOnClickListener {
+            dialog_custom!!.dismiss()
+        }
+        dialog_custom.show()
+    }
 
 }

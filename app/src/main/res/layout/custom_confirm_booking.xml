@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ln_booking"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="gone">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:background="@color/bg_main">
+
+            <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/booking_topic"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_menu_profile"
+                android:gravity="center"/>
+
+            <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/booking_sub_1_topic"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_normal_24"
+                android:gravity="center"/>
+
+            <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/booking_sub_2_topic"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_normal_24"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:background="@color/bg_main"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp">
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:background="@drawable/border_radius_top_left_right"
+                android:padding="15dp">
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal">
+
+                    <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:text="4/27/17 at 21.00"
+                        android:textColor="@color/gray_more"
+                        android:textSize="@dimen/text_normal_24"
+                        android:layout_weight="1"/>
+
+                    <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="@string/booking_estimate"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/text_normal_24"
+                        android:ellipsize="end"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal">
+
+                    <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:text="@string/booking_active"
+                        android:textColor="@color/blue"
+                        android:textSize="@dimen/text_normal_24"
+                        android:layout_weight="1"/>
+
+                    <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="8.5"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/text_normal_24"
+                        android:ellipsize="end"/>
+
+                    <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="@string/booking_km"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/text_normal_24"
+                        android:ellipsize="end"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="40dp"
+                    android:layout_height="4dp"
+                    android:background="@color/blue"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TableLayout
+            android:id="@+id/tableLayout_booking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_radius_bottom_left_right"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <TableRow
+                android:id="@+id/table_row_booking"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp">
+
+                <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                    android:id="@+id/tv_booking_status_row"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="@string/location_from"
+                    android:textColor="@color/gray_more"
+                    android:layout_marginTop="5dp"
+                    android:textSize="@dimen/text_normal_24"
+                    android:gravity="center"
+                    android:ems="3"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <co.th.udrinkidrive.MyFontsStyle.MyTextViewFontsBold
+                        android:id="@+id/tv_booking_status_local"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="อาคาร Major Tower ทองหล่อ"
+                        android:textColor="@color/bg_main"
+                        android:textSize="@dimen/text_normal"/>
+
+                    <co.th.udrinkidrive.MyFontsStyle.MyAutoTextView
+                        android:id="@+id/tv_booking_detail_local"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="225/9 ซอยทองหล่อ 10 Sukhumvit Rd, Khlong Tan Nuea, Watthana, Bangkok 10110"
+                        android:textColor="@color/bg_main"
+                        android:singleLine="true"
+                        android:scrollHorizontally="true"
+                        android:ellipsize="marquee"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:textSize="@dimen/text_normal"/>
+
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp">
+
+                <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="@string/location_to"
+                    android:textColor="@color/gray_more"
+                    android:layout_marginTop="5dp"
+                    android:textSize="@dimen/text_normal_24"
+                    android:gravity="center"
+                    android:ems="3"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <co.th.udrinkidrive.MyFontsStyle.MyTextViewFontsBold
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="อาคาร เอเบิ้ลคอนโด"
+                        android:textColor="@color/bg_main"
+                        android:textSize="@dimen/text_normal"/>
+
+                    <co.th.udrinkidrive.MyFontsStyle.MyAutoTextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="225/9 ซอยทองหล่อ 10 Sukhumvit Rd, Khlong Tan Nuea, Watthana, Bangkok 10110"
+                        android:textColor="@color/bg_main"
+                        android:singleLine="true"
+                        android:scrollHorizontally="true"
+                        android:ellipsize="marquee"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:textSize="@dimen/text_normal"/>
+
+                </LinearLayout>
+
+            </TableRow>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp">
+
+                    <co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
+                        android:id="@+id/bt_cancel_booking"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:text="@string/booking_cancel"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/button_normal"
+                        android:layout_weight="1"
+                        android:layout_marginRight="2dp"
+                        android:background="@drawable/border_button_default_press"/>
+
+                    <co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
+                        android:id="@+id/bt_add_booking"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:text="@string/booking_add_book"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/button_normal"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="2dp"
+                        android:background="@drawable/border_button_booking"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

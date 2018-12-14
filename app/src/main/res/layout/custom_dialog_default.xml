@@ -59,7 +59,19 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp">
+
+            <co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
+                android:id="@+id/bt_cancel"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="@string/login_cancel"
+                android:textColor="#fff"
+                android:textSize="@dimen/button_normal"
+                android:layout_weight="1"
+                android:layout_marginRight="2dp"
+                android:background="@drawable/border_button_default_press"/>
 
             <co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
                 android:id="@+id/bt_confirm"
@@ -69,8 +81,8 @@
                 android:textColor="#fff"
                 android:textSize="@dimen/button_normal"
                 android:layout_weight="1"
+                android:layout_marginLeft="2dp"
                 android:background="@drawable/border_button_cancel"/>
-
 
         </LinearLayout>
 

@@ -19,7 +19,7 @@ class PostEditFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.post_edit_fragment, container, false)
+        return inflater.inflate(R.layout.fragment_post_edit, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

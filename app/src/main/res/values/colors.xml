@@ -14,5 +14,6 @@
     <color name="bg_main_shadow">#07072E</color>
     <color name="color_login_username_pass_hint">#CACACA</color>
     <color name="gray">#949393</color>
+    <color name="gray_more">#58595B</color>
 
 </resources>

@@ -30,10 +30,10 @@ public class TouchableWrapper extends FrameLayout {
         switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 lastTouched = SystemClock.uptimeMillis();
-                updateMapAfterUserInterection.onUpdateMapAfterUserInterection("DOWN");
+                updateMapAfterUserInterection.onUpdateMapAfterUserInterection("HIDE");
                 break;
             case MotionEvent.ACTION_UP:
-                updateMapAfterUserInterection.onUpdateMapAfterUserInterection("UP");
+                updateMapAfterUserInterection.onUpdateMapAfterUserInterection("SHOW");
 //                final long now = SystemClock.uptimeMillis();
 //                if (now - lastTouched > SCROLL_TIME) {
 //                    // Update the map

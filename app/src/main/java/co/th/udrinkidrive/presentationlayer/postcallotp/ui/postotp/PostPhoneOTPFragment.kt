@@ -1,6 +1,5 @@
 package co.th.udrinkidrive.presentationlayer.postcallotp.ui.postotp
 
-import android.content.Intent
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.util.Log
@@ -9,15 +8,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
-import android.widget.Toast
 
 import co.th.udrinkidrive.R
 import co.th.udrinkidrive.Utils
 import co.th.udrinkidrive.datalayer.entity.Item
 import co.th.udrinkidrive.presentationlayer.postcallotp.PostCallOTPActivity
-import com.google.firebase.analytics.FirebaseAnalytics
-import com.google.firebase.iid.FirebaseInstanceId
-import kotlinx.android.synthetic.main.post_phone_otp_fragment.*
+import kotlinx.android.synthetic.main.fragment_post_phone_otp.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -31,7 +27,7 @@ class PostPhoneOTPFragment : Fragment() , View.OnClickListener {
                               savedInstanceState: Bundle?): View? {
         Log.d("Tag","onCreateView")
 
-        return inflater.inflate(R.layout.post_phone_otp_fragment, container, false)
+        return inflater.inflate(R.layout.fragment_post_phone_otp, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

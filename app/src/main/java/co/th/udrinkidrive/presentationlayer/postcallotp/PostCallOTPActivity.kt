@@ -2,7 +2,6 @@ package co.th.udrinkidrive.presentationlayer.postcallotp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import co.th.udrinkidrive.presentationlayer.postcallotp.ui.postotp.PostOTPFragment
 import co.th.udrinkidrive.R
 import co.th.udrinkidrive.presentationlayer.postcallotp.ui.postotp.PostPhoneOTPFragment
@@ -11,7 +10,7 @@ class PostCallOTPActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.post_call_otp_activity)
+        setContentView(R.layout.activity_post_call_otp)
 
         val list_profile = intent.extras.getStringArrayList("list_profile")
         if (savedInstanceState == null) {

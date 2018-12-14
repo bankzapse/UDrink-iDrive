@@ -16,6 +16,7 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import co.th.udrinkidrive.datalayer.service.InternetAvailability
 import kotlinx.android.synthetic.main.activity_loading.*
 import co.th.udrinkidrive.presentationlayer.postlogin.PostLoginActivity
+import co.th.udrinkidrive.presentationlayer.postmap.PostMapActivity
 
 
 class LoadingActivity : AppCompatActivity() {
@@ -38,11 +39,16 @@ class LoadingActivity : AppCompatActivity() {
 
             override fun onFinish() {
 
-                var intent = Intent(this@LoadingActivity,PostLoginActivity::class.java)
-                val p1 = Pair.create<View, String> (image_loading, "profile")
-                val p2 = Pair.create<View, String> (tv_sologan, "text")
-                val options = ActivityOptionsCompat.makeSceneTransitionAnimation(this@LoadingActivity, p1, p2)
-                startActivity(intent, options.toBundle())
+                if(SharedPrefUtil(this@LoadingActivity).GetResultString("Login") == "true"){
+                    var intent = Intent(this@LoadingActivity,PostMapActivity::class.java)
+                    startActivity(intent)
+                }else{
+                    var intent = Intent(this@LoadingActivity,PostLoginActivity::class.java)
+                    val p1 = Pair.create<View, String> (image_loading, "profile")
+                    val p2 = Pair.create<View, String> (tv_sologan, "text")
+                    val options = ActivityOptionsCompat.makeSceneTransitionAnimation(this@LoadingActivity, p1, p2)
+                    startActivity(intent, options.toBundle())
+                }
 
             }
 

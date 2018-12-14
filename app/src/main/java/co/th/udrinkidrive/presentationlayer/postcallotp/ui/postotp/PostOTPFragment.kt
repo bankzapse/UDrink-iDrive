@@ -1,7 +1,5 @@
 package co.th.udrinkidrive.presentationlayer.postcallotp.ui.postotp
 
-import android.app.Activity
-import android.content.Context
 import android.content.Intent
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -12,18 +10,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.WindowManager
 import co.th.udrinkidrive.R
 import android.view.animation.AnimationUtils
-import kotlinx.android.synthetic.main.post_otp_fragment.*
-import android.widget.TextView
-import android.widget.EditText
-import com.stfalcon.smsverifycatcher.OnSmsCatchListener
+import kotlinx.android.synthetic.main.fragment_post_otp.*
 import com.stfalcon.smsverifycatcher.SmsVerifyCatcher
-import androidx.annotation.NonNull
-import androidx.core.app.ActivityOptionsCompat
+import co.th.udrinkidrive.SharedPrefUtil
 import co.th.udrinkidrive.presentationlayer.postmap.PostMapActivity
-import kotlinx.android.synthetic.main.activity_post_register.*
 
 
 class PostOTPFragment : Fragment() {
@@ -38,7 +30,7 @@ class PostOTPFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
-        return inflater.inflate(R.layout.post_otp_fragment, container, false)
+        return inflater.inflate(R.layout.fragment_post_otp, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -73,7 +65,7 @@ class PostOTPFragment : Fragment() {
                      startActivity(intent)
                     activity!!.overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out)
                     activity!!.finish()
-
+                    SharedPrefUtil(activity!!).SaveResultString("Login","true")
                 }
             }
 

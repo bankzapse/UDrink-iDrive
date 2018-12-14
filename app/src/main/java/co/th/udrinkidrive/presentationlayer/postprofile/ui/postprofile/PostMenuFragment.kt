@@ -7,12 +7,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.FrameLayout
-import android.widget.LinearLayout
 import androidx.cardview.widget.CardView
+import co.th.udrinkidrive.LoadingActivity
 import co.th.udrinkidrive.R
+import co.th.udrinkidrive.Utils
 import com.thekhaeng.pushdownanim.PushDownAnim
-import kotlinx.android.synthetic.main.post_menu_fragment.*
+import kotlinx.android.synthetic.main.fragment_post_menu.*
 
 class PostMenuFragment : Fragment()  ,  View.OnClickListener{
 
@@ -24,7 +24,7 @@ class PostMenuFragment : Fragment()  ,  View.OnClickListener{
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.post_menu_fragment, container, false)
+        return inflater.inflate(R.layout.fragment_post_menu, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -34,28 +34,24 @@ class PostMenuFragment : Fragment()  ,  View.OnClickListener{
 //        PushDownClick(ln_reward)
 //        PushDownClick(ln_payment)
 
+        ViewAndEvent()//Action Click
+    }
+
+    fun ViewAndEvent(){
+        bt_logout.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
 
         when (v!!.id) {
-//            R.id.bt_signin -> {
-//
-//            }
-//            R.id.bt_register -> {
-//
-//            }
+            R.id.bt_logout -> {
+                val intent = Intent(context,LoadingActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                Utils(context!!).PopupDefault(R.drawable.img_warning,resources.getString(R.string.pop_logout_topic),resources.getString(R.string.pop_logout_sub_topic),intent,"INTENT",activity!!)
+
+            }
         }
 
-    }
-
-    fun PushDownClick(ln: CardView) {
-        ln.isEnabled = true
-        PushDownAnim.setPushDownAnimTo( ln )
-                .setScale(PushDownAnim.MODE_SCALE, PushDownAnim.DEFAULT_PUSH_SCALE )
-                .setDurationPush( 35 )
-                .setDurationRelease( 15 )
-                .setOnClickListener(this@PostMenuFragment)
     }
 
 }

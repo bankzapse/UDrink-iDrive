@@ -33,7 +33,7 @@
                     android:textColor="@color/white"
                     android:paddingLeft="15dp"
                     android:layout_marginTop="5dp"
-                    android:textSize="24dp"
+                    android:textSize="@dimen/text_normal_24"
                     android:gravity="center"
                     android:ems="3"/>
 

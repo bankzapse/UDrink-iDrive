@@ -62,6 +62,7 @@
     <string name="info_credit_credit">บัตรเครดิต</string>
     <string name="info_credit_submit">เพิ่มบัตร</string>
 
+    <string name="location_add">เพิ่ม</string>
     <string name="location_from">รับ</string>
     <string name="location_to">ส่ง</string>
     <string name="location_current">สถานที่ปัจจุบัน</string>
@@ -82,5 +83,20 @@
     <string name="table_information_super_car">ซุปเปอร์คาร์</string>
     <string name="table_information_note">หมายเหตุ</string>
     <string name="table_information_advance">เพิ่มเติม</string>
+
+    <string name="pop_logout_topic">ออกจากระบบ</string>
+    <string name="pop_logout_sub_topic">คุณต้องการออกจากระบบ?</string>
+
+    <string name="booking_topic">การจองเสร็จสมบูรณ์</string>
+    <string name="booking_sub_1_topic">ระบบจะแจ้งชื่อพนักงานขับรถของท่าน</string>
+    <string name="booking_sub_2_topic">ก่อนเวลาที่กำหนด 45 นาที</string>
+    <string name="booking_active">กำลังดำเนินการ</string>
+    <string name="booking_estimate">ประมาณระยะทาง</string>
+    <string name="booking_km">กม.</string>
+    <string name="booking_add_book">เพิ่มการจอง</string>
+    <string name="booking_cancel">ยกเลิก</string>
+
+    <string name="booking_cancel_topic">ยืนยันการยกเลิก</string>
+    <string name="booking_cancel_sub_topic">ต้องการยกเลิกการจองบริการ?</string>
 
 </resources>

@@ -29,21 +29,22 @@
                     android:layout_margin="1dp">
 
                     <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="@dimen/image_info_table"
+                        android:layout_height="@dimen/image_info_table"
                         android:layout_gravity="center_vertical|right"
                         android:padding="2dp"
                         android:src="@drawable/info_img_clock"/>
 
                     <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
                         android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:text="23.30 PM"
                         android:textColor="#000000"
                         android:paddingTop="15dp"
                         android:paddingBottom="15dp"
                         android:gravity="center"
-                        android:textSize="@dimen/text_normal"/>
+                        android:textSize="@dimen/text_info_table"
+                        android:ems="3"/>
 
                 </LinearLayout>
 
@@ -57,21 +58,22 @@
                     android:layout_margin="1dp">
 
                     <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="@dimen/image_info_table"
+                        android:layout_height="@dimen/image_info_table"
                         android:layout_gravity="center_vertical|right"
                         android:padding="2dp"
                         android:src="@drawable/info_img_promotion"/>
 
                     <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
                         android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:text="@string/table_information_promotion"
                         android:textColor="#000000"
                         android:paddingTop="15dp"
                         android:paddingBottom="15dp"
                         android:gravity="center"
-                        android:textSize="@dimen/text_normal"/>
+                        android:textSize="@dimen/text_info_table"
+                        android:ems="3"/>
 
                 </LinearLayout>
 
@@ -89,21 +91,22 @@
                         android:layout_margin="1dp">
 
                         <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
+                            android:layout_width="@dimen/image_info_table"
+                            android:layout_height="@dimen/image_info_table"
                             android:layout_gravity="center_vertical|right"
                             android:padding="2dp"
                             android:src="@drawable/info_img_contact"/>
 
                         <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
                             android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:text="@string/table_information_contact"
                             android:textColor="#000000"
                             android:paddingTop="15dp"
                             android:paddingBottom="15dp"
                             android:gravity="center"
-                            android:textSize="@dimen/text_normal"/>
+                            android:textSize="@dimen/text_info_table"
+                            android:ems="3"/>
 
                     </LinearLayout>
 
@@ -116,21 +119,21 @@
                         android:layout_margin="1dp">
 
                         <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
+                            android:layout_width="@dimen/image_info_table"
+                            android:layout_height="@dimen/image_info_table"
                             android:layout_gravity="center_vertical|right"
                             android:padding="2dp"
                             android:src="@drawable/info_img_advace"/>
 
                         <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
                             android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:text="@string/table_information_advance"
                             android:textColor="#000000"
                             android:paddingTop="15dp"
                             android:paddingBottom="15dp"
                             android:gravity="center"
-                            android:textSize="@dimen/text_normal"/>
+                            android:textSize="@dimen/text_info_table"/>
 
                     </LinearLayout>
 
@@ -156,21 +159,22 @@
                     android:clickable="true">
 
                     <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="@dimen/image_info_table"
+                        android:layout_height="@dimen/image_info_table"
                         android:layout_gravity="center_vertical|right"
                         android:padding="2dp"
                         android:src="@drawable/info_img_any"/>
 
                     <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
                         android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:text="@string/table_information_any"
                         android:textColor="#000000"
                         android:paddingTop="15dp"
                         android:paddingBottom="15dp"
                         android:gravity="center"
-                        android:textSize="@dimen/text_normal"/>
+                        android:textSize="@dimen/text_info_table"
+                        android:ems="3"/>
 
                 </LinearLayout>
 
@@ -183,21 +187,22 @@
                     android:layout_margin="1dp">
 
                     <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="@dimen/image_info_table"
+                        android:layout_height="@dimen/image_info_table"
                         android:layout_gravity="center_vertical|right"
                         android:padding="2dp"
                         android:src="@drawable/info_img_supercar"/>
 
                     <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
                         android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:text="@string/table_information_super_car"
                         android:textColor="#000000"
                         android:paddingTop="15dp"
                         android:paddingBottom="15dp"
                         android:gravity="center"
-                        android:textSize="@dimen/text_normal"/>
+                        android:textSize="@dimen/text_info_table"
+                        android:ems="3"/>
 
                 </LinearLayout>
 
@@ -210,21 +215,22 @@
                     android:layout_margin="1dp">
 
                     <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="@dimen/image_info_table"
+                        android:layout_height="@dimen/image_info_table"
                         android:layout_gravity="center_vertical|left"
                         android:padding="2dp"
                         android:src="@drawable/info_img_note"/>
 
                     <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
                         android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:text="@string/table_information_note"
                         android:textColor="#000000"
                         android:paddingTop="15dp"
                         android:paddingBottom="15dp"
                         android:gravity="center"
-                        android:textSize="@dimen/text_normal"/>
+                        android:textSize="@dimen/text_info_table"
+                        android:ems="3"/>
 
                 </LinearLayout>
 
@@ -245,8 +251,8 @@
                     android:orientation="horizontal"
                     android:background="@color/blue"
                     android:layout_margin="1dp"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="40dp"
+                    android:paddingLeft="35dp"
+                    android:paddingRight="35dp"
                     android:paddingTop="10dp"
                     android:paddingBottom="10dp">
 
@@ -257,7 +263,7 @@
                         android:textColor="@color/white"
                         android:gravity="center"
                         android:rotation="90"
-                        android:textSize="@dimen/text_normal"/>
+                        android:textSize="@dimen/text_info_table"/>
 
                     <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
                         android:layout_height="wrap_content"
@@ -265,7 +271,7 @@
                         android:text="@string/table_information_advance"
                         android:textColor="@color/white"
                         android:gravity="center"
-                        android:textSize="@dimen/text_normal"/>
+                        android:textSize="@dimen/text_info_table"/>
 
                 </LinearLayout>
 

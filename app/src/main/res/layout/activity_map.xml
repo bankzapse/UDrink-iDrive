@@ -77,10 +77,17 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
+                    <!--<View-->
+                        <!--android:layout_height="0.5dp"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:background="@color/color_login_username_pass_hint"-->
+                        <!--android:layout_gravity="bottom"/>-->
+
                     <LinearLayout
                         android:id="@+id/lv_current"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
                         android:paddingBottom="2dp"
                         android:background="@color/bg_main">
 
@@ -114,7 +121,7 @@
                                 <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
                                     android:layout_height="wrap_content"
                                     android:layout_width="wrap_content"
-                                    android:text="TO"
+                                    android:text="@string/location_to"
                                     android:textColor="@color/white"
                                     android:paddingTop="5dp"
                                     android:paddingLeft="15dp"
@@ -155,7 +162,7 @@
                                     android:id="@+id/tv_add_row"
                                     android:layout_height="wrap_content"
                                     android:layout_width="wrap_content"
-                                    android:text="ADD"
+                                    android:text="@string/location_add"
                                     android:textSize="@dimen/text_normal"
                                     android:textColor="@color/white"
                                     android:padding="15dp"
@@ -211,6 +218,11 @@
                 </LinearLayout>
 
             </ScrollView>
+
+            <include
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/custom_confirm_booking"/>
 
             <include
                 android:layout_width="fill_parent"
@@ -298,18 +310,25 @@
                 </LinearLayout>
 
                 <co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
-                    android:id="@+id/bt_confirm"
+                    android:id="@+id/bt_confirm_booking"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
                     android:background="@drawable/border_button"
                     android:gravity="center_horizontal"
                     android:padding="6dp"
-                    android:text="CONFIRM"
+                    android:text="@string/login_confirm"
                     android:textColor="#fff"
                     android:textSize="@dimen/button_normal" />
 
             </LinearLayout>
+
+            <include
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/custom_contact_driver"
+                android:layout_margin="10dp"
+                android:layout_gravity="bottom"/>
 
             <com.takusemba.multisnaprecyclerview.MultiSnapRecyclerView
                 android:id="@+id/muti_snap_favorite_location"

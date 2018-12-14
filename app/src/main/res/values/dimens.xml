@@ -7,4 +7,6 @@
     <dimen name="button_normal">28sp</dimen>
     <dimen name="edittext_normal">24sp</dimen>
     <dimen name="height_menu">130sp</dimen>
+    <dimen name="text_info_table">20sp</dimen>
+    <dimen name="image_info_table">30sp</dimen>
 </resources>

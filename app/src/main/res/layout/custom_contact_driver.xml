@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ln_contact_driver"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:visibility="gone">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:elevation="1dp"
+        android:padding="10dp"
+        android:background="@drawable/border_button_default">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/pic_profile"
+            app:civ_border_color="#EEEEEE"
+            app:civ_border_width="1dp"
+            app:civ_shadow="true"
+            app:civ_shadow_color="#646464"
+            app:civ_shadow_radius="8" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+
+            <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="สมชาย สุริยา"
+                android:textColor="@color/bg_main"
+                android:textSize="@dimen/text_normal_24" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ถึงที่หมายใน"
+                    android:textColor="@color/gray_more"
+                    android:textSize="@dimen/text_normal_24" />
+
+                <co.th.udrinkidrive.MyFontsStyle.MyTextViewFontsBold
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="35"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/text_menu_profile"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginLeft="4dp"/>
+
+                <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="นาที"
+                    android:textColor="@color/gray_more"
+                    android:textSize="@dimen/text_normal_24" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:padding="6dp"
+            android:src="@drawable/info_img_calling"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
+            android:id="@+id/bt_cancel_driver"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/login_cancel"
+            android:textColor="#fff"
+            android:textSize="@dimen/button_normal"
+            android:layout_weight="1"
+            android:layout_marginRight="2dp"
+            android:background="@drawable/border_button_default_press"/>
+
+        <co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
+            android:id="@+id/bt_add_booking_driver"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/booking_add_book"
+            android:textColor="#fff"
+            android:textSize="@dimen/button_normal"
+            android:layout_weight="1"
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/border_button_booking"/>
+
+    </LinearLayout>
+
+</LinearLayout>
