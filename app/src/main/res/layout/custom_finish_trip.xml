@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ln_end_trip"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible"
+    android:background="@color/bg_main"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/finish_your_trip"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_finish_trip_normal"
+                android:gravity="left"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="500"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_finish_trip"
+                    android:gravity="left"/>
+
+                <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/finish_thb"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_finish_trip"
+                    android:gravity="left"
+                    android:layout_marginLeft="4dp"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/finish_pay_by"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_menu_profile"
+                        android:gravity="left"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:padding="2dp"
+                            android:src="@drawable/pay_mastercard"/>
+
+                        <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/finish_credit_card"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_menu_profile"
+                            android:gravity="left"
+                            android:layout_marginLeft="4dp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/border_radius_finish_trip">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/pay_mastercard"/>
+
+                    <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/finish_add_trip"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_normal"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/gray_more"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/finish_trip_distance"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_menu_profile"
+                        android:gravity="left"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="12.5"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_finish_trip"
+                            android:gravity="left"/>
+
+                        <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/booking_km"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_menu_profile"
+                            android:gravity="left"
+                            android:layout_marginLeft="4dp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="80dp"
+                    android:background="@color/gray_more"
+                    android:layout_gravity="center"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp">
+
+                    <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/finish_time"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_menu_profile"
+                        android:gravity="left"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="35"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_finish_trip"
+                            android:gravity="left"/>
+
+                        <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/finish_min"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_menu_profile"
+                            android:gravity="left"
+                            android:layout_marginLeft="4dp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:background="@color/bg_main"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:background="@drawable/border_button_default"
+                android:padding="15dp">
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal">
+
+                    <com.mikhaellopez.circularimageview.CircularImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/pic_profile"
+                        app:civ_border_color="#EEEEEE"
+                        app:civ_border_width="1dp"
+                        app:civ_shadow="true"
+                        app:civ_shadow_color="#646464"
+                        app:civ_shadow_radius="8" />
+
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical">
+
+                        <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:text="สมชาย สุริยา"
+                            android:textColor="@color/bg_main"
+                            android:textSize="@dimen/text_normal_24"
+                            android:layout_weight="1"/>
+
+                        <RatingBar
+                            android:id="@+id/rating"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="?android:attr/ratingBarStyleIndicator"
+                            android:numStars="5"
+                            android:stepSize="0.2"
+                            android:isIndicator="true"
+                            android:layout_margin="6dp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
+                    android:id="@+id/bt_finish_trip"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:text="@string/finish_done"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/button_normal"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/selector_button_add_booking"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

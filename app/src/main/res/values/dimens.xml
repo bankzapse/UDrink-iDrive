@@ -9,4 +9,6 @@
     <dimen name="height_menu">130sp</dimen>
     <dimen name="text_info_table">20sp</dimen>
     <dimen name="image_info_table">30sp</dimen>
+    <dimen name="text_finish_trip_normal">40sp</dimen>
+    <dimen name="text_finish_trip">60sp</dimen>
 </resources>

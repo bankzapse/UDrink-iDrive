@@ -229,6 +229,18 @@
                 android:layout_height="wrap_content"
                 layout="@layout/custom_search_location"/>
 
+            <include
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/custom_contact_driver"
+                android:layout_margin="10dp"
+                android:layout_gravity="bottom"/>
+
+            <include
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                layout="@layout/custom_finish_trip"/>
+
             <LinearLayout
                 android:id="@+id/lv_book"
                 android:orientation="vertical"
@@ -323,12 +335,6 @@
 
             </LinearLayout>
 
-            <include
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                layout="@layout/custom_contact_driver"
-                android:layout_margin="10dp"
-                android:layout_gravity="bottom"/>
 
             <com.takusemba.multisnaprecyclerview.MultiSnapRecyclerView
                 android:id="@+id/muti_snap_favorite_location"

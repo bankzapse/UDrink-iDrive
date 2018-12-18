@@ -99,4 +99,17 @@
     <string name="booking_cancel_topic">ยืนยันการยกเลิก</string>
     <string name="booking_cancel_sub_topic">ต้องการยกเลิกการจองบริการ?</string>
 
+    <string name="table_add_more_limit">เพิ่มสูงสุดไม่เกิน 5 ที่</string>
+
+    <string name="finish_your_trip">ค่าบริการ</string>
+    <string name="finish_thb">บาท</string>
+    <string name="finish_pay_by">ชำระโดย</string>
+    <string name="finish_credit_card">บัตรเครดิต</string>
+    <string name="finish_cash">เงินสด</string>
+    <string name="finish_add_trip">ทริปพนักงาน</string>
+    <string name="finish_trip_distance">ระยะทาง</string>
+    <string name="finish_time">เวลา</string>
+    <string name="finish_min">นาที</string>
+    <string name="finish_done">เสร็จสิ้น</string>
+
 </resources>

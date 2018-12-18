@@ -29,6 +29,7 @@ class MyTextViewFonts : TextView {
         //        this.setTextSize(25);
 
         val tf = Typeface.createFromAsset(context.assets, "fonts/Kittithada.ttf")
+        this.includeFontPadding = false
         typeface = tf
     }
 

@@ -4,7 +4,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:visibility="gone">
+    android:visibility="gone"
+    android:clickable="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -237,8 +238,7 @@
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp">
+                    android:layout_height="wrap_content">
 
                     <co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
                         android:id="@+id/bt_cancel_booking"
@@ -249,7 +249,8 @@
                         android:textSize="@dimen/button_normal"
                         android:layout_weight="1"
                         android:layout_marginRight="2dp"
-                        android:background="@drawable/border_button_default_press"/>
+                        android:background="@drawable/border_button_default_press"
+                        android:layout_marginBottom="10dp"/>
 
                     <co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
                         android:id="@+id/bt_add_booking"
@@ -260,7 +261,8 @@
                         android:textSize="@dimen/button_normal"
                         android:layout_weight="1"
                         android:layout_marginLeft="2dp"
-                        android:background="@drawable/border_button_booking"/>
+                        android:background="@drawable/selector_button_add_booking"
+                        android:layout_marginBottom="10dp"/>
 
                 </LinearLayout>
 

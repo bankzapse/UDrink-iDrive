@@ -43,6 +43,7 @@ import kotlinx.android.synthetic.main.custom_confirm_booking.*
 import kotlinx.android.synthetic.main.custom_contact.*
 import kotlinx.android.synthetic.main.custom_contact_driver.*
 import kotlinx.android.synthetic.main.custom_credit_card.*
+import kotlinx.android.synthetic.main.custom_finish_trip.*
 import kotlinx.android.synthetic.main.custom_info_any.*
 import kotlinx.android.synthetic.main.custom_promotion.*
 import kotlinx.android.synthetic.main.custom_search_location.*
@@ -146,6 +147,8 @@ class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  
         bt_confirm_booking.setOnClickListener(this)
         bt_add_booking.setOnClickListener(this)
         bt_cancel_driver.setOnClickListener(this)
+        bt_add_booking_driver.setOnClickListener(this)
+        bt_finish_trip.setOnClickListener(this)
     }
 
     fun setMutiSnapFavoriteLocation(){
@@ -197,8 +200,7 @@ class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  
     }
 
     fun AddMarker(googleMap: GoogleMap, drawable: Drawable, location: LatLng) {
-        val pinnedMarker = googleMap.addMarker(MarkerOptions()
-                .position(location))
+        val pinnedMarker = googleMap.addMarker(MarkerOptions().position(location))
         val height = 80
         val width = 80
         val bitmapdraw = drawable as BitmapDrawable
@@ -274,7 +276,7 @@ class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  
             R.id.bt_confirm_booking -> {
                 action_infomation = false
                 CaseShowHideStepInfoBookinkAndConfirm("HIDE")
-                Utils(this).AnimationLinearLayoutTop(R.anim.slide_in_right,ln_booking,"VISIBLE")
+                Utils(this).AnimationLinearLayoutTop(R.anim.slide_down_scroll,ln_booking,"VISIBLE")
             }
             R.id.bt_add_booking -> {
                 ConfirmOrCancleBooking("ADD")
@@ -283,8 +285,17 @@ class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  
                 Utils(this@PostMapActivity).PopupDefault(R.drawable.img_warning,resources.getString(R.string.booking_cancel_topic),resources.getString(R.string.booking_cancel_sub_topic),intent,"BOOK",this@PostMapActivity)
             }
             R.id.bt_cancel_driver -> {
-                Utils(this).AnimationLinearLayoutTop(R.anim.slide_out_left,ln_contact_driver,"GONE")
-                Utils(this).AnimationLinearLayoutTop(R.anim.slide_in_right, ln_booking, "VISIBLE")
+                Utils(this).AnimationLinearLayoutTop(R.anim.slide_down,ln_contact_driver,"GONE")
+                Utils(this).AnimationLinearLayoutTop(R.anim.slide_down_scroll, ln_booking, "VISIBLE")
+            }
+            //Path Driver trip
+            R.id.bt_add_booking_driver -> {
+                Utils(this).AnimationLinearLayoutTop(R.anim.slide_down,ln_contact_driver,"GONE")
+                Utils(this).AnimationLinearLayoutTop(R.anim.slide_down_scroll, ln_end_trip, "VISIBLE")
+            }
+            R.id.bt_finish_trip -> {
+                Utils(this).AnimationLinearLayoutTop(R.anim.slide_out_left,ln_end_trip,"GONE")
+                Utils(this).AnimationLinearLayoutTop(R.anim.slide_down_scroll,ln_search_location,"VISIBLE")
             }
         }
     }
@@ -304,12 +315,12 @@ class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  
     fun ConfirmOrCancleBooking(s: String){
         if(s == "ADD"){
             action_infomation = false
-            Utils(this).AnimationLinearLayoutTop(R.anim.slide_in_right, ln_contact_driver, "VISIBLE")
+            Utils(this).AnimationLinearLayoutTop(R.anim.slide_up, ln_contact_driver, "VISIBLE")
         }else if(s == "CANCEL"){
             action_infomation = true
             CaseShowHideStepInfoBookinkAndConfirm("SHOW")
         }
-        Utils(this).AnimationLinearLayoutTop(R.anim.slide_out_left,ln_booking,"GONE")
+        Utils(this).AnimationLinearLayoutTop(R.anim.slide_up_scroll,ln_booking,"GONE")
 
     }
 
@@ -351,24 +362,29 @@ class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  
         val tv_detail_local = row.findViewById<TextView>(R.id.tv_detail_local)
         val image_remove = row.findViewById<ImageView>(R.id.image_remove)
         val tableCurrent = row.findViewById<TableRow>(R.id.tableCurrent)
-        if(tableLayoutCurrent.childCount == 0){
-            tv_status_row.text = resources.getString(R.string.location_from)
-            tv_status_local.text = "Current Location"
-            tv_detail_local.text = "อาคาร Major Tower ทองหล่อ"
-            image_remove.visibility = View.GONE
+        if(tableLayoutCurrent.childCount > 5){
+            Utils(this@PostMapActivity).ToastError(getString(R.string.table_add_more_limit))
         }else{
-            tv_status_row.text = resources.getString(R.string.location_to)+" "+tableLayoutCurrent.childCount.toString()
-            tv_status_local.text = "จุดแวะที่ "+tableLayoutCurrent.childCount.toString()
-            tv_detail_local.text = "225/9 ซอยทองหล่อ 10 Sukhumvit Rd, Khlong Tan Nuea, Watthana, Bangkok 10110"
-            row.startAnimation(AnimationUtils.loadAnimation(this, android.R.anim.slide_in_left))
-        }
-        tableLayoutCurrent.addView(row, tableLayoutCurrent.childCount)
+            if(tableLayoutCurrent.childCount == 0){
+                tv_status_row.text = resources.getString(R.string.location_from)
+                tv_status_local.text = "Current Location"
+                tv_detail_local.text = "อาคาร Major Tower ทองหล่อ"
+                image_remove.visibility = View.GONE
+            }else{
+                tv_status_row.text = resources.getString(R.string.location_to)+" "+tableLayoutCurrent.childCount.toString()
+                tv_status_local.text = "จุดแวะที่ "+tableLayoutCurrent.childCount.toString()
+                tv_detail_local.text = "225/9 ซอยทองหล่อ 10 Sukhumvit Rd, Khlong Tan Nuea, Watthana, Bangkok 10110"
+                row.startAnimation(AnimationUtils.loadAnimation(this, android.R.anim.slide_in_left))
+            }
+            tableLayoutCurrent.addView(row, tableLayoutCurrent.childCount)
 
-        tableCurrent.setOnClickListener(this)
-        image_remove.setOnClickListener {
-            Log.d("Tag","click : ${tableLayoutCurrent.childCount}")
-            tableLayoutCurrent.removeViewAt(tableLayoutCurrent.childCount-1)
+            tableCurrent.setOnClickListener(this)
+            image_remove.setOnClickListener {
+                Log.d("Tag","click : ${tableLayoutCurrent.childCount}")
+                tableLayoutCurrent.removeViewAt(tableLayoutCurrent.childCount-1)
+            }
         }
+
 
     }
 

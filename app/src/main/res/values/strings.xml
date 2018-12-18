@@ -99,4 +99,17 @@
     <string name="booking_cancel_topic">Confirm Cancellation</string>
     <string name="booking_cancel_sub_topic">Are you sure you wish to\ncancel this booking?</string>
 
+    <string name="table_add_more_limit">Limit 5 location</string>
+
+    <string name="finish_your_trip">YOUR TRIP</string>
+    <string name="finish_thb">THB</string>
+    <string name="finish_pay_by">Pay by</string>
+    <string name="finish_credit_card">Credit card</string>
+    <string name="finish_cash">Cash</string>
+    <string name="finish_add_trip">DONE</string>
+    <string name="finish_trip_distance">Trip Distance</string>
+    <string name="finish_time">Time</string>
+    <string name="finish_min">min</string>
+    <string name="finish_done">DONE</string>
+
 </resources>
