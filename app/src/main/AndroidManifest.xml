@@ -67,6 +67,9 @@
         <activity android:name=".presentationlayer.postforgotpassword.PostForgotpwActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity android:name=".presentationlayer.postprofile.PostRewardActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
 
         <receiver android:name=".datalayer.service.InternetAvailability">
             <intent-filter>

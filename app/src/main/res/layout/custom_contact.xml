@@ -85,7 +85,8 @@
                             android:layout_height="wrap_content"
                             android:text="@string/info_contact_friend"
                             android:textSize="@dimen/text_menu_profile"
-                            android:textColor="@color/gray"/>
+                            android:textColor="@color/gray"
+                            android:gravity="center_horizontal"/>
 
                     </LinearLayout>
 

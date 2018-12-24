@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ln_contact_driver"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_main"
+    android:visibility="visible"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+
+    <LinearLayout
+        android:id="@+id/ln_detail_reward"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:elevation="1dp"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:src="@drawable/img_asia_insurance"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+            <co.th.udrinkidrive.MyFontsStyle.MyTextViewFontsBold
+                android:id="@+id/tv_title_reward"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Car insurance 3+"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_normal_24" />
+
+            <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="free car insurance 3+ Month by asia insurance"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_normal" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <co.th.udrinkidrive.MyFontsStyle.MyTextViewFontsBold
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Point :"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/text_normal_24"
+                    android:layout_marginRight="4dp" />
+
+                <!--<ImageView-->
+                    <!--android:layout_width="35dp"-->
+                    <!--android:layout_height="35dp"-->
+                    <!--android:layout_gravity="center_vertical|center_horizontal"-->
+                    <!--android:src="@android:drawable/ic_dialog_map"/>-->
+
+                <co.th.udrinkidrive.MyFontsStyle.MyTextViewFontsBold
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Use 100 km."
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/text_normal_24"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginLeft="4dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+        android:id="@+id/expandable_reward"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:ael_expanded="true"
+        app:ael_duration="500"
+        app:ael_interpolator="fastOutSlowIn"
+        app:ael_orientation="vertical"
+        android:layout_marginBottom="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <co.th.udrinkidrive.MyFontsStyle.MyTextViewFontsBold
+                android:id="@+id/tv_expire"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Expire : 31/10/2018"
+                android:textColor="@color/white"
+                android:layout_alignParentRight="true"
+                android:textSize="@dimen/text_normal_24" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:layout_below="@+id/tv_expire">
+
+                <co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
+                    android:id="@+id/bt_cancel"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="@string/login_cancel"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/button_normal"
+                    android:layout_weight="1"
+                    android:layout_marginRight="2dp"
+                    android:background="@drawable/border_button_reward_cancel"/>
+
+                <co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
+                    android:id="@+id/bt_confirm"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="@string/login_confirm"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/button_normal"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="2dp"
+                    android:background="@drawable/selector_button"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="0.5dp"
+        android:background="@color/gray_more"
+        android:layout_gravity="center"/>
+
+</LinearLayout>

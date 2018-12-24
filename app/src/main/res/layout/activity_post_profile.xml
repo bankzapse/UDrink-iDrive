@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_Top"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/bg_main"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical|left"
+                android:padding="6dp"
+                android:src="@drawable/icon_back"/>
+
+        </FrameLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!--<FrameLayout-->
+        <!--xmlns:tools="http://schemas.android.com/tools"-->
+        <!--android:id="@+id/container"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_below="@+id/toolbar_Top"-->
+        <!--tools:context=".presentationlayer.postprofile.PostProfileActivity"/>-->
+
+    <LinearLayout
+        android:id="@+id/rl_profile"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:background="@color/bg_main"
+        android:elevation="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:orientation="vertical">
+
+                <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Surawut UdrinkiDrive"
+                    android:textColor="@color/white"
+                    android:textSize="28dp" />
+
+                <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Standard"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_normal" />
+
+                <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="เบอร์โทร : ​089-1234567"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_normal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="right">
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/pic_profile"
+                    app:civ_border_color="#EEEEEE"
+                    app:civ_border_width="1dp"
+                    app:civ_shadow="true"
+                    app:civ_shadow_color="#646464"
+                    app:civ_shadow_radius="8" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="4dp">
+
+                    <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                        android:id="@+id/tv_driver_by_hours"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profile_driver_by_hours"
+                        android:textColor="@color/white"
+                        android:layout_margin="10dp"
+                        android:textSize="@dimen/text_menu_profile" />
+
+                    <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                        android:id="@+id/tv_reward"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profile_reward"
+                        android:textColor="@color/white"
+                        android:layout_margin="10dp"
+                        android:textSize="@dimen/text_menu_profile" />
+
+                    <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profile_payment"
+                        android:textColor="@color/white"
+                        android:layout_margin="10dp"
+                        android:textSize="@dimen/text_menu_profile" />
+
+                    <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profile_history"
+                        android:textColor="@color/white"
+                        android:layout_margin="10dp"
+                        android:textSize="@dimen/text_menu_profile" />
+
+                    <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profile_my_place"
+                        android:textColor="@color/white"
+                        android:layout_margin="10dp"
+                        android:textSize="@dimen/text_menu_profile" />
+
+                    <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profile_notification"
+                        android:textColor="@color/white"
+                        android:layout_margin="10dp"
+                        android:textSize="@dimen/text_menu_profile" />
+
+                    <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profile_history"
+                        android:textColor="@color/white"
+                        android:layout_margin="10dp"
+                        android:textSize="@dimen/text_menu_profile" />
+
+                    <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profile_terms_condition"
+                        android:textColor="@color/white"
+                        android:layout_margin="10dp"
+                        android:textSize="@dimen/text_menu_profile" />
+
+                </LinearLayout>
+
+            </ScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_alignParentBottom="true"
+                android:padding="6dp">
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:background="@color/gray"
+                    android:layout_marginBottom="10dp"/>
+
+                <co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
+                    android:id="@+id/bt_logout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/red"
+                    android:gravity="center_horizontal"
+                    android:text="@string/menu_logout"
+                    android:textColor="@color/white"
+                    android:padding="6dp"
+                    android:textSize="@dimen/button_normal"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

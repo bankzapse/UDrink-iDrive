@@ -1,6 +1,7 @@
 <resources>
     <dimen name="fab_margin">16sp</dimen>
     <dimen name="text_normal">20sp</dimen>
+    <dimen name="text_normal_22">22sp</dimen>
     <dimen name="text_normal_24">24sp</dimen>
     <dimen name="text_menu_profile">28sp</dimen>
     <dimen name="text_info_normal">30sp</dimen>

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/ln_end_trip"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:visibility="visible"
+    android:visibility="gone"
     android:background="@color/bg_main"
     android:padding="20dp">
 
@@ -18,7 +17,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:visibility="visible">
 
             <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
                 android:layout_width="match_parent"
@@ -58,6 +58,7 @@
                 android:background="@color/white"/>
 
             <LinearLayout
+                android:id="@+id/ln_pay_by_show"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -131,6 +132,7 @@
                 android:background="@color/gray_more"/>
 
             <LinearLayout
+                android:id="@+id/ln_time_show"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -232,7 +234,6 @@
             android:layout_width="match_parent"
             android:orientation="vertical"
             android:background="@color/bg_main"
-            android:paddingTop="10dp"
             android:paddingBottom="10dp">
 
             <LinearLayout
@@ -242,47 +243,10 @@
                 android:background="@drawable/border_button_default"
                 android:padding="15dp">
 
-                <LinearLayout
+                <include
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_width="match_parent"
-                    android:orientation="horizontal">
-
-                    <com.mikhaellopez.circularimageview.CircularImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/pic_profile"
-                        app:civ_border_color="#EEEEEE"
-                        app:civ_border_width="1dp"
-                        app:civ_shadow="true"
-                        app:civ_shadow_color="#646464"
-                        app:civ_shadow_radius="8" />
-
-                    <LinearLayout
-                        android:layout_height="wrap_content"
-                        android:layout_width="match_parent"
-                        android:orientation="vertical">
-
-                        <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
-                            android:layout_height="wrap_content"
-                            android:layout_width="match_parent"
-                            android:text="สมชาย สุริยา"
-                            android:textColor="@color/bg_main"
-                            android:textSize="@dimen/text_normal_24"
-                            android:layout_weight="1"/>
-
-                        <RatingBar
-                            android:id="@+id/rating"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            style="?android:attr/ratingBarStyleIndicator"
-                            android:numStars="5"
-                            android:stepSize="0.2"
-                            android:isIndicator="true"
-                            android:layout_margin="6dp"/>
-
-                    </LinearLayout>
-
-                </LinearLayout>
+                    layout="@layout/custom_expand_rating_driver"/>
 
                 <co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
                     android:id="@+id/bt_finish_trip"
@@ -291,7 +255,6 @@
                     android:text="@string/finish_done"
                     android:textColor="#fff"
                     android:textSize="@dimen/button_normal"
-                    android:layout_weight="1"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/selector_button_add_booking"/>
 

@@ -31,6 +31,7 @@ import co.th.udrinkidrive.Utils
 import co.th.udrinkidrive.datalayer.service.InternetAvailability
 import co.th.udrinkidrive.presentationlayer.detectonmap.TouchableWrapper
 import co.th.udrinkidrive.presentationlayer.postprofile.PostProfileActivity
+import com.github.aakira.expandablelayout.ExpandableLayoutListenerAdapter
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.SupportMapFragment
@@ -43,6 +44,7 @@ import kotlinx.android.synthetic.main.custom_confirm_booking.*
 import kotlinx.android.synthetic.main.custom_contact.*
 import kotlinx.android.synthetic.main.custom_contact_driver.*
 import kotlinx.android.synthetic.main.custom_credit_card.*
+import kotlinx.android.synthetic.main.custom_expand_rating_driver.*
 import kotlinx.android.synthetic.main.custom_finish_trip.*
 import kotlinx.android.synthetic.main.custom_info_any.*
 import kotlinx.android.synthetic.main.custom_promotion.*
@@ -128,6 +130,25 @@ class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  
                 }
         )
 
+        expandableLayout.toggle()
+        expandableLayout.setListener(object : ExpandableLayoutListenerAdapter() {
+
+            override fun onPreOpen() {
+                Log.d("Tag","onPreOpen")
+                ln_expand_top.orientation = LinearLayout.VERTICAL
+                ln_pay_by_show.visibility = View.GONE
+                ln_time_show.visibility = View.GONE
+            }
+
+            override fun onClosed() {
+                Log.d("Tag","onPreClose")
+                ln_expand_top.orientation = LinearLayout.HORIZONTAL
+                ln_pay_by_show.visibility = View.VISIBLE
+                ln_time_show.visibility = View.VISIBLE
+            }
+
+        })
+
     }
 
     fun ViewAndEvent(){
@@ -148,6 +169,7 @@ class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  
         bt_add_booking.setOnClickListener(this)
         bt_cancel_driver.setOnClickListener(this)
         bt_add_booking_driver.setOnClickListener(this)
+        ln_expand_top.setOnClickListener(this)
         bt_finish_trip.setOnClickListener(this)
     }
 
@@ -292,6 +314,9 @@ class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  
             R.id.bt_add_booking_driver -> {
                 Utils(this).AnimationLinearLayoutTop(R.anim.slide_down,ln_contact_driver,"GONE")
                 Utils(this).AnimationLinearLayoutTop(R.anim.slide_down_scroll, ln_end_trip, "VISIBLE")
+            }
+            R.id.ln_expand_top -> {
+                expandableLayout.toggle()
             }
             R.id.bt_finish_trip -> {
                 Utils(this).AnimationLinearLayoutTop(R.anim.slide_out_left,ln_end_trip,"GONE")

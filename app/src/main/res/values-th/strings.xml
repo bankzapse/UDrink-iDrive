@@ -106,10 +106,33 @@
     <string name="finish_pay_by">ชำระโดย</string>
     <string name="finish_credit_card">บัตรเครดิต</string>
     <string name="finish_cash">เงินสด</string>
-    <string name="finish_add_trip">ทริปพนักงาน</string>
+    <string name="finish_add_trip">ทิปพนักงาน</string>
     <string name="finish_trip_distance">ระยะทาง</string>
     <string name="finish_time">เวลา</string>
     <string name="finish_min">นาที</string>
     <string name="finish_done">เสร็จสิ้น</string>
+
+    <string name="rating_complaint">คุณไม่พอใจเรื่องอะไรบ้าง</string>
+    <string name="rating_manners">มารยาท</string>
+    <string name="rating_direction">ความชำนาญ\nเส้นทาง</string>
+    <string name="rating_driving">ทักษะการขับขี่</string>
+    <string name="rating_Gear">ความชำนาญ\nปุ่มเกียร์</string>
+    <string name="rating_punctuality">ตรงต่อเวลา</string>
+    <string name="rating_uniform">การแต่งกาย</string>
+    <string name="rating_other">อื่นๆ</string>
+
+    <string name="profile_driver_by_hours">บริการรายชั่วโมง</string>
+    <string name="profile_reward">รางวัล</string>
+    <string name="profile_payment">การชำระเงิน</string>
+    <string name="profile_history">รายการย้อนหลัง</string>
+    <string name="profile_my_place">การเดินทาง</string>
+    <string name="profile_notification">การแจ้งเตือน</string>
+    <string name="profile_help_centre">ศูนย์ ช่วยเหลือ</string>
+    <string name="profile_terms_condition">ข้อตกลงและเงื่อนไข</string>
+
+    <string name="reward_title">รางวัล</string>
+    <string name="reward_status">สมาชิกมาตรฐาน</string>
+    <string name="reward_change_reward">แลกรางวัล</string>
+    <string name="reward_history_reward">รางวัลที่ได้รับ</string>
 
 </resources>

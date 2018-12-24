@@ -1,49 +1,47 @@
 package co.th.udrinkidrive.presentationlayer.postprofile
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import co.th.udrinkidrive.LoadingActivity
 import co.th.udrinkidrive.R
-import co.th.udrinkidrive.presentationlayer.postprofile.ui.postprofile.PostEditFragment
-import co.th.udrinkidrive.presentationlayer.postprofile.ui.postprofile.PostMenuFragment
-import co.th.udrinkidrive.presentationlayer.postprofile.ui.postprofile.PostProfileFragment
-import kotlinx.android.synthetic.main.post_profile_activity.*
+import co.th.udrinkidrive.Utils
+import kotlinx.android.synthetic.main.activity_post_profile.*
 
-class PostProfileActivity : AppCompatActivity() {
-
-    var check_edit : Boolean = false
+class PostProfileActivity : AppCompatActivity() , View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.post_profile_activity)
+        setContentView(R.layout.activity_post_profile)
 
         image_back.setOnClickListener {
             onBackPressed()
         }
 
-//        image_edit.setOnClickListener {
-//            if(check_edit){
-//                supportFragmentManager.beginTransaction()
-//                        .setCustomAnimations(R.anim.slide_in_right, R.anim.slide_in_left)
-//                        .replace(R.id.container, PostProfileFragment.newInstance())
-//                        .commitNow()
-//                image_edit.setImageResource(android.R.drawable.ic_menu_edit)
-//                check_edit = false
-//            }else{
-//                supportFragmentManager.beginTransaction()
-//                        .setCustomAnimations(R.anim.slide_out_left, R.anim.slide_out_right)
-//                        .replace(R.id.container, PostEditFragment.newInstance())
-//                        .commitNow()
-//                image_edit.setImageResource(android.R.drawable.ic_delete)
-//                check_edit = true
-//            }
-//        }
+        ViewAndEvent()
 
-        if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, PostMenuFragment.newInstance())
-                    .commitNow()
+    }
+
+    fun ViewAndEvent(){
+        bt_logout.setOnClickListener(this)
+        tv_reward.setOnClickListener(this)
+    }
+
+    override fun onClick(v: View?) {
+        when (v!!.id) {
+            //ADD POP UP SLIDE
+            R.id.bt_logout -> {
+                val intent = Intent(this@PostProfileActivity, LoadingActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                Utils(this).PopupDefault(R.drawable.img_warning,resources.getString(R.string.pop_logout_topic),resources.getString(R.string.pop_logout_sub_topic),intent,"INTENT",this)
+            }
+            R.id.tv_reward -> {
+                val intent = Intent(this@PostProfileActivity, PostRewardActivity::class.java)
+                startActivity(intent)
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_left)
+            }
         }
-
     }
 
     override fun onBackPressed() {

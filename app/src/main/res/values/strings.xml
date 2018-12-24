@@ -106,10 +106,33 @@
     <string name="finish_pay_by">Pay by</string>
     <string name="finish_credit_card">Credit card</string>
     <string name="finish_cash">Cash</string>
-    <string name="finish_add_trip">DONE</string>
+    <string name="finish_add_trip">Add Tip</string>
     <string name="finish_trip_distance">Trip Distance</string>
     <string name="finish_time">Time</string>
     <string name="finish_min">min</string>
     <string name="finish_done">DONE</string>
+
+    <string name="rating_complaint">Service complaints</string>
+    <string name="rating_manners">Manners</string>
+    <string name="rating_direction">Direction</string>
+    <string name="rating_driving">Driving\nskill</string>
+    <string name="rating_Gear">Gear&amp;\nButtons\nKnowledge</string>
+    <string name="rating_punctuality">Punctuality</string>
+    <string name="rating_uniform">Uniform</string>
+    <string name="rating_other">Other</string>
+
+    <string name="profile_driver_by_hours">Driver by Hours</string>
+    <string name="profile_reward">Reward</string>
+    <string name="profile_payment">Payment</string>
+    <string name="profile_history">History</string>
+    <string name="profile_my_place">My place</string>
+    <string name="profile_notification">Notification</string>
+    <string name="profile_help_centre">Help Centre</string>
+    <string name="profile_terms_condition">Terms and condition</string>
+
+    <string name="reward_title">REWARD</string>
+    <string name="reward_status">Standard</string>
+    <string name="reward_change_reward">REWARD</string>
+    <string name="reward_history_reward">INBOX</string>
 
 </resources>

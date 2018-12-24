@@ -1,48 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.sothree.slidinguppanel.SlidingUpPanelLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:sothree="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/sliding_layout"
-    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
-    android:gravity="bottom"
-    sothree:umanoPanelHeight="68dp"
-    sothree:umanoShadowHeight="4dp">
+    android:layout_width="match_parent"
+    android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/ln_expand_top"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:background="@drawable/border_button_default"
-        android:padding="15dp">
+        android:animateLayoutChanges="true">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/pic_profile"
+            android:layout_gravity="center_horizontal"
+            app:civ_border_color="#EEEEEE"
+            app:civ_border_width="1dp"
+            app:civ_shadow="true"
+            app:civ_shadow_color="#646464"
+            app:civ_shadow_radius="8" />
 
         <LinearLayout
             android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:orientation="horizontal"
-            xmlns:app="http://schemas.android.com/tools">
-
-            <com.mikhaellopez.circularimageview.CircularImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/pic_profile"
-                app:civ_border_color="#EEEEEE"
-                app:civ_border_width="1dp"
-                app:civ_shadow="true"
-                app:civ_shadow_color="#646464"
-                app:civ_shadow_radius="8" />
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:padding="15dp">
 
             <LinearLayout
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
 
                 <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
                     android:layout_height="wrap_content"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:text="สมชาย สุริยา"
                     android:textColor="@color/bg_main"
-                    android:textSize="@dimen/text_normal_24"
+                    android:textSize="@dimen/text_menu_profile"
                     android:layout_weight="1"/>
 
                 <RatingBar
@@ -59,27 +60,236 @@
 
         </LinearLayout>
 
-        <co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
-            android:id="@+id/bt_finish_trip"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:text="@string/finish_done"
-            android:textColor="#fff"
-            android:textSize="@dimen/button_normal"
-            android:layout_weight="1"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/selector_button_add_booking"/>
-
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_height="wrap_content"
+    <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+        android:id="@+id/expandableLayout"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@drawable/border_button_default"
-        android:padding="15dp">
+        app:ael_expanded="false"
+        app:ael_duration="500"
+        app:ael_interpolator="fastOutSlowIn"
+        app:ael_orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-    </LinearLayout>
+            <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                android:id="@+id/complaint"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="@string/rating_complaint"
+                android:textColor="@color/bg_main"
+                android:textSize="@dimen/text_normal_24"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"/>
 
-</com.sothree.slidinguppanel.SlidingUpPanelLayout>
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+                android:layout_below="@+id/complaint">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal|center_vertical">
+
+                            <LinearLayout
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:orientation="vertical"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:background="@drawable/border_radius">
+
+                                <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/rating_manners"
+                                    android:textSize="@dimen/text_normal_22"
+                                    android:textColor="@color/blue"
+                                    android:gravity="center_horizontal"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal|center_vertical">
+
+                            <LinearLayout
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:orientation="vertical"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:background="@drawable/border_radius_default">
+
+                                <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/rating_direction"
+                                    android:textSize="@dimen/text_normal_22"
+                                    android:textColor="@color/gray"
+                                    android:gravity="center_horizontal"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal|center_vertical">
+
+                            <LinearLayout
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:orientation="vertical"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:background="@drawable/border_radius_default">
+
+                                <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/rating_driving"
+                                    android:textSize="@dimen/text_normal_22"
+                                    android:textColor="@color/gray"
+                                    android:gravity="center_horizontal"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal|center_vertical">
+
+                            <LinearLayout
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:orientation="vertical"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:background="@drawable/border_radius_default">
+
+                                <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/rating_Gear"
+                                    android:textSize="@dimen/text_normal_22"
+                                    android:textColor="@color/gray"
+                                    android:gravity="center_horizontal"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal|center_vertical">
+
+                            <LinearLayout
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:orientation="vertical"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:background="@drawable/border_radius_default">
+
+                                <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/rating_punctuality"
+                                    android:textSize="@dimen/text_normal_22"
+                                    android:textColor="@color/gray"
+                                    android:gravity="center_horizontal"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal|center_vertical">
+
+                            <LinearLayout
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:orientation="vertical"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:background="@drawable/border_radius_default">
+
+                                <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/rating_uniform"
+                                    android:textSize="@dimen/text_normal_22"
+                                    android:textColor="@color/gray"
+                                    android:gravity="center_horizontal"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                //End expand bottom
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+</LinearLayout>
+

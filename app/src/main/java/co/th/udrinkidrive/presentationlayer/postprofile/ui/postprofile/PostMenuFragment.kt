@@ -16,6 +16,8 @@ import kotlinx.android.synthetic.main.fragment_post_menu.*
 
 class PostMenuFragment : Fragment()  ,  View.OnClickListener{
 
+    var check_edit : Boolean = false
+
     companion object {
         fun newInstance() = PostMenuFragment()
     }
@@ -35,6 +37,31 @@ class PostMenuFragment : Fragment()  ,  View.OnClickListener{
 //        PushDownClick(ln_payment)
 
         ViewAndEvent()//Action Click
+
+//        image_edit.setOnClickListener {
+//            if(check_edit){
+//                supportFragmentManager.beginTransaction()
+//                        .setCustomAnimations(R.anim.slide_in_right, R.anim.slide_in_left)
+//                        .replace(R.id.container, PostProfileFragment.newInstance())
+//                        .commitNow()
+//                image_edit.setImageResource(android.R.drawable.ic_menu_edit)
+//                check_edit = false
+//            }else{
+//                supportFragmentManager.beginTransaction()
+//                        .setCustomAnimations(R.anim.slide_out_left, R.anim.slide_out_right)
+//                        .replace(R.id.container, PostChangeRewardFragment.newInstance())
+//                        .commitNow()
+//                image_edit.setImageResource(android.R.drawable.ic_delete)
+//                check_edit = true
+//            }
+//        }
+//
+//        if (savedInstanceState == null) {
+//            supportFragmentManager.beginTransaction()
+//                    .replace(R.id.container, PostMenuFragment.newInstance())
+//                    .commitNow()
+//        }
+
     }
 
     fun ViewAndEvent(){
