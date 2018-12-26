@@ -26,6 +26,7 @@ class PostProfileActivity : AppCompatActivity() , View.OnClickListener {
     fun ViewAndEvent(){
         bt_logout.setOnClickListener(this)
         tv_reward.setOnClickListener(this)
+        tv_payment.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -38,6 +39,11 @@ class PostProfileActivity : AppCompatActivity() , View.OnClickListener {
             }
             R.id.tv_reward -> {
                 val intent = Intent(this@PostProfileActivity, PostRewardActivity::class.java)
+                startActivity(intent)
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_left)
+            }
+            R.id.tv_payment -> {
+                val intent = Intent(this@PostProfileActivity, PostPaymentActivty::class.java)
                 startActivity(intent)
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_left)
             }

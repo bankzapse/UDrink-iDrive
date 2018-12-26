@@ -50,8 +50,8 @@ class PostSigninActivity : AppCompatActivity() , View.OnClickListener {
         tv_forgot_pass.setOnClickListener(this)
         ln_sign_main.setOnClickListener(this)
 
-        et_email.setText("bank@gmail.com")
-        et_pass.setText("123456")
+//        et_email.setText("bank@gmail.com")
+//        et_pass.setText("123456")
 
         val refreshedToken = FirebaseInstanceId.getInstance().token
         Log.d("Tag","refreshedToken : $refreshedToken")

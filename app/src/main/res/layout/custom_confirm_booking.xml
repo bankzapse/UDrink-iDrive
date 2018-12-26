@@ -250,6 +250,7 @@
                         android:layout_weight="1"
                         android:layout_marginRight="2dp"
                         android:background="@drawable/border_button_default_press"
+                        android:gravity="center_horizontal|center_vertical"
                         android:layout_marginBottom="10dp"/>
 
                     <co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
@@ -262,6 +263,7 @@
                         android:layout_weight="1"
                         android:layout_marginLeft="2dp"
                         android:background="@drawable/selector_button_add_booking"
+                        android:gravity="center_horizontal|center_vertical"
                         android:layout_marginBottom="10dp"/>
 
                 </LinearLayout>

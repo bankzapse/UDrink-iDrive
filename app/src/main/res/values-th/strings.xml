@@ -62,6 +62,19 @@
     <string name="info_credit_credit">บัตรเครดิต</string>
     <string name="info_credit_submit">เพิ่มบัตร</string>
 
+    <string name="info_car_type">ประเภทรถ</string>
+    <string name="info_car_type_automatic">เกียร์ออโต้</string>
+    <string name="info_car_type_manual">เกียร์กระปุก</string>
+    <string name="info_car_type_super_car">ซุปเปอร์คาร์</string>
+
+    <string name="info_note">หมายเหตุถึงพนักงานขับรถ</string>
+    <string name="info_note_hint">ระบุ...</string>
+    <string name="info_note_add">ยืนยัน</string>
+
+    <string name="info_clock">เวลาการจอง</string>
+    <string name="info_clock_now">ตอนนี้</string>
+    <string name="info_clock_set">ตั้งค่า</string>
+
     <string name="location_add">เพิ่ม</string>
     <string name="location_from">รับ</string>
     <string name="location_to">ส่ง</string>
@@ -134,5 +147,15 @@
     <string name="reward_status">สมาชิกมาตรฐาน</string>
     <string name="reward_change_reward">แลกรางวัล</string>
     <string name="reward_history_reward">รางวัลที่ได้รับ</string>
+
+    <string name="payment_condition_title1">เพิ่มช่องทางการชำระเงินตอนนี้</string>
+    <string name="payment_condition_title2">คุณสามารถใช้บริการโดยไม่ต้องจ่ายเงินสด</string>
+    <string name="payment_add_card">เพิ่มบัตร</string>
+
+    <string name="add_credit_card_detail">ข้อมูลบัตรเครดิต</string>
+    <string name="add_credit_card_name">ชื่อเจ้าของบัตร</string>
+    <string name="add_credit_card_number">เลขหน้าบัตร</string>
+    <string name="add_credit_date_year">เดือน/ปี</string>
+    <string name="add_credit_save">บันทึก</string>
 
 </resources>

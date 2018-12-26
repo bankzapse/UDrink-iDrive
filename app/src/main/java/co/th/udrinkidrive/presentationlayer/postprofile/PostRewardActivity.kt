@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import co.th.udrinkidrive.R
 import co.th.udrinkidrive.presentationlayer.postprofile.ui.postprofile.PostChangeRewardFragment
+import com.flyco.tablayout.listener.OnTabSelectListener
 import kotlinx.android.synthetic.main.activity_post_reward.*
 
 class PostRewardActivity : AppCompatActivity() , View.OnClickListener {
@@ -46,6 +47,16 @@ class PostRewardActivity : AppCompatActivity() , View.OnClickListener {
             override fun onPageSelected(position: Int) {
                 tl_2.currentTab = position
             }
+
+        })
+
+        tl_2.setOnTabSelectListener(object : OnTabSelectListener{
+            override fun onTabSelect(position: Int) {
+                mViewPager.currentItem = position
+             }
+
+            override fun onTabReselect(position: Int) {
+             }
 
         })
 

@@ -179,6 +179,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/ln_main_car_type"
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
                     android:orientation="horizontal"
@@ -207,6 +208,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/ln_main_note_to_driver"
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
                     android:orientation="horizontal"

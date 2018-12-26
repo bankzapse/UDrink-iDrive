@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/ln_credit_card"
+    android:id="@+id/ln_promotion"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:visibility="gone">
+    android:visibility="visible">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,30 +17,24 @@
             android:layout_height="80dp"
             android:layout_gravity="center_vertical|center_horizontal"
             android:padding="6dp"
-            android:src="@drawable/info_img_credit_card_active"/>
+            android:src="@drawable/info_img_clock_active"/>
 
         <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="@string/info_credit_topic"
+            android:text="@string/info_clock"
             android:textSize="@dimen/text_info_normal"
             android:textColor="@color/black"
             android:layout_gravity="center_vertical|center_horizontal"/>
 
-        <ListView
-            android:id="@+id/lv_credit_card"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"/>
-
         <co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
-            android:id="@+id/bt_confirm_promotion"
+            android:id="@+id/bt_set_clock"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border_button_booking"
-            android:gravity="center_horizontal"
+            android:gravity="center_horizontal|center_vertical"
             android:padding="6dp"
-            android:text="@string/info_credit_submit"
+            android:text="@string/info_clock_set"
             android:textColor="#fff"
             android:textSize="@dimen/button_normal"
             android:layout_marginLeft="10dp"

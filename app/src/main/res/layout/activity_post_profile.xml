@@ -55,28 +55,29 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="10dp">
 
                 <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Surawut UdrinkiDrive"
                     android:textColor="@color/white"
-                    android:textSize="28dp" />
+                    android:textSize="@dimen/text_menu_profile" />
 
                 <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Standard"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/text_normal" />
+                    android:textSize="@dimen/text_normal_24" />
 
                 <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="เบอร์โทร : ​089-1234567"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/text_normal" />
+                    android:textSize="@dimen/text_normal_24" />
 
             </LinearLayout>
 
@@ -116,15 +117,6 @@
                     android:layout_margin="4dp">
 
                     <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
-                        android:id="@+id/tv_driver_by_hours"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/profile_driver_by_hours"
-                        android:textColor="@color/white"
-                        android:layout_margin="10dp"
-                        android:textSize="@dimen/text_menu_profile" />
-
-                    <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
                         android:id="@+id/tv_reward"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -134,6 +126,7 @@
                         android:textSize="@dimen/text_menu_profile" />
 
                     <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+                        android:id="@+id/tv_payment"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/profile_payment"
@@ -149,37 +142,6 @@
                         android:layout_margin="10dp"
                         android:textSize="@dimen/text_menu_profile" />
 
-                    <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/profile_my_place"
-                        android:textColor="@color/white"
-                        android:layout_margin="10dp"
-                        android:textSize="@dimen/text_menu_profile" />
-
-                    <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/profile_notification"
-                        android:textColor="@color/white"
-                        android:layout_margin="10dp"
-                        android:textSize="@dimen/text_menu_profile" />
-
-                    <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/profile_history"
-                        android:textColor="@color/white"
-                        android:layout_margin="10dp"
-                        android:textSize="@dimen/text_menu_profile" />
-
-                    <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/profile_terms_condition"
-                        android:textColor="@color/white"
-                        android:layout_margin="10dp"
-                        android:textSize="@dimen/text_menu_profile" />
 
                 </LinearLayout>
 

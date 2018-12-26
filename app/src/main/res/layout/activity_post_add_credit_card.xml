@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_Top"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/bg_main"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical|left"
+                android:padding="6dp"
+                android:src="@drawable/icon_back"/>
+
+        </FrameLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp">
+
+        <com.wajahatkarim3.easyflipview.EasyFlipView
+            android:id="@+id/easyFlipView"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            app:flipOnTouch="true"
+            app:flipEnabled="true"
+            app:flipDuration="400"
+            app:flipType="horizontal"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <!-- Back Layout Goes Here -->
+            <include layout="@layout/flash_card_layout_back"/>
+
+            <!-- Front Layout Goes Here -->
+            <include layout="@layout/flash_card_layout_front"/>
+
+        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+        <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_credit_card_detail"
+            android:textColor="@color/bg_main"
+            android:textSize="@dimen/text_normal_24" />
+
+        <TableLayout
+            android:id="@+id/tablelayout"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_marginTop="15dp">
+
+            <TableRow
+                android:background="@drawable/border_table"
+                android:layout_marginTop="5dp">
+                <co.th.udrinkidrive.MyFontsStyle.MyEdittextFonts
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:inputType="textPersonName"
+                    android:backgroundTint="#fff"
+                    android:textCursorDrawable="@null"
+                    android:hint="@string/add_credit_card_name"
+                    android:textColorHint="@color/color_login_username_pass_hint"
+                    android:textColor="@color/bg_main"
+                    android:background="@null"
+                    android:textSize="@dimen/edittext_normal"
+                    android:padding="14dp"/>
+            </TableRow>
+
+            <TableRow
+                android:background="@drawable/border_table"
+                android:layout_marginTop="5dp">
+                <co.th.udrinkidrive.MyFontsStyle.MyEdittextFonts
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:inputType="textPersonName"
+                    android:backgroundTint="#fff"
+                    android:textCursorDrawable="@null"
+                    android:hint="@string/login_password"
+                    android:textColorHint="@color/color_login_username_pass_hint"
+                    android:textColor="@color/bg_main"
+                    android:background="@null"
+                    android:textSize="@dimen/edittext_normal"
+                    android:padding="14dp"/>
+            </TableRow>
+
+            <TableRow
+                android:background="@drawable/border_table"
+                android:layout_marginTop="5dp">
+                <co.th.udrinkidrive.MyFontsStyle.MyEdittextFonts
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:inputType="numberPassword"
+                    android:backgroundTint="#fff"
+                    android:textCursorDrawable="@null"
+                    android:hint="@string/add_credit_date_year"
+                    android:textColorHint="@color/color_login_username_pass_hint"
+                    android:textColor="@color/bg_main"
+                    android:background="@null"
+                    android:textSize="@dimen/edittext_normal"
+                    android:padding="14dp"/>
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
+            android:id="@+id/bt_save_credit_card"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/add_credit_save"
+            android:textColor="@color/white"
+            android:textSize="@dimen/button_normal"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/selector_button_add_booking"
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_marginBottom="10dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

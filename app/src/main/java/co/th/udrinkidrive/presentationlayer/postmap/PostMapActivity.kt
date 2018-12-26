@@ -40,6 +40,7 @@ import com.seatgeek.placesautocomplete.DetailsCallback
 import com.seatgeek.placesautocomplete.OnPlaceSelectedListener
 import com.seatgeek.placesautocomplete.model.Place
 import com.seatgeek.placesautocomplete.model.PlaceDetails
+import kotlinx.android.synthetic.main.custom_car_type.*
 import kotlinx.android.synthetic.main.custom_confirm_booking.*
 import kotlinx.android.synthetic.main.custom_contact.*
 import kotlinx.android.synthetic.main.custom_contact_driver.*
@@ -47,6 +48,7 @@ import kotlinx.android.synthetic.main.custom_credit_card.*
 import kotlinx.android.synthetic.main.custom_expand_rating_driver.*
 import kotlinx.android.synthetic.main.custom_finish_trip.*
 import kotlinx.android.synthetic.main.custom_info_any.*
+import kotlinx.android.synthetic.main.custom_note_to_driver.*
 import kotlinx.android.synthetic.main.custom_promotion.*
 import kotlinx.android.synthetic.main.custom_search_location.*
 import kotlinx.android.synthetic.main.table_view_infomation.*
@@ -157,8 +159,10 @@ class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  
         image_profile.setOnClickListener(this)
         ln_info_any.setOnClickListener(this)
         ln_main_contact.setOnClickListener(this)
+        ln_main_car_type.setOnClickListener(this)
         ln_main_promotion.setOnClickListener(this)
         ln_main_credit_card.setOnClickListener(this)
+        ln_main_note_to_driver.setOnClickListener(this)
         image_back.setOnClickListener(this)
         tv_search_current.setOnClickListener(this)
         image_back_search.setOnClickListener(this)
@@ -242,6 +246,12 @@ class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  
             }
             R.id.ln_main_promotion -> {
                 ActionSlideShowLeftToRight(ln_promotion)
+            }
+            R.id.ln_main_car_type -> {
+                ActionSlideShowLeftToRight(ln_car_type)
+            }
+            R.id.ln_main_note_to_driver -> {
+                ActionSlideShowLeftToRight(ln_note_to_driver)
             }
             R.id.ln_main_credit_card -> {
                 ActionSlideShowLeftToRight(ln_credit_card)

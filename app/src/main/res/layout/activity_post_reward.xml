@@ -48,21 +48,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="10dp">
 
                 <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/reward_title"
                     android:textColor="@color/white"
-                    android:textSize="28dp" />
+                    android:textSize="@dimen/text_menu_profile" />
 
                 <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/reward_status"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/text_normal" />
+                    android:textSize="@dimen/text_normal_24" />
 
             </LinearLayout>
 
@@ -78,15 +79,15 @@
 
                     <com.github.lzyzsd.circleprogress.DonutProgress
                         android:id="@+id/donut_progress"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
                         android:layout_gravity="right"
                         android:rotation="270"
                         custom:donut_progress="30"
                         app:donut_show_text="false"
-                        app:donut_unfinished_stroke_width="2dp"
+                        app:donut_unfinished_stroke_width="4dp"
                         app:donut_unfinished_color="@color/gray_more"
-                        app:donut_finished_stroke_width="4dp"
+                        app:donut_finished_stroke_width="6dp"
                         app:donut_finished_color="@color/blue"
                         />
 

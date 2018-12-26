@@ -98,6 +98,7 @@
             android:textSize="@dimen/button_normal"
             android:layout_weight="1"
             android:layout_marginRight="2dp"
+            android:gravity="center_horizontal|center_vertical"
             android:background="@drawable/border_button_default_press"/>
 
         <co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
@@ -109,6 +110,7 @@
             android:textSize="@dimen/button_normal"
             android:layout_weight="1"
             android:layout_marginLeft="2dp"
+            android:gravity="center_horizontal|center_vertical"
             android:background="@drawable/border_button_booking"/>
 
     </LinearLayout>

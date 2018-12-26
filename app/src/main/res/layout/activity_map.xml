@@ -202,7 +202,17 @@
                         <include
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
+                            layout="@layout/custom_car_type"/>
+
+                        <include
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
                             layout="@layout/custom_credit_card"/>
+
+                        <include
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            layout="@layout/custom_note_to_driver"/>
 
                         <ImageView
                             android:id="@+id/image_back"
@@ -250,6 +260,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_gravity="bottom"
                 android:visibility="gone"
+                android:clickable="true"
                 android:background="@android:color/transparent">
 
                 <LinearLayout
@@ -327,7 +338,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
                     android:background="@drawable/border_button"
-                    android:gravity="center_horizontal"
+                    android:gravity="center_horizontal|center_vertical"
                     android:padding="6dp"
                     android:text="@string/login_confirm"
                     android:textColor="#fff"

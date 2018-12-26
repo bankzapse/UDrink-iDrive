@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/ln_credit_card"
+    android:id="@+id/ln_note_to_driver"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/white"
     android:visibility="gone">
 
@@ -17,30 +17,43 @@
             android:layout_height="80dp"
             android:layout_gravity="center_vertical|center_horizontal"
             android:padding="6dp"
-            android:src="@drawable/info_img_credit_card_active"/>
+            android:src="@drawable/info_img_note_active"/>
 
         <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="@string/info_credit_topic"
+            android:text="@string/info_note"
             android:textSize="@dimen/text_info_normal"
             android:textColor="@color/black"
             android:layout_gravity="center_vertical|center_horizontal"/>
 
-        <ListView
-            android:id="@+id/lv_credit_card"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"/>
+            android:background="@drawable/border_edittext"
+            android:layout_margin="10dp">
+            <co.th.udrinkidrive.MyFontsStyle.MyEdittextFonts
+                android:id="@+id/et_note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:backgroundTint="@color/white"
+                android:textCursorDrawable="@null"
+                android:hint="@string/info_note_hint"
+                android:textColorHint="@color/color_login_username_pass_hint"
+                android:textColor="@color/bg_main"
+                android:textSize="@dimen/edittext_normal"
+                android:padding="14dp"/>
+        </LinearLayout>
 
         <co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
-            android:id="@+id/bt_confirm_promotion"
+            android:id="@+id/bt_confirm_note_add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border_button_booking"
             android:gravity="center_horizontal"
             android:padding="6dp"
-            android:text="@string/info_credit_submit"
+            android:text="@string/info_note_add"
             android:textColor="#fff"
             android:textSize="@dimen/button_normal"
             android:layout_marginLeft="10dp"

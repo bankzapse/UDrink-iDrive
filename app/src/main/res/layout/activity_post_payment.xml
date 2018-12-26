@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_Top"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/bg_main"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical|left"
+                android:padding="6dp"
+                android:src="@drawable/icon_back"/>
+
+        </FrameLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_weight="1">
+
+        <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/profile_payment"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_normal_40" />
+
+        <ScrollView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/border_button_reward_cancel">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:src="@drawable/pay_mastercard"/>
+
+                    <co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="1100-58612-xxx"
+                        android:textColor="#fff"
+                        android:gravity="left|center_vertical"
+                        android:textSize="@dimen/button_normal"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="6dp"
+                        android:background="@android:color/transparent"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/border_button_reward_cancel">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:src="@drawable/pay_mastercard"/>
+
+                    <co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="1100-58612-xxx"
+                        android:textColor="#fff"
+                        android:gravity="left|center_vertical"
+                        android:textSize="@dimen/button_normal"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="6dp"
+                        android:background="@android:color/transparent"/>
+
+                </LinearLayout>
+
+                <co.th.udrinkidrive.MyFontsStyle.MyButtonFonts
+                    android:id="@+id/bt_add_card"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:text="@string/payment_add_card"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/button_normal"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_button_default_press"
+                    android:layout_marginTop="5dp"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:gravity="center_horizontal">
+
+        <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/payment_condition_title1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_normal_24" />
+
+        <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/payment_condition_title2"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_normal_24" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
