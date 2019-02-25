@@ -53,7 +53,7 @@ import kotlinx.android.synthetic.main.custom_promotion.*
 import kotlinx.android.synthetic.main.custom_search_location.*
 import kotlinx.android.synthetic.main.table_view_infomation.*
 
-class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  , TouchableWrapper.UpdateMapAfterUserInterection , View.OnClickListener{
+class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  , TouchableWrapper.UpdateMapAfterUserInterection , View.OnClickListener  {
 
     override fun onCameraChange(p0: CameraPosition?) {
         Log.d("Tag","p0 : $p0")
@@ -211,12 +211,12 @@ class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  
                         val cameraPosition = CameraPosition.Builder().target(current).zoom(18.0f).build()
                         val cameraUpdate = CameraUpdateFactory.newCameraPosition(cameraPosition)
                         googleMap.moveCamera(cameraUpdate)
-                        AddMarker(googleMap,resources.getDrawable(R.drawable.logo_loading),current)
+                        AddMarker(googleMap,resources.getDrawable(R.drawable.location_car),current)
                     } catch (e: Exception) {
                     }
 
                     if(to_location != null){
-                        AddMarker(googleMap,resources.getDrawable(R.drawable.location_car), to_location!!)
+                        AddMarker(googleMap,resources.getDrawable(R.drawable.logo_loading), to_location!!)
                         Utils(this).ZoomMarkerOptionAndPolyLine(googleMap,current, to_location!!)
                     }
 
@@ -419,7 +419,6 @@ class PostMapActivity : AppCompatActivity() , GoogleMap.OnCameraChangeListener  
                 tableLayoutCurrent.removeViewAt(tableLayoutCurrent.childCount-1)
             }
         }
-
 
     }
 

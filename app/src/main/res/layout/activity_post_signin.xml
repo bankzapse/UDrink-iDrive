@@ -5,7 +5,7 @@
     android:id="@+id/ln_sign_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_main"
+    android:background="@drawable/bg_no_logo_udid"
     android:orientation="vertical"
     android:paddingRight="30dp"
     android:paddingLeft="30dp"
@@ -23,7 +23,7 @@
             android:id="@+id/image_loading_sign_in"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/logo_udrink"
+            android:src="@drawable/logo_new_udid"
             android:transitionName="profile"/>
 
         <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts

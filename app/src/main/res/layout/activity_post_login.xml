@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_main"
+    android:background="@drawable/bg_no_logo_udid"
     tools:context=".presentationlayer.postlogin.PostLoginActivity">
 
     <LinearLayout
@@ -27,7 +27,7 @@
                 android:id="@+id/image_loading_login"
                 android:layout_width="180dp"
                 android:layout_height="180dp"
-                android:src="@drawable/logo_udrink"
+                android:src="@drawable/logo_new_udid"
                 android:transitionName="profile"/>
 
             <co.th.udrinkidrive.MyFontsStyle.MyTextViewFonts
